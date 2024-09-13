@@ -1,0 +1,403 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkktvmn8q6r74"]
+
+[ext_resource type="Script" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3DTab.gd" id="1_ak8mk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vluhy"]
+font_size = 26
+font_color = Color(1, 1, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_slah3"]
+font_size = 22
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gha1"]
+font_size = 22
+font_color = Color(1, 1, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DebugVehicleWheel3DTab" type="TabBar"]
+script = ExtResource("1_ak8mk")
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Content"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "  Tab Title"
+label_settings = SubResource("LabelSettings_vluhy")
+vertical_alignment = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Content"]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Content" type="VBoxContainer" parent="Content/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="PerWheelMotion" type="VBoxContainer" parent="Content/Scroll/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/PerWheelMotion"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "PerWheelMotion"
+label_settings = SubResource("LabelSettings_vluhy")
+vertical_alignment = 2
+
+[node name="EngineForce" type="HBoxContainer" parent="Content/Scroll/Content/PerWheelMotion"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/PerWheelMotion/EngineForce"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Engine Force"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/PerWheelMotion/EngineForce"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Brake" type="HBoxContainer" parent="Content/Scroll/Content/PerWheelMotion"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/PerWheelMotion/Brake"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Brake"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/PerWheelMotion/Brake"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Steering" type="HBoxContainer" parent="Content/Scroll/Content/PerWheelMotion"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/PerWheelMotion/Steering"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Steering
+"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/PerWheelMotion/Steering"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Wheel" type="VBoxContainer" parent="Content/Scroll/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Wheel"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Wheel"
+label_settings = SubResource("LabelSettings_vluhy")
+vertical_alignment = 2
+
+[node name="RollInfluence" type="HBoxContainer" parent="Content/Scroll/Content/Wheel"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Wheel/RollInfluence"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Roll Influence"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Wheel/RollInfluence"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Wheel/RollInfluence/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Wheel/RollInfluence/Values"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 0.05
+
+[node name="Radius" type="HBoxContainer" parent="Content/Scroll/Content/Wheel"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Wheel/Radius"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Radius"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Wheel/Radius"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Wheel/Radius/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Wheel/Radius/Values"]
+layout_mode = 2
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.01
+
+[node name="RestLength" type="HBoxContainer" parent="Content/Scroll/Content/Wheel"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Wheel/RestLength"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Rest Length"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Wheel/RestLength"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Wheel/RestLength/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Wheel/RestLength/Values"]
+layout_mode = 2
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.01
+
+[node name="FrictionSlip" type="HBoxContainer" parent="Content/Scroll/Content/Wheel"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Wheel/FrictionSlip"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Frinction Slip"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Wheel/FrictionSlip"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Wheel/FrictionSlip/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Wheel/FrictionSlip/Values"]
+layout_mode = 2
+max_value = 20.0
+step = 0.1
+
+[node name="Suspension" type="VBoxContainer" parent="Content/Scroll/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Suspension"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Suspension"
+label_settings = SubResource("LabelSettings_vluhy")
+vertical_alignment = 2
+
+[node name="Travel" type="HBoxContainer" parent="Content/Scroll/Content/Suspension"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Suspension/Travel"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Travel"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Suspension/Travel"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Suspension/Travel/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Suspension/Travel/Values"]
+layout_mode = 2
+max_value = 2.0
+step = 0.05
+value = 0.05
+
+[node name="Stiffness" type="HBoxContainer" parent="Content/Scroll/Content/Suspension"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Suspension/Stiffness"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Stiffness"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Suspension/Stiffness"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Suspension/Stiffness/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Suspension/Stiffness/Values"]
+layout_mode = 2
+max_value = 50.0
+step = 0.25
+value = 5.0
+
+[node name="MaxForce" type="HBoxContainer" parent="Content/Scroll/Content/Suspension"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Suspension/MaxForce"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Max Force"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Suspension/MaxForce"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Suspension/MaxForce/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Suspension/MaxForce/Values"]
+layout_mode = 2
+max_value = 20000.0
+step = 100.0
+value = 100.0
+
+[node name="Damping" type="VBoxContainer" parent="Content/Scroll/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Damping"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Damping"
+label_settings = SubResource("LabelSettings_vluhy")
+vertical_alignment = 2
+
+[node name="Compression" type="HBoxContainer" parent="Content/Scroll/Content/Damping"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Damping/Compression"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Compression"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Damping/Compression"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Damping/Compression/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Damping/Compression/Values"]
+layout_mode = 2
+min_value = 0.01
+max_value = 2.0
+step = 0.01
+value = 0.06
+
+[node name="Relaxation" type="HBoxContainer" parent="Content/Scroll/Content/Damping"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/Scroll/Content/Damping/Relaxation"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Relaxation"
+label_settings = SubResource("LabelSettings_slah3")
+vertical_alignment = 1
+
+[node name="Values" type="VBoxContainer" parent="Content/Scroll/Content/Damping/Relaxation"]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Content/Scroll/Content/Damping/Relaxation/Values"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="HSlider" type="HSlider" parent="Content/Scroll/Content/Damping/Relaxation/Values"]
+layout_mode = 2
+min_value = 0.01
+max_value = 2.0
+step = 0.01
+value = 0.06
+
+[connection signal="value_changed" from="Content/Scroll/Content/Wheel/RollInfluence/Values/HSlider" to="." method="_on_wheel_rollinfluence_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Wheel/Radius/Values/HSlider" to="." method="_on_wheel_radius_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Wheel/RestLength/Values/HSlider" to="." method="_on_wheel_restlength_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Wheel/FrictionSlip/Values/HSlider" to="." method="_on_wheel_flictionslip_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Suspension/Travel/Values/HSlider" to="." method="_on_suspension_travel_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Suspension/Stiffness/Values/HSlider" to="." method="_on_suspension_stiffness_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Suspension/MaxForce/Values/HSlider" to="." method="_on_suspension_maxforce_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Damping/Compression/Values/HSlider" to="." method="_on_damping_compression_slider_value_changed"]
+[connection signal="value_changed" from="Content/Scroll/Content/Damping/Relaxation/Values/HSlider" to="." method="_on_damping_relaxation_slider_value_changed"]

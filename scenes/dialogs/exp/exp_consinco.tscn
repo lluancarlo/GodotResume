@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcdlodypf3vm3"]
+
+[ext_resource type="PackedScene" uid="uid://cl5cbv0pf7v4m" path="res://scenes/dialogs/exp/base_dialog_exp.tscn" id="1_figud"]
+[ext_resource type="Texture2D" uid="uid://cdb2vo63yb3v7" path="res://assets/img/totvs-logo.jpg" id="2_a4n1s"]
+
+[node name="ExpConsinco" instance=ExtResource("1_figud")]
+offset_top = -284.0
+offset_bottom = 284.0
+logo_link = "https://consinco.com.br/"
+
+[node name="Title" parent="VBox/Header" index="0"]
+text = "Consinco By Totvs"
+
+[node name="Logo" parent="VBox/Content/MainInfo" index="0"]
+texture_normal = ExtResource("2_a4n1s")
+
+[node name="Value" parent="VBox/Content/MainInfo/Info/Position" index="1"]
+text = "Full Stack Developer"
+
+[node name="Value" parent="VBox/Content/MainInfo/Info/Period" index="1"]
+text = "Apr 2018 - Oct 2020"
+
+[node name="Description" parent="VBox/Content" index="1"]
+text = "Desktop development with Centura and Oracle Database with PL / SQL, WEB with C # and Javascript, using .NET, API, Angular and Kendo UI, fixing bugs and creating new features in order to promote the efficient development of the system as a whole, validating changes and functionality as well as writing documentation."
+
+[node name="Value" parent="VBox/Content/Skills" index="1"]
+text = "C#, .Net, Oracle PL/Sql, Javascript, Angular"

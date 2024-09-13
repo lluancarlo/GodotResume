@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhxcynap6n88l"]
+
+[ext_resource type="Script" path="res://scripts/PickUp.gd" id="1_ul7e6"]
+[ext_resource type="QuadMesh" uid="uid://b028udy8kuuja" path="res://assets/meshes/pick_up.tres" id="2_6msgh"]
+[ext_resource type="FontFile" uid="uid://gqqdohjg3y7j" path="res://assets/fonts/Montreal-Regular.ttf" id="3_gruea"]
+[ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="4_1os0l"]
+[ext_resource type="AudioStream" uid="uid://bbjsqboqu7moh" path="res://assets/kenney/interface-sounds/switch_003.ogg" id="4_ybkj6"]
+
+[sub_resource type="Animation" id="Animation_0i5as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8aykb"]
+resource_name = "enter"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.1, 1, 1.1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_edu2c"]
+_data = {
+"RESET": SubResource("Animation_0i5as"),
+"enter": SubResource("Animation_8aykb")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3tpc2"]
+size = Vector3(1.3, 1, 2.2)
+
+[node name="PickUp" type="Node3D"]
+script = ExtResource("1_ul7e6")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+visibility_range_end = 35.0
+mesh = ExtResource("2_6msgh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_edu2c")
+}
+
+[node name="LabelTitle" type="Label3D" parent="."]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 1.5, 0)
+visibility_range_end = 33.0
+billboard = 1
+alpha_cut = 1
+text = "Title"
+font = ExtResource("3_gruea")
+outline_size = 5
+
+[node name="LabelInteraction" type="Label3D" parent="."]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 1.75, 0)
+visibility_range_end = 33.0
+billboard = 1
+alpha_cut = 1
+text = "Press [E] to open"
+font = ExtResource("4_1os0l")
+outline_size = 5
+
+[node name="Area3D" type="Area3D" parent="."]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36187, -0.00300288)
+shape = SubResource("BoxShape3D_3tpc2")
+
+[node name="AudioEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ybkj6")
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area3D" to="." method="_on_area_3d_body_shape_exited"]

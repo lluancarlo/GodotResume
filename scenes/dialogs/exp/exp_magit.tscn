@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c140u5eel72t"]
+
+[ext_resource type="PackedScene" uid="uid://cl5cbv0pf7v4m" path="res://scenes/dialogs/exp/base_dialog_exp.tscn" id="1_cfdes"]
+[ext_resource type="Texture2D" uid="uid://bi7cjoig4kmw2" path="res://assets/img/magit-logo.jpg" id="2_p5dsg"]
+
+[node name="ExpMagit" instance=ExtResource("1_cfdes")]
+logo_link = "https://www.mag-it.com.br/en"
+
+[node name="Title" parent="VBox/Header" index="0"]
+text = "Magit it partner"
+
+[node name="Logo" parent="VBox/Content/MainInfo" index="0"]
+texture_normal = ExtResource("2_p5dsg")
+
+[node name="Value" parent="VBox/Content/MainInfo/Info/Position" index="1"]
+text = "Full Stack Developer"
+
+[node name="Value" parent="VBox/Content/MainInfo/Info/Period" index="1"]
+text = "Oct 2020 - Jul 2022"
+
+[node name="Description" parent="VBox/Content" index="1"]
+text = "Front-End with JavaScript (AngularJS, ReactJS, Bootstrap).
+Back-End with C# (ASP.Net Core, Entity Framework, Unit Tests with FluentAssertions, Bogus, Rich and Anemic Domain Model, Mediator Pattern with MediatR, Onion Architecture, Solid Principles) and NodeJS (with AdonisJS).
+Database with SQL Server, MySql, PostgreSQL and Oracle PL/SQL.
+Devops with Jira and Azure, Pipeline Build and Release, code versioning git, Sprint & Kanban"
+
+[node name="Value" parent="VBox/Content/Skills" index="1"]
+text = "C#, .Net, Sql, Javascript, Angular, React Js"

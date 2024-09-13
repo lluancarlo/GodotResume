@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnytmelmsitub"]
+
+[ext_resource type="Script" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3D.gd" id="1_3dx0v"]
+[ext_resource type="PackedScene" uid="uid://dkktvmn8q6r74" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3DTab.tscn" id="2_n8rll"]
+
+[node name="DebugVehicleWheel3D" type="TabContainer"]
+custom_minimum_size = Vector2(350, 420)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_top = 490.0
+offset_right = -30.0
+offset_bottom = 910.0
+grow_horizontal = 0
+script = ExtResource("1_3dx0v")
+show_per_wheel_motion = false
+
+[node name="Front" parent="." instance=ExtResource("2_n8rll")]
+layout_mode = 2
+tab_title = "Front Wheels"
+
+[node name="Rear" parent="." instance=ExtResource("2_n8rll")]
+visible = false
+layout_mode = 2
+tab_title = "Rear Wheels"
+
+[connection signal="damping_compression_changed" from="Front" to="." method="_on_front_damping_compression_changed"]
+[connection signal="damping_relaxation_changed" from="Front" to="." method="_on_front_damping_relaxation_changed"]
+[connection signal="suspension_maxforce_changed" from="Front" to="." method="_on_front_suspension_maxforce_changed"]
+[connection signal="suspension_stiffness_changed" from="Front" to="." method="_on_front_suspension_stiffness_changed"]
+[connection signal="suspension_travel_changed" from="Front" to="." method="_on_front_suspension_travel_changed"]
+[connection signal="wheel_frictionslip_changed" from="Front" to="." method="_on_front_wheel_frictionslip_changed"]
+[connection signal="wheel_radius_changed" from="Front" to="." method="_on_front_wheel_radius_changed"]
+[connection signal="wheel_restlength_changed" from="Front" to="." method="_on_front_wheel_restlength_changed"]
+[connection signal="wheel_rollinfluence_changed" from="Front" to="." method="_on_front_wheel_rollinfluence_changed"]
+[connection signal="damping_compression_changed" from="Rear" to="." method="_on_rear_damping_compression_changed"]
+[connection signal="damping_relaxation_changed" from="Rear" to="." method="_on_rear_damping_relaxation_changed"]
+[connection signal="suspension_maxforce_changed" from="Rear" to="." method="_on_rear_suspension_maxforce_changed"]
+[connection signal="suspension_stiffness_changed" from="Rear" to="." method="_on_rear_suspension_stiffness_changed"]
+[connection signal="suspension_travel_changed" from="Rear" to="." method="_on_rear_suspension_travel_changed"]
+[connection signal="wheel_frictionslip_changed" from="Rear" to="." method="_on_rear_wheel_frictionslip_changed"]
+[connection signal="wheel_radius_changed" from="Rear" to="." method="_on_rear_wheel_radius_changed"]
+[connection signal="wheel_restlength_changed" from="Rear" to="." method="_on_rear_wheel_restlength_changed"]
+[connection signal="wheel_rollinfluence_changed" from="Rear" to="." method="_on_rear_wheel_rollinfluence_changed"]

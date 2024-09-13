@@ -1,0 +1,1840 @@
+[gd_scene load_steps=46 format=3 uid="uid://bdpgnc1txjso8"]
+
+[ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
+[ext_resource type="Material" uid="uid://d4cvloymv66vn" path="res://assets/materials/grass.material" id="1_bdqam"]
+[ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
+[ext_resource type="Script" path="res://scripts/FollowPlayer.gd" id="1_gptlb"]
+[ext_resource type="Script" path="res://scripts/PlayerController.gd" id="2_hp3v1"]
+[ext_resource type="PackedScene" uid="uid://cwk2lgxoq5sg2" path="res://assets/scenes/natures/cliff_half_rock.scn" id="2_n6s6i"]
+[ext_resource type="Material" uid="uid://b2e3q04uueo5m" path="res://assets/materials/water.material" id="2_wx30m"]
+[ext_resource type="PackedScene" uid="uid://c7xy0cbk8yqhs" path="res://assets/scenes/roads/road_intersection_path.scn" id="2_xo1du"]
+[ext_resource type="PackedScene" uid="uid://bklf6h07530ko" path="res://assets/scenes/natures/cliff_block_slope_rock.scn" id="3_tasli"]
+[ext_resource type="PackedScene" uid="uid://cjidr1hta64qu" path="res://assets/scenes/roads/tile_low.scn" id="3_tfq4s"]
+[ext_resource type="PackedScene" uid="uid://ceti4fmao38ak" path="res://assets/scenes/natures/tree_oak.scn" id="5_f5xax"]
+[ext_resource type="PackedScene" uid="uid://bcnkeso2vrxoc" path="res://assets/scenes/natures/tree_pine.scn" id="6_1wlq4"]
+[ext_resource type="PackedScene" uid="uid://gagj0v82bcnn" path="res://assets/scenes/natures/tree_thin.scn" id="7_i8vau"]
+[ext_resource type="PackedScene" uid="uid://dsrtiuh0w3lat" path="res://assets/scenes/natures/rock_large_a.scn" id="8_a5huh"]
+[ext_resource type="PackedScene" uid="uid://dvql43tx0317i" path="res://assets/scenes/natures/rock_large_b.scn" id="9_aim4p"]
+[ext_resource type="PackedScene" uid="uid://b8yajhb3efn4c" path="res://assets/scenes/natures/rock_small_a.scn" id="10_8d8pl"]
+[ext_resource type="PackedScene" uid="uid://b1kfaxmwnb3l8" path="res://assets/scenes/natures/rock_small_b.scn" id="11_bv1xe"]
+[ext_resource type="PackedScene" uid="uid://b6k0ysrkqbmte" path="res://assets/scenes/natures/grass.scn" id="12_r0q7x"]
+[ext_resource type="PackedScene" uid="uid://c5l37tmlogaie" path="res://assets/scenes/buildings/house_type_19.scn" id="16_uaynw"]
+[ext_resource type="PackedScene" uid="uid://brqlseag0b4yu" path="res://assets/scenes/buildings/fence_wide.scn" id="17_fdoqk"]
+[ext_resource type="PackedScene" uid="uid://bmv4aj8faoc23" path="res://assets/scenes/natures/rock_tall_a.scn" id="18_1vkoj"]
+[ext_resource type="PackedScene" uid="uid://cf23hunuvpbc0" path="res://assets/scenes/buildings/house_type_22.scn" id="18_k1kal"]
+[ext_resource type="PackedScene" uid="uid://bh3aol3c85qgk" path="res://assets/scenes/buildings/large_building_f.scn" id="19_bhiyu"]
+[ext_resource type="PackedScene" uid="uid://bmdvds3uj0jpw" path="res://assets/scenes/natures/rock_tall_b.scn" id="21_l757x"]
+[ext_resource type="Material" uid="uid://c6q8me1cqk077" path="res://assets/materials/italy.material" id="21_lysey"]
+[ext_resource type="PackedScene" uid="uid://bpkndx622xjrd" path="res://assets/scenes/natures/fence_planks_double.scn" id="22_ccbhg"]
+[ext_resource type="PackedScene" uid="uid://cw0mebwtldsyq" path="res://assets/scenes/natures/crops_dirt_row.scn" id="23_lqqwb"]
+[ext_resource type="PackedScene" uid="uid://5cwo2kmeq7s7" path="res://assets/scenes/natures/crops_dirt_row_end.scn" id="24_vw2qp"]
+[ext_resource type="PackedScene" uid="uid://dmqs32owkanoe" path="res://assets/scenes/natures/crops_corn_stage_2.scn" id="25_r1aob"]
+[ext_resource type="Material" uid="uid://b0uhbpq0epm75" path="res://assets/materials/brazil.material" id="28_1c5e0"]
+[ext_resource type="Script" path="res://scenes/ShowFps.gd" id="31_bjc0q"]
+[ext_resource type="Script" path="res://scenes/node_vehiclebody3D.gd" id="32_1xpr2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ev86x"]
+material = ExtResource("1_bdqam")
+size = Vector3(50, 0.1, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_43wc4"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_s603f"]
+lightmap_size_hint = Vector2i(7, 5)
+material = ExtResource("28_1c5e0")
+flip_faces = true
+size = Vector2(1, 0.6)
+subdivide_width = 10
+subdivide_depth = 6
+
+[sub_resource type="QuadMesh" id="QuadMesh_22eor"]
+lightmap_size_hint = Vector2i(7, 5)
+material = ExtResource("21_lysey")
+flip_faces = true
+size = Vector2(1, 0.6)
+subdivide_width = 10
+subdivide_depth = 6
+
+[sub_resource type="BoxMesh" id="BoxMesh_eed8a"]
+size = Vector3(0.9, 2, 0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_seupx"]
+points = PackedVector3Array(0.414146, 0.926237, 0.25, -0.438796, -0.956116, -0.25, -0.425257, -0.926237, 0.25, -0.438796, 0.956116, -0.25, 0.427684, -0.956116, -0.25, 0.427684, 0.956116, -0.25, -0.425257, 0.926237, 0.25, 0.414146, -0.926237, 0.25)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3neeq"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.2
+
+[sub_resource type="LabelSettings" id="LabelSettings_ylj7i"]
+font_size = 26
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_phbwc"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_dny3b"]
+font_size = 26
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vluhy"]
+font_size = 26
+font_color = Color(1, 1, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_slah3"]
+font_size = 22
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gha1"]
+font_size = 22
+font_color = Color(1, 1, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+
+[node name="Sun" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(0.707107, -0.5, -0.5, 0, -0.707107, 0.707107, -0.707107, -0.5, -0.5, 0, 0, 0)
+light_energy = 2.0
+shadow_enabled = true
+shadow_bias = 2.0
+shadow_opacity = 0.9
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 30.0
+directional_shadow_pancake_size = 0.0
+
+[node name="Water" type="MeshInstance3D" parent="World"]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -15, -2.2, -15)
+mesh = SubResource("BoxMesh_ev86x")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_wx30m")
+
+[node name="Floor" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -0.05, 11)
+mesh = SubResource("BoxMesh_ev86x")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_43wc4")
+
+[node name="Floor2" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -15, -2.05, -15)
+mesh = SubResource("BoxMesh_ev86x")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_43wc4")
+
+[node name="Floor3" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1.25, 0, 0, 0, 1.5, 0, 0, 0, 0.25, 17.75, 2.93, 43.25)
+mesh = SubResource("BoxMesh_ev86x")
+skeleton = NodePath("../..")
+
+[node name="Floor4" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-5.46392e-08, 0, -0.25, 0, 1.5, 0, 1.25, 0, -1.09278e-08, 42.75, 2.93, 17.25)
+mesh = SubResource("BoxMesh_ev86x")
+skeleton = NodePath("../..")
+
+[node name="Cliffs" type="Node3D" parent="World"]
+
+[node name="cliff_half_rock" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, -4)
+
+[node name="cliff_half_rock2" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, -8)
+
+[node name="cliff_half_rock3" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, -12)
+
+[node name="cliff_half_rock7" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -2, -16)
+
+[node name="cliff_half_rock10" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -2, -16)
+
+[node name="cliff_half_rock11" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -2, -16)
+
+[node name="cliff_half_rock12" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2, -16)
+
+[node name="cliff_half_rock13" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -2, -16)
+
+[node name="cliff_half_rock16" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -2, -16)
+
+[node name="cliff_half_rock44" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 24, -3, -16)
+
+[node name="cliff_half_rock45" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 28, -3, -16)
+
+[node name="cliff_half_rock46" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 32, -3, -16)
+
+[node name="cliff_half_rock47" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 36, -3, -16)
+
+[node name="cliff_half_rock51" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 38, -3, -16)
+
+[node name="cliff_half_rock52" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 42, -3, -16)
+
+[node name="cliff_half_rock53" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 46, -3, -16)
+
+[node name="cliff_half_rock14" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2, -16)
+
+[node name="cliff_half_rock4" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, 12)
+
+[node name="cliff_half_rock5" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, 8)
+
+[node name="cliff_half_rock6" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, 4)
+
+[node name="cliff_half_rock8" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, 20)
+
+[node name="cliff_half_rock9" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -15.5, -3, 24)
+
+[node name="cliff_half_rock15" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -15.5, -3, 28)
+
+[node name="cliff_half_rock17" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -15.5, -3, 32)
+
+[node name="cliff_half_rock18" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, -15.5, -3, 36)
+
+[node name="cliff_half_rock48" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, -15.5, -3, 38.3451)
+
+[node name="cliff_half_rock49" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, -15.5, -3, 42.3451)
+
+[node name="cliff_half_rock50" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 3, 0, -1, 0, -4.37114e-08, -15.5, -3, 46.3451)
+
+[node name="cliff_half_rock19" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -11.5, 0, 35)
+
+[node name="cliff_half_rock20" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -7.5, 0, 35)
+
+[node name="cliff_half_rock21" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.5, 0, 35)
+
+[node name="cliff_half_rock22" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.5, 0, 35)
+
+[node name="cliff_half_rock23" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 4.5, 0, 35)
+
+[node name="cliff_half_rock24" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 8.5, 0, 35)
+
+[node name="cliff_half_rock25" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 12.5, 0, 35)
+
+[node name="cliff_half_rock26" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 16.5, 0, 35)
+
+[node name="cliff_half_rock27" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 20.5, 0, 35)
+
+[node name="cliff_half_rock28" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 24.5, 0, 35)
+
+[node name="cliff_half_rock29" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 28.5, 0, 35)
+
+[node name="cliff_half_rock30" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 32.5, 0, 35)
+
+[node name="cliff_half_rock31" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 32)
+
+[node name="cliff_half_rock43" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1.5, 0, -0.707107, 0, 0.707107, 33.5, 0, 34)
+
+[node name="cliff_half_rock32" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 28)
+
+[node name="cliff_half_rock33" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 24)
+
+[node name="cliff_half_rock34" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, -4)
+
+[node name="cliff_half_rock35" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, -8)
+
+[node name="cliff_half_rock36" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, -12)
+
+[node name="cliff_half_rock37" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 8)
+
+[node name="cliff_half_rock38" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 4)
+
+[node name="cliff_half_rock39" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 0)
+
+[node name="cliff_half_rock40" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 20)
+
+[node name="cliff_half_rock41" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 16)
+
+[node name="cliff_half_rock42" parent="World/Cliffs" instance=ExtResource("2_n6s6i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.5, 0, -1, 0, -4.37114e-08, 34.5, 0, 12)
+
+[node name="cliff_block_slope_rock" parent="World/Cliffs" instance=ExtResource("3_tasli")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, -2, 16)
+
+[node name="cliff_block_slope_rock2" parent="World/Cliffs" instance=ExtResource("3_tasli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -2, -16)
+
+[node name="City" type="Node3D" parent="."]
+
+[node name="Center" type="Node3D" parent="City"]
+
+[node name="Roads" type="Node3D" parent="City/Center"]
+
+[node name="road_curve2" parent="City/Center/Roads" instance=ExtResource("1_bp8cq")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -6, 0, 6)
+
+[node name="road_curve3" parent="City/Center/Roads" instance=ExtResource("1_bp8cq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -6)
+
+[node name="road_curve5" parent="City/Center/Roads" instance=ExtResource("1_bp8cq")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 6, 0, 6)
+
+[node name="road_curve4" parent="City/Center/Roads" instance=ExtResource("1_bp8cq")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 0, -6)
+
+[node name="road_intersection_path" parent="City/Center/Roads" instance=ExtResource("2_xo1du")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="road_intersection_path2" parent="City/Center/Roads" instance=ExtResource("2_xo1du")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8, 0, 0)
+
+[node name="road_intersection_path3" parent="City/Center/Roads" instance=ExtResource("2_xo1du")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 8)
+
+[node name="road_intersection_path4" parent="City/Center/Roads" instance=ExtResource("2_xo1du")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -8)
+
+[node name="tile_low" parent="City/Center/Roads" instance=ExtResource("3_tfq4s")]
+
+[node name="tile_low2" parent="City/Center/Roads" instance=ExtResource("3_tfq4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="tile_low3" parent="City/Center/Roads" instance=ExtResource("3_tfq4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="tile_low4" parent="City/Center/Roads" instance=ExtResource("3_tfq4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="tile_low5" parent="City/Center/Roads" instance=ExtResource("3_tfq4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="road_straight" parent="City/Center/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="road_straight3" parent="City/Center/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, 1.30385e-08)
+
+[node name="road_straight6" parent="City/Center/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65661e-09, 0, 12)
+
+[node name="road_straight2" parent="City/Center/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 0)
+
+[node name="Nature" type="Node3D" parent="City/Center"]
+
+[node name="tree_oak" parent="City/Center/Nature" instance=ExtResource("5_f5xax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37108, 0, 2.92482)
+
+[node name="tree_oak3" parent="City/Center/Nature" instance=ExtResource("5_f5xax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72415, -2.38419e-07, 5.02197)
+
+[node name="tree_oak2" parent="City/Center/Nature" instance=ExtResource("5_f5xax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09592, 0, -4.06408)
+
+[node name="tree_oak4" parent="City/Center/Nature" instance=ExtResource("5_f5xax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.272, 0, 2.66672)
+
+[node name="tree_oak5" parent="City/Center/Nature" instance=ExtResource("5_f5xax")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -7.43784, 0, 9.51433)
+
+[node name="tree_oak6" parent="City/Center/Nature" instance=ExtResource("5_f5xax")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.09592, 0, -12.0641)
+
+[node name="tree_pine" parent="City/Center/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92931, -9.53674e-07, -2.68123)
+
+[node name="tree_pine3" parent="City/Center/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5003, -9.53674e-07, 6.62339)
+
+[node name="tree_pine2" parent="City/Center/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75091, -1.43051e-06, -4.63456)
+
+[node name="tree_pine5" parent="City/Center/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19601, -1.43051e-06, -12.6224)
+
+[node name="tree_pine4" parent="City/Center/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3456, -1.43051e-06, -9.9214)
+
+[node name="tree_thin" parent="City/Center/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01171, 2.38419e-07, -3.04018)
+
+[node name="tree_thin5" parent="City/Center/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.55329, 0, -0.832989, 0, 1, 0, 0.832989, 0, 0.55329, -11.8438, 2.38419e-07, -9.06439)
+
+[node name="tree_thin3" parent="City/Center/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27613, 4.76837e-07, 2.49807)
+
+[node name="tree_thin2" parent="City/Center/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8119, 9.53674e-07, 5.14222)
+
+[node name="tree_thin4" parent="City/Center/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 10.7047, 9.53674e-07, -5.06286)
+
+[node name="rock_large_a" parent="City/Center/Nature" instance=ExtResource("8_a5huh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92891, 0, -3.39531)
+
+[node name="rock_large_a3" parent="City/Center/Nature" instance=ExtResource("8_a5huh")]
+transform = Transform3D(0.529431, 0, -0.848353, 0, 1, 0, 0.848353, 0, 0.529431, -6.839, 0, -11.6275)
+
+[node name="rock_large_a2" parent="City/Center/Nature" instance=ExtResource("8_a5huh")]
+transform = Transform3D(0.484504, 0, 0.874789, 0, 1, 0, -0.874789, 0, 0.484504, 4.45927, 0, -12.6234)
+
+[node name="rock_large_b" parent="City/Center/Nature" instance=ExtResource("9_aim4p")]
+transform = Transform3D(-0.998612, 0, -0.052667, 0, 1, 0, 0.052667, 0, -0.998612, 3.9044, 0, 3.50906)
+
+[node name="rock_small_a" parent="City/Center/Nature" instance=ExtResource("10_8d8pl")]
+transform = Transform3D(-0.95424, 0, 0.299041, 0, 1, 0, -0.299041, 0, -0.95424, -2.94977, 0, 3.02899)
+
+[node name="rock_small_a2" parent="City/Center/Nature" instance=ExtResource("10_8d8pl")]
+transform = Transform3D(-0.63531, 0, -0.772257, 0, 1, 0, 0.772257, 0, -0.63531, -7.67626, 0, 11.8276)
+
+[node name="rock_small_a3" parent="City/Center/Nature" instance=ExtResource("10_8d8pl")]
+transform = Transform3D(-0.95424, 0, 0.299041, 0, 1, 0, -0.299041, 0, -0.95424, -9.10087, 0, 9.10782)
+
+[node name="rock_small_a4" parent="City/Center/Nature" instance=ExtResource("10_8d8pl")]
+transform = Transform3D(0.376936, 0, 0.926239, 0, 1, 0, -0.926239, 0, 0.376936, -3.12775, 0, 12.8456)
+
+[node name="rock_small_b" parent="City/Center/Nature" instance=ExtResource("11_bv1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39346, 0, -3.92845)
+
+[node name="rock_small_b2" parent="City/Center/Nature" instance=ExtResource("11_bv1xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7335, 0, -5.91238)
+
+[node name="grass" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
+
+[node name="grass2" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
+
+[node name="grass3" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97285, 0, -2.93292)
+
+[node name="grass4" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04685, 0, -4.74936)
+
+[node name="grass16" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69501, 0, -7.5786)
+
+[node name="grass17" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51918, -4.76837e-07, -9.50519)
+
+[node name="grass18" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.90009, -9.53674e-07, -10.6891)
+
+[node name="grass19" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9174, -9.53674e-07, -3.3268)
+
+[node name="grass20" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2681, -9.53674e-07, -6.34529)
+
+[node name="grass21" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5633, -1.90735e-06, -7.79427)
+
+[node name="grass22" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.96937, -1.90735e-06, -9.67363)
+
+[node name="grass23" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.64829, -1.43051e-06, -11.0132)
+
+[node name="grass24" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97971, -1.43051e-06, -12.6428)
+
+[node name="grass25" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1425, -1.43051e-06, -11.4168)
+
+[node name="grass5" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60178, -4.76837e-07, -5.40421)
+
+[node name="grass26" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3968, -4.76837e-07, -11.029)
+
+[node name="grass27" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.26647, -4.76837e-07, -9.96196)
+
+[node name="grass28" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95181, -4.76837e-07, -9.33281)
+
+[node name="grass30" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72985, -4.76837e-07, -10.5725)
+
+[node name="grass31" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.46648, -4.76837e-07, -12.267)
+
+[node name="grass32" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18723, -4.76837e-07, -13.6119)
+
+[node name="grass33" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3432, -4.76837e-07, -12.3657)
+
+[node name="grass34" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7578, -4.76837e-07, -12.7119)
+
+[node name="grass35" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7015, 1.7053e-13, -10.8085)
+
+[node name="grass36" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7866, 9.53675e-07, -10.5034)
+
+[node name="grass37" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87478, 9.53675e-07, -8.86384)
+
+[node name="grass38" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2165, 4.76837e-07, -7.66449)
+
+[node name="grass39" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7839, 2.27374e-13, -6.61121)
+
+[node name="grass40" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0423, 2.27374e-13, -3.52852)
+
+[node name="grass41" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4544, 2.27374e-13, -3.58744)
+
+[node name="grass42" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3479, 2.27374e-13, -4.70834)
+
+[node name="grass43" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.57354, 2.27374e-13, -6.78295)
+
+[node name="grass29" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95181, -4.76837e-07, -9.33281)
+
+[node name="grass6" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63322, -4.76837e-07, -2.87137)
+
+[node name="grass7" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30313, -4.76837e-07, -2.65509)
+
+[node name="grass8" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14439, -4.76837e-07, 2.66439)
+
+[node name="grass44" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9125, -4.76837e-07, 2.94322)
+
+[node name="grass45" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6811, -4.76837e-07, 4.24216)
+
+[node name="grass46" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0383, -4.76837e-07, 5.06089)
+
+[node name="grass47" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3904, -4.76837e-07, 5.98004)
+
+[node name="grass48" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2444, 1.7053e-13, 6.38274)
+
+[node name="grass49" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.592, 1.7053e-13, 7.65432)
+
+[node name="grass50" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8659, 4.76837e-07, 7.72669)
+
+[node name="grass51" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13425, 9.53675e-07, 7.53456)
+
+[node name="grass52" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21319, 9.53675e-07, 8.51642)
+
+[node name="grass53" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2193, 9.53675e-07, 9.08278)
+
+[node name="grass54" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0004, 9.53675e-07, 9.15636)
+
+[node name="grass55" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3198, 9.53675e-07, 10.2814)
+
+[node name="grass64" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3277, 9.53675e-07, 12.4091)
+
+[node name="grass65" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03863, 9.53675e-07, 13.1335)
+
+[node name="grass66" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67757, 9.53675e-07, 12.4965)
+
+[node name="grass67" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62251, 9.53675e-07, 12.8178)
+
+[node name="grass56" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.92037, 9.53675e-07, 10.0189)
+
+[node name="grass57" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03121, 9.53675e-07, 10.597)
+
+[node name="grass58" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.69178, 9.53675e-07, 10.4963)
+
+[node name="grass59" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64079, 9.53675e-07, 11.7804)
+
+[node name="grass60" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.35434, 9.53675e-07, 11.481)
+
+[node name="grass61" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93734, 9.53675e-07, 11.1729)
+
+[node name="grass62" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.46117, 9.53675e-07, 10.3784)
+
+[node name="grass63" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39905, 9.53675e-07, 11.6674)
+
+[node name="grass9" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17728, -4.76837e-07, 4.29832)
+
+[node name="grass10" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59551, -4.76837e-07, 2.71808)
+
+[node name="grass11" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79256, -4.76837e-07, 4.37681)
+
+[node name="grass12" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56049, -4.76837e-07, 3.33304)
+
+[node name="grass13" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99352, -2.38419e-07, 3.38769)
+
+[node name="grass14" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40363, -2.38419e-07, 2.63794)
+
+[node name="grass15" parent="City/Center/Nature" instance=ExtResource("12_r0q7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65915, -2.38419e-07, 4.99689)
+
+[node name="rock_tall_b" parent="City/Center/Nature" instance=ExtResource("21_l757x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5821, -0.049999, -12.3704)
+
+[node name="rock_tall_b2" parent="City/Center/Nature" instance=ExtResource("21_l757x")]
+transform = Transform3D(0.591084, 0, 0.80661, 0, 1, 0, -0.80661, 0, 0.591084, -11.6312, -0.049999, -5.93001)
+
+[node name="rock_tall_a" parent="City/Center/Nature" instance=ExtResource("18_1vkoj")]
+transform = Transform3D(0.861044, 0, 0.508531, 0, 1, 0, -0.508531, 0, 0.861044, -12.6347, -0.0500005, 11.4384)
+
+[node name="Personal" type="Node3D" parent="City"]
+
+[node name="Roads" type="Node3D" parent="City/Personal"]
+
+[node name="road_straight" parent="City/Personal/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(-4.37114e-08, 0, -2, 0, 1, 0, 1, 0, -8.74228e-08, 18, 0, 0)
+
+[node name="road_straight2" parent="City/Personal/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 18)
+
+[node name="road_straight3" parent="City/Personal/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 28, 0, 14)
+
+[node name="road_straight4" parent="City/Personal/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(-4.37114e-08, 0, -4, 0, 1, 0, 1, 0, -1.74846e-07, 14, 0, 28)
+
+[node name="road_curve" parent="City/Personal/Roads" instance=ExtResource("1_bp8cq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26, 0, 2)
+
+[node name="road_curve2" parent="City/Personal/Roads" instance=ExtResource("1_bp8cq")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2, 0, 26)
+
+[node name="road_curve3" parent="City/Personal/Roads" instance=ExtResource("1_bp8cq")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 26, 0, 26)
+
+[node name="Buildings" type="Node3D" parent="City/Personal"]
+
+[node name="house_type19" parent="City/Personal/Buildings" instance=ExtResource("16_uaynw")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 32.5, 0, 9)
+
+[node name="Flag" type="MeshInstance3D" parent="City/Personal/Buildings/house_type19"]
+transform = Transform3D(1, 0, -1.19249e-08, 0, 1, 0, 1.19249e-08, 0, 1, 1.55138, 1.36199, 1.5898)
+mesh = SubResource("QuadMesh_s603f")
+skeleton = NodePath("")
+
+[node name="fence_wide" parent="City/Personal/Buildings" instance=ExtResource("17_fdoqk")]
+transform = Transform3D(-4.15258e-08, 0, -1, 0, 1, 0, 0.95, 0, -4.37114e-08, 34, 0, 9)
+
+[node name="fence_wide2" parent="City/Personal/Buildings" instance=ExtResource("17_fdoqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 15)
+
+[node name="house_type22" parent="City/Personal/Buildings" instance=ExtResource("18_k1kal")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33, 0, 19)
+
+[node name="Flag" type="MeshInstance3D" parent="City/Personal/Buildings/house_type22"]
+transform = Transform3D(7.10543e-15, 0, -1, 0, 1, 0, 1, 0, 7.10543e-15, -2.39311, 2.37676, 1.39086)
+mesh = SubResource("QuadMesh_22eor")
+skeleton = NodePath("")
+
+[node name="tile_low" parent="City/Personal/Buildings" instance=ExtResource("3_tfq4s")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 2, 33, 0, 18)
+
+[node name="tile_low2" parent="City/Personal/Buildings" instance=ExtResource("3_tfq4s")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 33, 0, 9)
+
+[node name="tile_low3" parent="City/Personal/Buildings" instance=ExtResource("3_tfq4s")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1.5, 14, 0, 33)
+
+[node name="large_buildingF" parent="City/Personal/Buildings" instance=ExtResource("19_bhiyu")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 0, 33)
+
+[node name="Flag" type="MeshInstance3D" parent="City/Personal/Buildings/large_buildingF"]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, -2.34293, 3.17755, 1.60656)
+mesh = SubResource("QuadMesh_s603f")
+skeleton = NodePath("")
+
+[node name="Nature" type="Node3D" parent="City/Personal"]
+
+[node name="tree_pine" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.74629, 0, -0.665621, 0, 1, 0, 0.665621, 0, 0.74629, 30.9505, -0.05, 27.4854)
+
+[node name="tree_pine19" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.74629, 0, -0.665621, 0, 1, 0, 0.665621, 0, 0.74629, 30.6555, -0.05, 24.813)
+
+[node name="tree_pine20" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.74629, 0, -0.665621, 0, 1, 0, 0.665621, 0, 0.74629, 29.0634, -0.05, 28.3492)
+
+[node name="tree_pine21" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.74629, 0, -0.665621, 0, 1, 0, 0.665621, 0, 0.74629, 26.582, -0.05, 29.5236)
+
+[node name="tree_pine22" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.740805, 0, 0.671721, 0, 1, 0, -0.671721, 0, 0.740805, 30.5017, -0.05, 32.1442)
+
+[node name="tree_pine23" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(-0.273053, 0, 0.961999, 0, 1, 0, -0.961999, 0, -0.273053, 31.9708, -0.05, 29.7482)
+
+[node name="tree_pine2" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.1663, -0.05, 24.433)
+
+[node name="tree_pine24" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1663, -0.05, 22.433)
+
+[node name="tree_pine26" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1663, -0.05, 8.433)
+
+[node name="tree_pine3" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0681, -0.05, 31.5342)
+
+[node name="tree_pine4" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 22.9881, -0.05, 34.4964)
+
+[node name="tree_pine25" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 11.9881, -0.05, 4.4964)
+
+[node name="tree_pine27" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 3.9881, -0.05, 18.4964)
+
+[node name="tree_pine28" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 3.9881, -0.05, 13.4964)
+
+[node name="tree_pine5" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 22.9881, 2.95, 38.4964)
+
+[node name="tree_pine12" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(-0.199659, 0, 0.979866, 0, 1, 0, -0.979866, 0, -0.199659, 32.0869, 2.95, 37.1291)
+
+[node name="tree_pine13" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(-0.199659, 0, 0.979866, 0, 1, 0, -0.979866, 0, -0.199659, 36.845, 2.95, 31.8279)
+
+[node name="tree_pine14" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(-0.199659, 0, 0.979866, 0, 1, 0, -0.979866, 0, -0.199659, 36.8259, 2.95, 23.4349)
+
+[node name="tree_pine15" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(-0.95097, 0, 0.309283, 0, 1, 0, -0.309283, 0, -0.95097, 37.1039, 2.95, 10.5888)
+
+[node name="tree_pine16" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.700249, 0, 0.713899, 0, 1, 0, -0.713899, 0, 0.700249, 36.7055, 2.95, 18.6903)
+
+[node name="tree_pine17" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(-0.377986, 0, 0.925811, 0, 1, 0, -0.925811, 0, -0.377986, 36.7055, 3.23984, 2.27895)
+
+[node name="tree_pine18" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(-0.377986, 0, 0.925811, 0, 1, 0, -0.925811, 0, -0.377986, 36.1272, 3.24289, 5.15139)
+
+[node name="tree_pine7" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 15.006, 2.95, 38.1239)
+
+[node name="tree_pine8" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 4.61588, 2.95, 37.9981)
+
+[node name="tree_pine9" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 20.4744, 2.95, 37.5214)
+
+[node name="tree_pine10" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 24.7005, 2.95, 37.9209)
+
+[node name="tree_pine11" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.722279, 0, -0.691601, 0, 1, 0, 0.691601, 0, 0.722279, 26.9574, 2.95, 38.0687)
+
+[node name="tree_pine6" parent="City/Personal/Nature" instance=ExtResource("6_1wlq4")]
+transform = Transform3D(0.64165, 0, 0.766997, 0, 1, 0, -0.766997, 0, 0.64165, 7.78912, 2.95, 37.965)
+
+[node name="tree_thin" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.0554381, 0, -0.998462, 0, 1, 0, 0.998462, 0, -0.0554381, 24.5371, -0.05, 31.8758)
+
+[node name="tree_thin14" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.878875, 0, -0.477051, 0, 1, 0, 0.477051, 0, 0.878875, 21.2226, -0.05, 24.4725)
+
+[node name="tree_thin9" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.0554381, 0, -0.998462, 0, 1, 0, 0.998462, 0, -0.0554381, 33.7834, -0.05, 13.0066)
+
+[node name="tree_thin15" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.994627, 0, -0.103522, 0, 1, 0, 0.103522, 0, -0.994627, 19.7834, -0.05, 4.0066)
+
+[node name="tree_thin16" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.157434, 0, -0.98753, 0, 1, 0, 0.98753, 0, -0.157434, 10.7834, -0.05, 7.0066)
+
+[node name="tree_thin2" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.400973, 0, 0.91609, 0, 1, 0, -0.91609, 0, 0.400973, 32.9734, -0.0499995, 25.9178)
+
+[node name="tree_thin3" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.0863212, 0, -0.996267, 0, 1, 0, 0.996267, 0, 0.0863212, 2.4509, -0.05, 33.019)
+
+[node name="tree_thin17" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.562877, 0, 0.82654, 0, 1, 0, -0.82654, 0, 0.562877, 4.4509, -0.05, 12.019)
+
+[node name="tree_thin19" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.884516, 0, 0.46651, 0, 1, 0, -0.46651, 0, -0.884516, 3.4509, -0.05, 21.019)
+
+[node name="tree_thin18" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.82654, 0, -0.562877, 0, 1, 0, 0.562877, 0, 0.82654, 3.4509, -0.05, 15.019)
+
+[node name="tree_thin4" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.435373, 0, 0.90025, 0, 1, 0, -0.90025, 0, 0.435373, 3.12941, 2.95, 37.9273)
+
+[node name="tree_thin5" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.435373, 0, 0.90025, 0, 1, 0, -0.90025, 0, 0.435373, 12.0464, 2.95, 38.1057)
+
+[node name="tree_thin6" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.435373, 0, 0.90025, 0, 1, 0, -0.90025, 0, 0.435373, 18.4605, 2.95, 38.0257)
+
+[node name="tree_thin7" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.435373, 0, 0.90025, 0, 1, 0, -0.90025, 0, 0.435373, 29.3772, 2.95, 37.6987)
+
+[node name="tree_thin10" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.316527, 0, -0.948584, 0, 1, 0, 0.948584, 0, -0.316527, 21.5207, 2.95, 37.4972)
+
+[node name="tree_thin8" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.435373, 0, 0.90025, 0, 1, 0, -0.90025, 0, 0.435373, 35.64, 2.95, 34.3194)
+
+[node name="tree_thin11" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.998477, 0, 0.0551767, 0, 1, 0, -0.0551767, 0, -0.998477, 36.8251, 2.95, 26.9881)
+
+[node name="tree_thin12" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(0.548001, 0, 0.836478, 0, 1, 0, -0.836478, 0, 0.548001, 36.8251, 2.95, 21.7753)
+
+[node name="tree_thin13" parent="City/Personal/Nature" instance=ExtResource("7_i8vau")]
+transform = Transform3D(-0.798562, 0, 0.601913, 0, 1, 0, -0.601913, 0, -0.798562, 36.6279, 2.95, 9.09815)
+
+[node name="rock_large_b" parent="City/Personal/Nature" instance=ExtResource("9_aim4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2128, -0.0499995, 30.4963)
+
+[node name="rock_large_b2" parent="City/Personal/Nature" instance=ExtResource("9_aim4p")]
+transform = Transform3D(-0.994301, 0, 0.106611, 0, 1, 0, -0.106611, 0, -0.994301, 23.357, -0.0499995, 24.0902)
+
+[node name="rock_large_b3" parent="City/Personal/Nature" instance=ExtResource("9_aim4p")]
+transform = Transform3D(0.132845, 0, -0.991137, 0, 1, 0, 0.991137, 0, 0.132845, 17.357, -0.0499995, 5.0902)
+
+[node name="rock_large_a" parent="City/Personal/Nature" instance=ExtResource("8_a5huh")]
+transform = Transform3D(-0.227195, 0, -0.973849, 0, 1, 0, 0.973849, 0, -0.227195, 24.7088, -0.05, 30.399)
+
+[node name="rock_tall_b" parent="City/Personal/Nature" instance=ExtResource("21_l757x")]
+transform = Transform3D(0.892381, 0, -0.451283, 0, 1, 0, 0.451283, 0, 0.892381, 30.3457, -0.050001, 26.2115)
+
+[node name="fence_planks_double" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, 8)
+
+[node name="fence_planks_double2" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, 12)
+
+[node name="fence_planks_double3" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, 16)
+
+[node name="fence_planks_double4" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, 20)
+
+[node name="fence_planks_double10" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 12.3, 0, 2.7)
+
+[node name="fence_planks_double11" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 16.3, 0, 2.7)
+
+[node name="fence_planks_double12" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 20.3, 0, 2.7)
+
+[node name="fence_planks_double5" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19.525, 0, 24.9953)
+
+[node name="fence_planks_double6" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15.525, 0, 24.9953)
+
+[node name="fence_planks_double7" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.525, 0, 24.9953)
+
+[node name="fence_planks_double8" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.525, 0, 24.9953)
+
+[node name="fence_planks_double13" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.64192, 0, 13.0109)
+
+[node name="fence_planks_double14" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.64192, 0, 17.0109)
+
+[node name="fence_planks_double15" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.64192, 0, 21.0109)
+
+[node name="fence_planks_double16" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 5.38805, -4.76837e-07, 9.72937)
+
+[node name="fence_planks_double17" parent="City/Personal/Nature" instance=ExtResource("22_ccbhg")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 9.10202, 0, 6.22152)
+
+[node name="crops" type="Node3D" parent="City/Personal/Nature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
+
+[node name="row" type="Node3D" parent="City/Personal/Nature/crops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="crops_dirt_row" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+
+[node name="crops_dirt_row2" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row3" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_dirt_row4" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_dirt_row5" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row14" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_dirt_row15" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="crops_dirt_row8" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_dirt_row_end" parent="City/Personal/Nature/crops/row" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="crops_dirt_row12" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_dirt_row13" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_dirt_row9" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_dirt_row10" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_dirt_row11" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_dirt_row6" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row7" parent="City/Personal/Nature/crops/row" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row_end2" parent="City/Personal/Nature/crops/row" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="crops_corn_stage2" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_corn_stage3" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_corn_stage4" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_corn_stage5" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_corn_stage6" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_corn_stage7" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_corn_stage8" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+
+[node name="crops_corn_stage9" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_corn_stage10" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_corn_stage11" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_corn_stage12" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_corn_stage13" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_corn_stage14" parent="City/Personal/Nature/crops/row" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="row2" type="Node3D" parent="City/Personal/Nature/crops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="crops_dirt_row" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+
+[node name="crops_dirt_row2" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row3" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_dirt_row4" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_dirt_row5" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row14" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_dirt_row15" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="crops_dirt_row8" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_dirt_row_end" parent="City/Personal/Nature/crops/row2" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="crops_dirt_row12" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_dirt_row13" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_dirt_row9" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_dirt_row10" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_dirt_row11" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_dirt_row6" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row7" parent="City/Personal/Nature/crops/row2" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row_end2" parent="City/Personal/Nature/crops/row2" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="crops_corn_stage2" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_corn_stage3" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_corn_stage4" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_corn_stage5" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_corn_stage6" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_corn_stage7" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_corn_stage8" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+
+[node name="crops_corn_stage9" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_corn_stage10" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_corn_stage11" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_corn_stage12" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_corn_stage13" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_corn_stage14" parent="City/Personal/Nature/crops/row2" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="row3" type="Node3D" parent="City/Personal/Nature/crops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="crops_dirt_row" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+
+[node name="crops_dirt_row2" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row3" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_dirt_row4" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_dirt_row5" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row14" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_dirt_row15" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="crops_dirt_row8" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_dirt_row_end" parent="City/Personal/Nature/crops/row3" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="crops_dirt_row12" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_dirt_row13" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_dirt_row9" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_dirt_row10" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_dirt_row11" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_dirt_row6" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row7" parent="City/Personal/Nature/crops/row3" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row_end2" parent="City/Personal/Nature/crops/row3" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="crops_corn_stage2" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_corn_stage3" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_corn_stage4" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_corn_stage5" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_corn_stage6" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_corn_stage7" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_corn_stage8" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+
+[node name="crops_corn_stage9" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_corn_stage10" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_corn_stage11" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_corn_stage12" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_corn_stage13" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_corn_stage14" parent="City/Personal/Nature/crops/row3" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="row4" type="Node3D" parent="City/Personal/Nature/crops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="crops_dirt_row" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+
+[node name="crops_dirt_row2" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row3" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_dirt_row4" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_dirt_row5" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row14" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_dirt_row15" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="crops_dirt_row8" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_dirt_row_end" parent="City/Personal/Nature/crops/row4" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="crops_dirt_row12" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_dirt_row13" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_dirt_row9" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_dirt_row10" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_dirt_row11" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_dirt_row6" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row7" parent="City/Personal/Nature/crops/row4" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row_end2" parent="City/Personal/Nature/crops/row4" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="crops_corn_stage2" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_corn_stage3" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_corn_stage4" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_corn_stage5" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_corn_stage6" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_corn_stage7" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_corn_stage8" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+
+[node name="crops_corn_stage9" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_corn_stage10" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_corn_stage11" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_corn_stage12" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_corn_stage13" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_corn_stage14" parent="City/Personal/Nature/crops/row4" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="row5" type="Node3D" parent="City/Personal/Nature/crops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="crops_dirt_row" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+
+[node name="crops_dirt_row2" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row3" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_dirt_row4" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_dirt_row5" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row14" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_dirt_row15" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="crops_dirt_row8" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_dirt_row_end" parent="City/Personal/Nature/crops/row5" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="crops_dirt_row12" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_dirt_row13" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_dirt_row9" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_dirt_row10" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_dirt_row11" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_dirt_row6" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row7" parent="City/Personal/Nature/crops/row5" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row_end2" parent="City/Personal/Nature/crops/row5" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="crops_corn_stage2" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_corn_stage3" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_corn_stage4" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_corn_stage5" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_corn_stage6" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_corn_stage7" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_corn_stage8" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+
+[node name="crops_corn_stage9" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_corn_stage10" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_corn_stage11" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_corn_stage12" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_corn_stage13" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_corn_stage14" parent="City/Personal/Nature/crops/row5" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="row6" type="Node3D" parent="City/Personal/Nature/crops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="crops_dirt_row" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+
+[node name="crops_dirt_row2" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row3" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_dirt_row4" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_dirt_row5" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row14" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_dirt_row15" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="crops_dirt_row8" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_dirt_row_end" parent="City/Personal/Nature/crops/row6" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="crops_dirt_row12" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_dirt_row13" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_dirt_row9" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_dirt_row10" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_dirt_row11" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_dirt_row6" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row7" parent="City/Personal/Nature/crops/row6" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row_end2" parent="City/Personal/Nature/crops/row6" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="crops_corn_stage2" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_corn_stage3" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_corn_stage4" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_corn_stage5" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_corn_stage6" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_corn_stage7" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_corn_stage8" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+
+[node name="crops_corn_stage9" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_corn_stage10" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_corn_stage11" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_corn_stage12" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_corn_stage13" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_corn_stage14" parent="City/Personal/Nature/crops/row6" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="row7" type="Node3D" parent="City/Personal/Nature/crops"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="crops_dirt_row" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+
+[node name="crops_dirt_row2" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row3" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_dirt_row4" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_dirt_row5" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row14" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_dirt_row15" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="crops_dirt_row8" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_dirt_row_end" parent="City/Personal/Nature/crops/row7" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="crops_dirt_row12" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_dirt_row13" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_dirt_row9" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_dirt_row10" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_dirt_row11" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_dirt_row6" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_dirt_row7" parent="City/Personal/Nature/crops/row7" instance=ExtResource("23_lqqwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_dirt_row_end2" parent="City/Personal/Nature/crops/row7" instance=ExtResource("24_vw2qp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="crops_corn_stage2" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="crops_corn_stage3" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="crops_corn_stage4" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="crops_corn_stage5" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="crops_corn_stage6" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="crops_corn_stage7" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="crops_corn_stage8" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+
+[node name="crops_corn_stage9" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="crops_corn_stage10" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="crops_corn_stage11" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crops_corn_stage12" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="crops_corn_stage13" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="crops_corn_stage14" parent="City/Personal/Nature/crops/row7" instance=ExtResource("25_r1aob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Experiences" type="Node3D" parent="City"]
+visible = false
+
+[node name="Roads" type="Node3D" parent="City/Experiences"]
+
+[node name="road_straight4" parent="City/Experiences/Roads" instance=ExtResource("1_2obj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.707107, 0.298836, -0.640857, 0, 0.906308, 0.422618, 0.707107, 0.298836, -0.640857, -3, 4, -3)
+script = ExtResource("1_gptlb")
+_player_node = NodePath("../Player")
+offset_position = Vector3(-2, 4, -2)
+offset_rotation = Vector3(-45, -135, 0)
+
+[node name="Player" type="VehicleBody3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 1, 0)
+mass = 800.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.4, 0)
+can_sleep = false
+script = ExtResource("2_hp3v1")
+
+[node name="Body" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_eed8a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+shape = SubResource("ConvexPolygonShape3D_seupx")
+
+[node name="WheelFL" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.25, 0.75)
+use_as_steering = true
+wheel_radius = 0.32
+suspension_travel = 1.0
+suspension_stiffness = 20.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelFL"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_3neeq")
+
+[node name="WheelFR" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.25, 0.75)
+use_as_steering = true
+wheel_radius = 0.32
+suspension_travel = 1.0
+suspension_stiffness = 20.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelFR"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_3neeq")
+
+[node name="WheelRL" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.25, -0.75)
+use_as_traction = true
+wheel_radius = 0.32
+suspension_travel = 1.0
+suspension_stiffness = 20.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelRL"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_3neeq")
+
+[node name="WheelRR" type="VehicleWheel3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.25, -0.75)
+use_as_traction = true
+wheel_radius = 0.32
+suspension_travel = 1.0
+suspension_stiffness = 20.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/WheelRR"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_3neeq")
+
+[node name="CenterOfMass" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Fps" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("31_bjc0q")
+
+[node name="Label" type="Label" parent="Control/Fps"]
+layout_mode = 2
+text = "FPS: "
+label_settings = SubResource("LabelSettings_ylj7i")
+
+[node name="Value" type="Label" parent="Control/Fps"]
+layout_mode = 2
+text = "96"
+label_settings = SubResource("LabelSettings_phbwc")
+
+[node name="CarTools" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = 278.0
+grow_horizontal = 0
+script = ExtResource("32_1xpr2")
+show_node_name = true
+
+[node name="Content" type="VBoxContainer" parent="Control/CarTools"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = 20.0
+offset_right = 115.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="HBoxContainer" parent="Control/CarTools/Content"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/Title"]
+layout_mode = 2
+text = "VehicleBody3D"
+label_settings = SubResource("LabelSettings_dny3b")
+
+[node name="Value" type="Label" parent="Control/CarTools/Content/Title"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "VehicleBody3D"
+label_settings = SubResource("LabelSettings_vluhy")
+clip_text = true
+
+[node name="Motion" type="VBoxContainer" parent="Control/CarTools/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/Motion"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Motion
+"
+label_settings = SubResource("LabelSettings_vluhy")
+
+[node name="EngineForce" type="HBoxContainer" parent="Control/CarTools/Content/Motion"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/Motion/EngineForce"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Engine Force"
+label_settings = SubResource("LabelSettings_slah3")
+
+[node name="Value" type="Label" parent="Control/CarTools/Content/Motion/EngineForce"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="Brake" type="HBoxContainer" parent="Control/CarTools/Content/Motion"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/Motion/Brake"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Brake"
+label_settings = SubResource("LabelSettings_slah3")
+
+[node name="Value" type="Label" parent="Control/CarTools/Content/Motion/Brake"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="Steering" type="HBoxContainer" parent="Control/CarTools/Content/Motion"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/Motion/Steering"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Steering
+"
+label_settings = SubResource("LabelSettings_slah3")
+
+[node name="Value" type="Label" parent="Control/CarTools/Content/Motion/Steering"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="RigidBody3D" type="VBoxContainer" parent="Control/CarTools/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/RigidBody3D"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "RigidBody3D"
+label_settings = SubResource("LabelSettings_vluhy")
+
+[node name="EngineForce" type="HBoxContainer" parent="Control/CarTools/Content/RigidBody3D"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/RigidBody3D/EngineForce"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Engine Force"
+label_settings = SubResource("LabelSettings_slah3")
+
+[node name="Value" type="Label" parent="Control/CarTools/Content/RigidBody3D/EngineForce"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="Brake" type="HBoxContainer" parent="Control/CarTools/Content/RigidBody3D"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/RigidBody3D/Brake"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Brake"
+label_settings = SubResource("LabelSettings_slah3")
+
+[node name="Value" type="Label" parent="Control/CarTools/Content/RigidBody3D/Brake"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true
+
+[node name="Steering" type="HBoxContainer" parent="Control/CarTools/Content/RigidBody3D"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CarTools/Content/RigidBody3D/Steering"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Steering
+"
+label_settings = SubResource("LabelSettings_slah3")
+
+[node name="Value" type="Label" parent="Control/CarTools/Content/RigidBody3D/Steering"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "123456.78"
+label_settings = SubResource("LabelSettings_2gha1")
+clip_text = true

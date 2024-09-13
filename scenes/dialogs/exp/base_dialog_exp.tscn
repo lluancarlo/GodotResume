@@ -1,0 +1,198 @@
+[gd_scene load_steps=14 format=3 uid="uid://cl5cbv0pf7v4m"]
+
+[ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/panel.stylebox" id="1_id6y4"]
+[ext_resource type="Script" path="res://scripts/CustomPopup.gd" id="2_4oi7t"]
+[ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog_title_label.res" id="3_otn0i"]
+[ext_resource type="Texture2D" uid="uid://bpkubgvvqftqw" path="res://assets/kenney/ui-pack/PNG/grey_crossWhite.png" id="4_nf173"]
+[ext_resource type="Texture2D" uid="uid://dohmkqjl8x4yn" path="res://assets/kenney/ui-pack/PNG/grey_crossGrey.png" id="5_2uqbv"]
+[ext_resource type="LabelSettings" uid="uid://c5m2syvcfelod" path="res://assets/styles/dialog_content_label.res" id="7_2obyi"]
+[ext_resource type="LabelSettings" uid="uid://b0h037oplcutf" path="res://assets/styles/dialog_content_blue.tres" id="8_umnfe"]
+[ext_resource type="LabelSettings" uid="uid://defv3tobpyrn5" path="res://assets/styles/dialog_content_small.res" id="9_l34su"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld6m4"]
+bg_color = Color(0, 0.801012, 0.861656, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.43134, 0.43134, 0.43134, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 30.0
+expand_margin_bottom = 30.0
+shadow_size = 10
+anti_aliasing_size = 2.0
+
+[sub_resource type="Animation" id="Animation_tdrno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2q6ed"]
+resource_name = "close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_33xwc"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_et8fv"]
+_data = {
+"RESET": SubResource("Animation_tdrno"),
+"close": SubResource("Animation_2q6ed"),
+"open": SubResource("Animation_33xwc")
+}
+
+[node name="BaseDialogExp" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -515.5
+offset_top = -265.0
+offset_right = 515.5
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_id6y4")
+script = ExtResource("2_4oi7t")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Header" type="PanelContainer" parent="VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ld6m4")
+
+[node name="Title" type="Label" parent="VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "title"
+label_settings = ExtResource("3_otn0i")
+
+[node name="Close" type="TextureButton" parent="VBox/Header"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("4_nf173")
+texture_pressed = ExtResource("4_nf173")
+texture_hover = ExtResource("5_2uqbv")
+stretch_mode = 5
+
+[node name="Content" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MainInfo" type="HBoxContainer" parent="VBox/Content"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Logo" type="TextureButton" parent="VBox/Content/MainInfo"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+stretch_mode = 0
+
+[node name="Info" type="VBoxContainer" parent="VBox/Content/MainInfo"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Position" type="VBoxContainer" parent="VBox/Content/MainInfo/Info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/Content/MainInfo/Info/Position"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Position"
+label_settings = ExtResource("7_2obyi")
+
+[node name="Value" type="Label" parent="VBox/Content/MainInfo/Info/Position"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "position"
+label_settings = ExtResource("8_umnfe")
+
+[node name="Period" type="VBoxContainer" parent="VBox/Content/MainInfo/Info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/Content/MainInfo/Info/Period"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Period"
+label_settings = ExtResource("7_2obyi")
+
+[node name="Value" type="Label" parent="VBox/Content/MainInfo/Info/Period"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "period"
+label_settings = ExtResource("8_umnfe")
+
+[node name="Description" type="Label" parent="VBox/Content"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 1
+text = "description"
+label_settings = ExtResource("9_l34su")
+autowrap_mode = 2
+
+[node name="Skills" type="HBoxContainer" parent="VBox/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/Content/Skills"]
+layout_mode = 2
+text = "Skills: "
+label_settings = ExtResource("7_2obyi")
+
+[node name="Value" type="Label" parent="VBox/Content/Skills"]
+layout_mode = 2
+text = "skills"
+label_settings = ExtResource("8_umnfe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_et8fv")
+}
+
+[connection signal="pressed" from="VBox/Header/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="VBox/Content/MainInfo/Logo" to="." method="_on_logo_pressed"]

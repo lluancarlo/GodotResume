@@ -1,0 +1,18 @@
+[gd_scene load_steps=7 format=3 uid="uid://kccn4wtmnqxo"]
+
+[ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="1_86mqe"]
+[ext_resource type="PackedScene" uid="uid://ceti4fmao38ak" path="res://assets/scenes/natures/tree_oak.scn" id="2_fneq6"]
+[ext_resource type="PackedScene" uid="uid://gagj0v82bcnn" path="res://assets/scenes/natures/tree_thin.scn" id="3_anriv"]
+[ext_resource type="PackedScene" uid="uid://bcnkeso2vrxoc" path="res://assets/scenes/natures/tree_pine.scn" id="4_6r4oe"]
+[ext_resource type="PackedScene" uid="uid://c51bqqlwhq2xs" path="res://assets/scenes/natures/tree_palm.scn" id="5_h5bxu"]
+[ext_resource type="PackedScene" uid="uid://d2jsuu3kmmu33" path="res://assets/scenes/natures/tree_palm_tall.scn" id="6_tlijn"]
+
+[node name="BrushTree" type="Node3D"]
+script = ExtResource("1_86mqe")
+brushSize = 2.0
+brushDensity = 1
+paintableObjects = Array[PackedScene]([ExtResource("2_fneq6"), ExtResource("3_anriv"), ExtResource("4_6r4oe"), ExtResource("5_h5bxu"), ExtResource("6_tlijn")])
+minSize = 0.8
+maxSize = 1.2
+randomRotMin = Vector3(0, -179, 0)
+randomRotMax = Vector3(0, 179, 0)

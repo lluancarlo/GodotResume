@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfrdc368p2ciw"]
+
+[ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="1_vhqqh"]
+[ext_resource type="PackedScene" uid="uid://b6k0ysrkqbmte" path="res://assets/scenes/natures/grass.scn" id="2_j7hrn"]
+[ext_resource type="PackedScene" uid="uid://c3gqnt4pncokt" path="res://assets/scenes/natures/grass_2.scn" id="3_l6nch"]
+[ext_resource type="PackedScene" uid="uid://bubwk0xndw1c8" path="res://assets/scenes/natures/grass_3.scn" id="4_kyato"]
+
+[node name="BrushGrass" type="Node3D"]
+script = ExtResource("1_vhqqh")
+brushSize = 2.0
+brushDensity = 2
+paintableObjects = Array[PackedScene]([ExtResource("2_j7hrn"), ExtResource("3_l6nch"), ExtResource("4_kyato")])
+minSize = 0.5
+maxSize = 1.2
+randomRotMin = Vector3(0, -179, 0)
+randomRotMax = Vector3(0, 179, 0)

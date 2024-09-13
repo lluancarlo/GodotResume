@@ -1,0 +1,14 @@
+[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://b028udy8kuuja"]
+
+[ext_resource type="Texture2D" uid="uid://wf4ik53dtke1" path="res://assets/img/crosshair042.png" id="1_eh7f7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ps7fy"]
+transparency = 1
+albedo_color = Color(0.462043, 0.463413, 0.495442, 1)
+albedo_texture = ExtResource("1_eh7f7")
+
+[resource]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ps7fy")
+size = Vector2(1.5, 2.5)
+orientation = 1

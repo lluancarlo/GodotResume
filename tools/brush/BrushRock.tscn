@@ -1,0 +1,17 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfy2kk54a7g0b"]
+
+[ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="1_jc56v"]
+[ext_resource type="PackedScene" uid="uid://bmv4aj8faoc23" path="res://assets/scenes/natures/rock_tall_a.scn" id="2_xxun7"]
+[ext_resource type="PackedScene" uid="uid://bmdvds3uj0jpw" path="res://assets/scenes/natures/rock_tall_b.scn" id="3_846rf"]
+[ext_resource type="PackedScene" uid="uid://dsrtiuh0w3lat" path="res://assets/scenes/natures/rock_large_a.scn" id="4_ljdy4"]
+[ext_resource type="PackedScene" uid="uid://dvql43tx0317i" path="res://assets/scenes/natures/rock_large_b.scn" id="5_h503j"]
+[ext_resource type="PackedScene" uid="uid://b8yajhb3efn4c" path="res://assets/scenes/natures/rock_small_a.scn" id="6_6tpcu"]
+[ext_resource type="PackedScene" uid="uid://b1kfaxmwnb3l8" path="res://assets/scenes/natures/rock_small_b.scn" id="7_n4qa7"]
+
+[node name="BrushRock" type="Node3D"]
+script = ExtResource("1_jc56v")
+brushSize = 2.0
+brushDensity = 1
+paintableObjects = Array[PackedScene]([ExtResource("2_xxun7"), ExtResource("3_846rf"), ExtResource("4_ljdy4"), ExtResource("5_h503j"), ExtResource("6_6tpcu"), ExtResource("7_n4qa7")])
+randomRotMin = Vector3(0, -179, 0)
+randomRotMax = Vector3(0, 179, 0)
