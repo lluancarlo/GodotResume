@@ -1,4 +1,4 @@
-name: "Publish to GitHub Pages"
+name: "Deploy to github.io/GodotResume"
 
 env:
   GODOT_VERSION: 4.3
