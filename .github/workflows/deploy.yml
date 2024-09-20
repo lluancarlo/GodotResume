@@ -1,4 +1,4 @@
-name: "Publish to GitHub Pages"
+name: "Deploy to github.io/GodotResume"
 
 env:
   GODOT_VERSION: 4.3
@@ -30,7 +30,7 @@ jobs:
         run: mkdir -v -p export
 
       - name: Build
-        run: godot -v --export-release --headless "Web" ../export/index.html project/project.godot
+        run: godot -v --export-release --headless "Web" ./export/index.html project.godot
 
       - name: Add coi-service-worker
         run: |
