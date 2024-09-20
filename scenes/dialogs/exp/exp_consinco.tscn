@@ -15,7 +15,7 @@ text = "Consinco By Totvs"
 texture_normal = ExtResource("2_a4n1s")
 
 [node name="Value" parent="VBox/Content/MainInfo/Info/Position" index="1"]
-text = "Full Stack Developer"
+text = "Full-Stack Developer"
 
 [node name="Value" parent="VBox/Content/MainInfo/Info/Period" index="1"]
 text = "Apr 2018 - Oct 2020"

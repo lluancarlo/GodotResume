@@ -15,6 +15,7 @@ signal menu_pressed()
 @export var _exp_magit_dialog : BasePopup
 @export var _exp_topgaming_dialog : BasePopup
 @export var _exp_deltaengine_dialog : BasePopup
+@export var _exp_amilon_dialog : BasePopup
 @export_category(&"Node Paths")
 @export var _hud : HUD
 @export var menu_main : PanelContainer
@@ -56,6 +57,8 @@ func open_popup(id: int) -> void:
 			opened_popup = _exp_topgaming_dialog
 		GameData.Popups.Exp_DeltaEngine:
 			opened_popup = _exp_deltaengine_dialog
+		GameData.Popups.Exp_Amilon:
+			opened_popup = _exp_amilon_dialog
 	opened_popup.open()
 	_audio_open.play()
 

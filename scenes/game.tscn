@@ -1,7 +1,6 @@
 [gd_scene load_steps=186 format=4 uid="uid://bdpgnc1txjso8"]
 
 [ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
-[ext_resource type="Material" uid="uid://d4cvloymv66vn" path="res://assets/materials/grass.material" id="1_bdqam"]
 [ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
 [ext_resource type="Script" path="res://scripts/FollowCamera.gd" id="1_gptlb"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dri4wbusws3m7" path="res://scenes/game.occ" id="1_xjmf5"]
@@ -66,6 +65,7 @@
 [ext_resource type="AudioStream" uid="uid://djduywofbk318" path="res://audio/impact_1.wav" id="54_8eyxk"]
 [ext_resource type="AudioStream" uid="uid://ldcb7fuyl425" path="res://audio/impact_2.wav" id="55_emjfu"]
 [ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="56_au57e"]
+[ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/dialogs/exp/exp_amilon.tscn" id="68_pstgr"]
 [ext_resource type="AudioStream" uid="uid://c83ihvaulblyw" path="res://assets/kenney/interface-sounds/select_005.ogg" id="73_hfuq1"]
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="73_i0xs2"]
 [ext_resource type="AudioStream" uid="uid://dc6f5ovhc0bpy" path="res://assets/kenney/interface-sounds/drop_004.ogg" id="74_vq0br"]
@@ -97,24 +97,27 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h7h3w"]
 sky_top_color = Color(0.504927, 0.569293, 0.726509, 1)
 sky_horizon_color = Color(0.593483, 0.725398, 0.801377, 1)
-sky_curve = 0.3
 ground_bottom_color = Color(0.298039, 0.698039, 0.972549, 1)
 ground_horizon_color = Color(0.592157, 0.72549, 0.8, 1)
 ground_curve = 0.07
 sun_angle_max = 45.0
+energy_multiplier = 1.5
 
 [sub_resource type="Sky" id="Sky_els7s"]
 sky_material = SubResource("ProceduralSkyMaterial_h7h3w")
-process_mode = 3
-radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_hyb1t"]
 background_mode = 2
+background_energy_multiplier = 0.8
 sky = SubResource("Sky_els7s")
-fog_density = 0.1
+fog_enabled = true
+fog_density = 0.005
+fog_sky_affect = 0.0
+fog_height_density = -0.05
+fog_depth_curve = 1.31951
+fog_depth_begin = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ev86x"]
-material = ExtResource("1_bdqam")
 size = Vector3(60, 0.1, 60)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_43wc4"]
@@ -1255,17 +1258,17 @@ environment = SubResource("Environment_hyb1t")
 
 [node name="Sun" type="DirectionalLight3D" parent="World"]
 transform = Transform3D(0.707107, -0.5, -0.5, 0, -0.707107, 0.707107, -0.707107, -0.5, -0.5, 0, 0, 0)
-light_color = Color(0.498039, 0.498039, 0.498039, 1)
-light_energy = 2.0
+light_color = Color(1, 1, 0.588235, 1)
+light_energy = 0.5
 shadow_enabled = true
 shadow_bias = 2.0
 directional_shadow_max_distance = 35.0
 
 [node name="Water" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1.7, 0, 0, 0, 1.5, 0, 0, 0, 2, -8.5, -2.2, -18.669)
+transform = Transform3D(1.7, 0, 0, 0, 1.5, 0, 0, 0, 2, -8.5, -2.4, -18.669)
+material_override = ExtResource("2_wx30m")
 mesh = SubResource("BoxMesh_ev86x")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("2_wx30m")
 
 [node name="Floor" type="MeshInstance3D" parent="World" groups=["ground"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 11)
@@ -1296,6 +1299,30 @@ skeleton = NodePath("../..")
 [node name="Floor4" type="MeshInstance3D" parent="World"]
 transform = Transform3D(-5.46392e-08, 0, -0.25, 0, 1.5, 0, 1.25, 0, -1.09278e-08, 42.75, 3, 17.25)
 visibility_range_end = 33.0
+mesh = ExtResource("4_fl2e0")
+skeleton = NodePath("../..")
+
+[node name="Floor5" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-4.8816e-08, -0.258819, -0.0482963, -1.3576e-08, 0.965926, -0.012941, 1.2, 3.99089e-10, -2.1111e-09, -35.19, -2.33, -24)
+visibility_range_end = 50.0
+mesh = ExtResource("4_fl2e0")
+skeleton = NodePath("../..")
+
+[node name="Floor6" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-5.24537e-08, 0.258819, -0.0482963, 0, 0.965926, 0.012941, 1.2, 1.13133e-08, -2.1111e-09, 7.189, -2.33, -24)
+visibility_range_end = 50.0
+mesh = ExtResource("4_fl2e0")
+skeleton = NodePath("../..")
+
+[node name="Floor7" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-2.2575e-09, 3.85493e-10, -0.8, 0.012941, 0.965926, -9.05067e-09, 0.0482963, -0.258819, -3.49691e-08, -14, -2.33, -55.193)
+visibility_range_end = 50.0
+mesh = ExtResource("4_fl2e0")
+skeleton = NodePath("../..")
+
+[node name="Floor8" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-2.1111e-09, -1.13133e-08, -0.8, -0.012941, 0.965926, 0, 0.0482963, 0.258819, -3.49691e-08, -14, -2.33, 7.2)
+visibility_range_end = 50.0
 mesh = ExtResource("4_fl2e0")
 skeleton = NodePath("../..")
 
@@ -2785,12 +2812,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 [node name="PickupWhereBorn" parent="City/Personal/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7744, 0.0591327, 10.0538)
 popup_id = 1
-placeholder = "Where I born"
+placeholder = "Where Was I born"
 
 [node name="PickupWhereLiving" parent="City/Personal/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7744, 0.0591327, 18.0538)
 popup_id = 2
-placeholder = "Where I live"
+placeholder = "Where do I live"
 
 [node name="PickupUniversity" parent="City/Personal/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.1515, 0.0591327, 28.8811)
@@ -2884,13 +2911,16 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.48
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -12.6696)
 
 [node name="large_building_d" parent="City/Experiences/Buildings" instance=ExtResource("37_oju2f")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -29.4919)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -24.9919)
 
 [node name="large_building_e" parent="City/Experiences/Buildings" instance=ExtResource("38_kq1h4")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -21.5164)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -19.0164)
 
 [node name="small_building_d" parent="City/Experiences/Buildings" instance=ExtResource("39_medyc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -37.05)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -31.05)
+
+[node name="large_building_e2" parent="City/Experiences/Buildings" instance=ExtResource("38_kq1h4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, -37.0164)
 
 [node name="Nature" type="Node3D" parent="City/Experiences"]
 
@@ -3432,19 +3462,24 @@ popup_id = 4
 placeholder = "Consinco - 2018 to 2020"
 
 [node name="Magit" parent="City/Experiences/Interactive" instance=ExtResource("35_xtc3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -21.3835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -18.8835)
 popup_id = 5
 placeholder = "Magit - 2020 to 2022"
 
 [node name="TopGaming" parent="City/Experiences/Interactive" instance=ExtResource("35_xtc3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -29.3835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -24.8835)
 popup_id = 6
 placeholder = "Top Gaming - 2022 to 2023"
 
 [node name="DeltaEngine" parent="City/Experiences/Interactive" instance=ExtResource("35_xtc3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -36.7773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -30.7773)
 popup_id = 7
 placeholder = "Delta Engine - 2023 to 2024"
+
+[node name="Amilon" parent="City/Experiences/Interactive" instance=ExtResource("35_xtc3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -36.7773)
+popup_id = 8
+placeholder = "Amilon - 2024 to Present"
 
 [node name="Area3D" type="Area3D" parent="City/Experiences"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -23)
@@ -3453,19 +3488,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -23)
 shape = SubResource("BoxShape3D_hf6ys")
 
 [node name="Canoe" parent="City" instance=ExtResource("50_5vm2s")]
-transform = Transform3D(0.921626, 0, -0.388079, 0, 1, 0, 0.388079, 0, 0.921626, 10.1719, -2.27646, -21.5282)
+transform = Transform3D(0.921626, 0, -0.388079, 0, 1, 0, 0.388079, 0, 0.921626, 10.1719, -2.56936, -21.5282)
 
 [node name="Canoe2" parent="City" instance=ExtResource("50_5vm2s")]
-transform = Transform3D(-0.61339, 0, -0.78978, 0, 1, 0, 0.78978, 0, -0.61339, -6.3281, -2.27646, -58.5282)
+transform = Transform3D(-0.61339, 0, -0.78978, 0, 1, 0, 0.78978, 0, -0.61339, -6.3281, -2.56936, -58.5282)
 
 [node name="Canoe3" parent="City" instance=ExtResource("50_5vm2s")]
-transform = Transform3D(0.604112, 0, -0.796899, 0, 1, 0, 0.796899, 0, 0.604112, -22.8281, -2.27646, -58.0282)
+transform = Transform3D(0.604112, 0, -0.796899, 0, 1, 0, 0.796899, 0, 0.604112, -22.8281, -2.56936, -58.0282)
 
 [node name="Canoe4" parent="City" instance=ExtResource("50_5vm2s")]
-transform = Transform3D(-0.796899, 0, -0.604112, 0, 1, 0, 0.604112, 0, -0.796899, -38.8281, -2.27646, -42.0282)
+transform = Transform3D(-0.796899, 0, -0.604112, 0, 1, 0, 0.604112, 0, -0.796899, -38.8281, -2.56936, -42.0282)
 
 [node name="Canoe5" parent="City" instance=ExtResource("50_5vm2s")]
-transform = Transform3D(0.604112, 0, -0.796899, 0, 1, 0, 0.796899, 0, 0.604112, -38.8281, -2.27646, -18.5282)
+transform = Transform3D(0.604112, 0, -0.796899, 0, 1, 0, 0.796899, 0, 0.604112, -38.8281, -2.56936, -18.5282)
 
 [node name="Player" type="VehicleBody3D" parent="."]
 transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 0, 0.5, -8)
@@ -3554,7 +3589,7 @@ transform = Transform3D(-1, 0, -8.74229e-08, 0, 1, 0, 8.74229e-08, 0, -1, 0, 1, 
 script = ExtResource("1_gptlb")
 min_distance = 2.0
 
-[node name="UiManager" type="Control" parent="." node_paths=PackedStringArray("_player", "_audio_open", "_audio_close", "_popups_control", "_where_born_dialog", "_where_living_dialog", "_university_dialog", "_exp_consinco_dialog", "_exp_magit_dialog", "_exp_topgaming_dialog", "_exp_deltaengine_dialog", "_hud", "menu_main", "menu_options")]
+[node name="UiManager" type="Control" parent="." node_paths=PackedStringArray("_player", "_audio_open", "_audio_close", "_popups_control", "_where_born_dialog", "_where_living_dialog", "_university_dialog", "_exp_consinco_dialog", "_exp_magit_dialog", "_exp_topgaming_dialog", "_exp_deltaengine_dialog", "_exp_amilon_dialog", "_hud", "menu_main", "menu_options")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -3577,6 +3612,7 @@ _exp_consinco_dialog = NodePath("Popups/ExpConsinco")
 _exp_magit_dialog = NodePath("Popups/ExpMagit")
 _exp_topgaming_dialog = NodePath("Popups/ExpTopGaming")
 _exp_deltaengine_dialog = NodePath("Popups/ExpDeltaEngine")
+_exp_amilon_dialog = NodePath("Popups/ExpAmilon")
 _hud = NodePath("HUD")
 menu_main = NodePath("Menus/Main")
 menu_options = NodePath("Menus/Options")
@@ -3615,6 +3651,9 @@ offset_top = -298.5
 offset_bottom = 298.5
 
 [node name="ExpDeltaEngine" parent="UiManager/Popups" instance=ExtResource("53_uymfx")]
+layout_mode = 1
+
+[node name="ExpAmilon" parent="UiManager/Popups" instance=ExtResource("68_pstgr")]
 layout_mode = 1
 
 [node name="HUD" type="Control" parent="UiManager" node_paths=PackedStringArray("_fps_group", "_fps", "_gear", "_speed", "_overlay_group", "_overlay")]
@@ -4023,6 +4062,7 @@ stream = ExtResource("93_ajrje")
 [connection signal="closed" from="UiManager/Popups/ExpMagit" to="UiManager" method="_on_popup_closed"]
 [connection signal="closed" from="UiManager/Popups/ExpTopGaming" to="UiManager" method="_on_popup_closed"]
 [connection signal="closed" from="UiManager/Popups/ExpDeltaEngine" to="UiManager" method="_on_popup_closed"]
+[connection signal="closed" from="UiManager/Popups/ExpAmilon" to="UiManager" method="_on_popup_closed"]
 [connection signal="options_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_main_options_pressed"]
 [connection signal="reset_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_main_reset_pressed"]
 [connection signal="pressed" from="UiManager/Menus/Main/VBox/Buttons/Resume" to="UiManager/Menus/Main" method="_on_resume_pressed"]

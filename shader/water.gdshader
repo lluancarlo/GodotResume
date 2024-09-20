@@ -1,124 +1,83 @@
 shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform float WaveSpeed = 0.00999999977648;
-uniform sampler2D tex_frg_19;
-uniform sampler2D tex_frg_11;
-uniform float WaveIntensity = 0.20000000298023;
-uniform vec4 WaveColor : source_color = vec4(0.000000, 1.000000, 0.986607, 1.000000);
-uniform vec4 WaterColor : source_color = vec4(0.000000, 0.169643, 1.000000, 1.000000);
-uniform float FoamSize = 0.10000000149012;
-uniform sampler2D depth_tex_frg_2 : hint_depth_texture;
-uniform float WaterOpacity = 0.40000000596046;
+uniform vec3 water_color: source_color;
+uniform float water_color_ratio: hint_range(0.0, 1.0, 0.1) = 0.5;
+uniform float beers_law: hint_range(0.0, 20.0, 0.1) = 3.0;
+
+uniform sampler2D water_noise_1;
+uniform sampler2D water_noise_2;
+
+uniform sampler2D caustics_noise; 
+uniform sampler2D foam_noise;
+
+uniform float normal_strength: hint_range(0.0, 2.0, 0.1) = 0.5;
+uniform float roughness: hint_range(0.0, 1.0, 0.1) = 0.1;
+
+uniform float time_scale: hint_range(0.0, 10.0, 0.1) = 5.0;
+uniform float uv_scale: hint_range(0.1, 5.0, 0.1) = 1.0;
+
+uniform float depth_distance: hint_range(0.0, 10.0, 0.1) = 1.0;
+uniform float caustics_power: hint_range(0.0, 1.0, 0.1) = 1.0;
+uniform float caustics_distance: hint_range(0.0, 1.0, 0.05) = 0.3;
+uniform float foam_distance: hint_range(0.0, 0.1, 0.01) = 0.04;
+
+uniform sampler2D depth_texture: hint_depth_texture;
+uniform sampler2D screen_texture: hint_screen_texture;
+
+uniform float wave_power: hint_range(0.0, 0.4, 0.02) = 0.2;
+uniform float wave_frequency: hint_range(0.0, 5.0, 0.1) = 1.0;
+
+varying vec4 world_uv;
 
 
+void vertex() {
+	world_uv = MODEL_MATRIX * vec4(VERTEX, 1.0);
+	float offset = cos(0.5*world_uv.x + 0.5*world_uv.z) * sin(TIME * wave_frequency);
+	offset += sin(0.8*world_uv.z + 0.8*world_uv.y) * cos(1.5 * TIME * wave_frequency);
+	VERTEX.y += wave_power * offset;
+}
 
 void fragment() {
-// FloatParameter:23
-	float n_out23p0 = WaveSpeed;
-
-
-// FloatOp:24
-	float n_in24p1 = -1.00000;
-	float n_out24p0 = n_out23p0 * n_in24p1;
-
-
-// Input:21
-	float n_out21p0 = TIME;
-
-
-// UVFunc:20
-	vec2 n_out20p0 = vec2(n_out21p0) * vec2(n_out24p0) + UV;
-
-
-// Texture2D:19
-	vec4 n_out19p0 = texture(tex_frg_19, n_out20p0);
-
-
-// Input:18
-	float n_out18p0 = TIME;
-
-
-// UVFunc:17
-	vec2 n_out17p0 = vec2(n_out18p0) * vec2(n_out23p0) + UV;
-
-
-// Texture2D:11
-	vec4 n_out11p0 = texture(tex_frg_11, n_out17p0);
-
-
-// Mix:22
-	float n_in22p2 = 0.50000;
-	float n_out22p0 = mix(n_out19p0.x, n_out11p0.x, n_in22p2);
-
-
-// FloatFunc:13
-	float n_out13p0 = round(n_out22p0);
-
-
-// FloatParameter:28
-	float n_out28p0 = WaveIntensity;
-
-
-// FloatOp:14
-	float n_out14p0 = n_out13p0 * n_out28p0;
-
-
-// ColorParameter:27
-	vec4 n_out27p0 = WaveColor;
-
-
-// VectorOp:15
-	vec3 n_out15p0 = vec3(n_out14p0) * vec3(n_out27p0.xyz);
-
-
-// ColorParameter:26
-	vec4 n_out26p0 = WaterColor;
-
-
-// VectorOp:12
-	vec3 n_out12p0 = n_out15p0 + vec3(n_out26p0.xyz);
-
-
-// FloatParameter:29
-	float n_out29p0 = FoamSize;
-
-
-	float n_out2p0;
-// ProximityFade:2
-	{
-		float __depth_tex = texture(depth_tex_frg_2, SCREEN_UV).r;
-		vec4 __depth_world_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, __depth_tex, 1.0);
-		__depth_world_pos.xyz /= __depth_world_pos.w;
-		n_out2p0 = clamp(1.0 - smoothstep(__depth_world_pos.z + n_out29p0, __depth_world_pos.z, VERTEX.z), 0.0, 1.0);
-	}
-
-
-// FloatFunc:3
-	float n_out3p0 = 1.0 - n_out2p0;
-
-
-// FloatFunc:4
-	float n_out4p0 = round(n_out3p0);
-
-
-// FloatParameter:30
-	float n_out30p0 = WaterOpacity;
-
-
-// FloatOp:10
-	float n_out10p0 = n_out4p0 + n_out30p0;
-
-
-// FloatOp:25
-	float n_in25p1 = 1.00000;
-	float n_out25p0 = n_out4p0 * n_in25p1;
-
-
-// Output:0
-	ALBEDO = n_out12p0;
-	ALPHA = n_out10p0;
-	EMISSION = vec3(n_out25p0);
-
-
+	float depth_r = textureLod(depth_texture, SCREEN_UV, 0.0).r;
+	vec4 world = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, depth_r, 1.0);
+	world.xyz /= world.w;
+	
+	vec2 uv = world_uv.xz * uv_scale;
+	float fac1 = 25.0;
+	float fac2 = 0.01;
+	uv.x += sin(TIME * time_scale + (uv.x + uv.y) * fac1) * fac2;
+	uv.y += cos(TIME * time_scale + (uv.x - uv.y) * fac1) * fac2;
+	
+	vec2 suv = SCREEN_UV;
+	
+	float depth_blend = smoothstep(world.z + depth_distance, world.z, VERTEX.z);
+	depth_blend = exp(depth_blend * -beers_law);  // dark: shallow, bright: deep 
+	vec3 screen = textureLod(screen_texture, suv, 0.0).rgb;
+	screen = mix(screen, water_color, water_color_ratio);
+	vec3 screen_depth = mix(screen, water_color, depth_blend);
+	vec2 uv_caustics = 1.7 * uv;
+	vec3 caustics = pow(texture(caustics_noise, uv_caustics).rgb, vec3(3.0));
+	float caustics_level = 1.0 - smoothstep(depth_blend, 0.0, caustics_distance);
+	caustics_level = pow(caustics_level, 0.6);
+	caustics = vec3(caustics_level) * caustics;
+	
+	float foam_level = 1.0 - smoothstep(depth_blend, 0.0, foam_distance);
+	foam_level = pow(foam_level, 3.0);
+	
+	vec3 foam = texture(foam_noise, uv).rgb;
+	foam = pow(foam-0.2, vec3(0.5)) * vec3(foam_level);
+	foam = clamp(foam, 0.0, 1.0);
+	
+	ALBEDO = screen_depth + caustics_power*caustics + foam;
+	vec3 normal1 = texture(water_noise_1, 1.0*uv).rgb;
+	vec3 normal2 = texture(water_noise_2, 1.0*uv).rgb;
+	NORMAL_MAP = mix(normal1, normal2, (sin(TIME * time_scale) + 1.0) / 2.0);
+	NORMAL *= normal_strength;
+	
+	ROUGHNESS = roughness;
 }
+
+//void light() {
+	// Called for every pixel for every light affecting the material.
+	// Uncomment to replace the default light processing function with this one.
+//}

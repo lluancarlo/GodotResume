@@ -13,7 +13,7 @@ text = "Magit it partner"
 texture_normal = ExtResource("2_p5dsg")
 
 [node name="Value" parent="VBox/Content/MainInfo/Info/Position" index="1"]
-text = "Full Stack Developer"
+text = "Full-Stack Developer"
 
 [node name="Value" parent="VBox/Content/MainInfo/Info/Period" index="1"]
 text = "Oct 2020 - Jul 2022"
