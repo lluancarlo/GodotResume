@@ -3572,13 +3572,13 @@ mesh = ExtResource("52_uodu7")
 
 [node name="AudioEngine" type="AudioStreamPlayer3D" parent="Player"]
 stream = ExtResource("53_8swy2")
-volume_db = -15.0
+volume_db = -25.0
 pitch_scale = 0.2
 autoplay = true
 
 [node name="AudioImpact" type="AudioStreamPlayer3D" parent="Player"]
 stream = SubResource("AudioStreamRandomizer_rsaax")
-volume_db = -15.0
+volume_db = -20.0
 
 [node name="CameraBase" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
