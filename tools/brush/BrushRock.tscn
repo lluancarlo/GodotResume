@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfy2kk54a7g0b"]
 
-[ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="1_jc56v"]
+[ext_resource type="Script" uid="uid://bxohc5qpu60jt" path="res://addons/scene_object_brush/Brush.gd" id="1_jc56v"]
 [ext_resource type="PackedScene" uid="uid://bmv4aj8faoc23" path="res://assets/scenes/natures/rock_tall_a.scn" id="2_xxun7"]
 [ext_resource type="PackedScene" uid="uid://bmdvds3uj0jpw" path="res://assets/scenes/natures/rock_tall_b.scn" id="3_846rf"]
 [ext_resource type="PackedScene" uid="uid://dsrtiuh0w3lat" path="res://assets/scenes/natures/rock_large_a.scn" id="4_ljdy4"]

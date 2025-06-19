@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkktvmn8q6r74"]
 
-[ext_resource type="Script" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3DTab.gd" id="1_ak8mk"]
+[ext_resource type="Script" uid="uid://bppye5kxfdawa" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3DTab.gd" id="1_ak8mk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vluhy"]
 font_size = 26

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnytmelmsitub"]
 
-[ext_resource type="Script" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3D.gd" id="1_3dx0v"]
+[ext_resource type="Script" uid="uid://dt005iv2jgf5l" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3D.gd" id="1_3dx0v"]
 [ext_resource type="PackedScene" uid="uid://dkktvmn8q6r74" path="res://tools/node_debug/VehicleWheel3D/DebugVehicleWheel3DTab.tscn" id="2_n8rll"]
 
 [node name="DebugVehicleWheel3D" type="TabContainer"]

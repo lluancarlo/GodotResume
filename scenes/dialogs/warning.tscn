@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://odldxscmlbwu"]
 
 [ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/panel.stylebox" id="1_lvc0r"]
-[ext_resource type="Script" path="res://scripts/CustomPopup.gd" id="2_cmksy"]
+[ext_resource type="Script" uid="uid://c3se7e5btq80p" path="res://scripts/CustomPopup.gd" id="2_cmksy"]
 [ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog_title_label.res" id="3_ase56"]
 [ext_resource type="Texture2D" uid="uid://bpkubgvvqftqw" path="res://assets/kenney/ui-pack/PNG/grey_crossWhite.png" id="4_2ikll"]
 [ext_resource type="Texture2D" uid="uid://dohmkqjl8x4yn" path="res://assets/kenney/ui-pack/PNG/grey_crossGrey.png" id="5_l80im"]
@@ -77,9 +77,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_et8fv"]
 _data = {
-"RESET": SubResource("Animation_tdrno"),
-"close": SubResource("Animation_2q6ed"),
-"open": SubResource("Animation_33xwc")
+&"RESET": SubResource("Animation_tdrno"),
+&"close": SubResource("Animation_2q6ed"),
+&"open": SubResource("Animation_33xwc")
 }
 
 [node name="WarningPopup" type="PanelContainer"]

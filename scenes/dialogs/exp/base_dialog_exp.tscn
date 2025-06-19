@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cl5cbv0pf7v4m"]
 
 [ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/panel.stylebox" id="1_id6y4"]
-[ext_resource type="Script" path="res://scripts/CustomPopup.gd" id="2_4oi7t"]
+[ext_resource type="Script" uid="uid://c3se7e5btq80p" path="res://scripts/CustomPopup.gd" id="2_4oi7t"]
 [ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog_title_label.res" id="3_otn0i"]
 [ext_resource type="Texture2D" uid="uid://bpkubgvvqftqw" path="res://assets/kenney/ui-pack/PNG/grey_crossWhite.png" id="4_nf173"]
 [ext_resource type="Texture2D" uid="uid://dohmkqjl8x4yn" path="res://assets/kenney/ui-pack/PNG/grey_crossGrey.png" id="5_2uqbv"]
@@ -75,9 +75,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_et8fv"]
 _data = {
-"RESET": SubResource("Animation_tdrno"),
-"close": SubResource("Animation_2q6ed"),
-"open": SubResource("Animation_33xwc")
+&"RESET": SubResource("Animation_tdrno"),
+&"close": SubResource("Animation_2q6ed"),
+&"open": SubResource("Animation_33xwc")
 }
 
 [node name="BaseDialogExp" type="PanelContainer"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhxcynap6n88l"]
 
-[ext_resource type="Script" path="res://scripts/PickUp.gd" id="1_ul7e6"]
+[ext_resource type="Script" uid="uid://c4obk2ean1ecj" path="res://scripts/PickUp.gd" id="1_ul7e6"]
 [ext_resource type="QuadMesh" uid="uid://b028udy8kuuja" path="res://assets/meshes/pick_up.tres" id="2_6msgh"]
 [ext_resource type="FontFile" uid="uid://gqqdohjg3y7j" path="res://assets/fonts/Montreal-Regular.ttf" id="3_gruea"]
 [ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="4_1os0l"]
@@ -63,8 +63,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_edu2c"]
 _data = {
-"RESET": SubResource("Animation_0i5as"),
-"enter": SubResource("Animation_8aykb")
+&"RESET": SubResource("Animation_0i5as"),
+&"enter": SubResource("Animation_8aykb")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3tpc2"]

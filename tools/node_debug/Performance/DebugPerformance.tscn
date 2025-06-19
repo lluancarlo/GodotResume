@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d17gs5yghghj8"]
 
-[ext_resource type="Script" path="res://tools/node_debug/Performance/DebugPerformance.gd" id="1_3p2q1"]
+[ext_resource type="Script" uid="uid://ctsdvbrxvbxa6" path="res://tools/node_debug/Performance/DebugPerformance.gd" id="1_3p2q1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3cbl3"]
 font_size = 22

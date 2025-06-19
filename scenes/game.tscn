@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
 [ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
-[ext_resource type="Script" path="res://scripts/FollowCamera.gd" id="1_gptlb"]
+[ext_resource type="Script" uid="uid://bir66qsg60bsw" path="res://scripts/FollowCamera.gd" id="1_gptlb"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dri4wbusws3m7" path="res://scenes/game.occ" id="1_xjmf5"]
-[ext_resource type="Script" path="res://scripts/PlayerCar.gd" id="2_hp3v1"]
+[ext_resource type="Script" uid="uid://bfjix56whrvap" path="res://scripts/PlayerCar.gd" id="2_hp3v1"]
 [ext_resource type="PackedScene" uid="uid://cwk2lgxoq5sg2" path="res://assets/scenes/natures/cliff_half_rock.scn" id="2_n6s6i"]
 [ext_resource type="Material" uid="uid://b2e3q04uueo5m" path="res://assets/materials/water.material" id="2_wx30m"]
 [ext_resource type="PackedScene" uid="uid://c7xy0cbk8yqhs" path="res://assets/scenes/roads/road_intersection_path.scn" id="2_xo1du"]
@@ -31,11 +31,11 @@
 [ext_resource type="PackedScene" uid="uid://bh3aol3c85qgk" path="res://assets/scenes/buildings/large_building_f.scn" id="19_bhiyu"]
 [ext_resource type="PackedScene" uid="uid://bmdvds3uj0jpw" path="res://assets/scenes/natures/rock_tall_b.scn" id="21_l757x"]
 [ext_resource type="PackedScene" uid="uid://bpkndx622xjrd" path="res://assets/scenes/natures/fence_planks_double.scn" id="22_ccbhg"]
-[ext_resource type="Script" path="res://scripts/Zone.gd" id="23_a13fj"]
+[ext_resource type="Script" uid="uid://dbnvd8w80w1sh" path="res://scripts/Zone.gd" id="23_a13fj"]
 [ext_resource type="PackedScene" uid="uid://828y640r8a6v" path="res://assets/scenes/natures/crops_dirt_row.scn" id="23_lqqwb"]
 [ext_resource type="PackedScene" uid="uid://dw6rvsgisnjx0" path="res://assets/scenes/natures/crops_dirt_row_end.scn" id="24_vw2qp"]
 [ext_resource type="PackedScene" uid="uid://dmqs32owkanoe" path="res://assets/scenes/natures/crops_corn_stage_2.scn" id="25_r1aob"]
-[ext_resource type="Script" path="res://addons/scene_object_brush/Brush.gd" id="27_3qju5"]
+[ext_resource type="Script" uid="uid://bxohc5qpu60jt" path="res://addons/scene_object_brush/Brush.gd" id="27_3qju5"]
 [ext_resource type="PackedScene" uid="uid://6tnm3kku8qlq" path="res://assets/scenes/roads/road_slant_curve.scn" id="34_bpyjk"]
 [ext_resource type="PackedScene" uid="uid://bhxcynap6n88l" path="res://scenes/misc/pick_up.tscn" id="35_xtc3j"]
 [ext_resource type="PackedScene" uid="uid://6vida01mqfdf" path="res://assets/scenes/roads/road_side_entry.scn" id="36_0ljps"]
@@ -48,7 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://cfrdc368p2ciw" path="res://tools/brush/BrushGrass.tscn" id="44_1jj0s"]
 [ext_resource type="PackedScene" uid="uid://c3gqnt4pncokt" path="res://assets/scenes/natures/grass_2.scn" id="45_8rigp"]
 [ext_resource type="PackedScene" uid="uid://bubwk0xndw1c8" path="res://assets/scenes/natures/grass_3.scn" id="46_4acse"]
-[ext_resource type="Script" path="res://scripts/UiManager.gd" id="46_nk40p"]
+[ext_resource type="Script" uid="uid://pdaet0m3dy1w" path="res://scripts/UiManager.gd" id="46_nk40p"]
 [ext_resource type="PackedScene" uid="uid://disu76fpgt3pa" path="res://scenes/dialogs/photo/where_born.tscn" id="47_5vjek"]
 [ext_resource type="PackedScene" uid="uid://kccn4wtmnqxo" path="res://tools/brush/BrushTree.tscn" id="47_wo0e5"]
 [ext_resource type="PackedScene" uid="uid://d2jsuu3kmmu33" path="res://assets/scenes/natures/tree_palm_tall.scn" id="48_bs7bt"]
@@ -67,7 +67,7 @@
 [ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="56_au57e"]
 [ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/dialogs/exp/exp_amilon.tscn" id="68_pstgr"]
 [ext_resource type="AudioStream" uid="uid://c83ihvaulblyw" path="res://assets/kenney/interface-sounds/select_005.ogg" id="73_hfuq1"]
-[ext_resource type="Script" path="res://scripts/HUD.gd" id="73_i0xs2"]
+[ext_resource type="Script" uid="uid://dcxqbnaddn4dy" path="res://scripts/HUD.gd" id="73_i0xs2"]
 [ext_resource type="AudioStream" uid="uid://dc6f5ovhc0bpy" path="res://assets/kenney/interface-sounds/drop_004.ogg" id="74_vq0br"]
 [ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="75_q7g5h"]
 [ext_resource type="Texture2D" uid="uid://uoi0any32s55" path="res://assets/img/gear-icon.png" id="77_13fi4"]
@@ -76,13 +76,13 @@
 [ext_resource type="StyleBox" uid="uid://cy3uk2xyxrlnx" path="res://assets/styles/button_hover.stylebox" id="78_6c44r"]
 [ext_resource type="StyleBox" uid="uid://bldmdbgu37dyd" path="res://assets/styles/panel_header.stylebox" id="78_cg818"]
 [ext_resource type="PackedScene" uid="uid://dmyhkht6egj43" path="res://assets/scenes/natures/sign.scn" id="78_o0w3k"]
-[ext_resource type="Script" path="res://scripts/MenuMain.gd" id="78_o3kw1"]
+[ext_resource type="Script" uid="uid://cxoq282awwsdo" path="res://scripts/MenuMain.gd" id="78_o3kw1"]
 [ext_resource type="Texture2D" uid="uid://bh0kcnt2mnwr5" path="res://assets/img/speedometer-icon.png" id="78_ujuqy"]
 [ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog_title_label.res" id="79_o4acj"]
 [ext_resource type="StyleBox" uid="uid://bb56yriex56l4" path="res://assets/styles/button_pressed.stylebox" id="79_ukwlv"]
 [ext_resource type="Texture2D" uid="uid://fkdsuwgj60ag" path="res://assets/img/linkedin-logo.png" id="83_xdvh6"]
 [ext_resource type="Texture2D" uid="uid://d2wfh31bg5rdf" path="res://assets/img/github-logo.png" id="84_owrei"]
-[ext_resource type="Script" path="res://scripts/MenuOptions.gd" id="85_4n6f3"]
+[ext_resource type="Script" uid="uid://q2dfmx3siebt" path="res://scripts/MenuOptions.gd" id="85_4n6f3"]
 [ext_resource type="Texture2D" uid="uid://dsuiu6k1gadw0" path="res://assets/kenney/ui-pack/PNG/grey_arrowUpWhite.png" id="86_345ol"]
 [ext_resource type="LabelSettings" uid="uid://c5m2syvcfelod" path="res://assets/styles/dialog_content_label.res" id="86_fdc3m"]
 [ext_resource type="Texture2D" uid="uid://c0ej6o8464t06" path="res://assets/kenney/ui-pack/PNG/grey_arrowUpGrey.png" id="87_5f1im"]
@@ -3814,8 +3814,8 @@ theme_override_constants/separation = 50
 [node name="Resume" type="Button" parent="UiManager/Menus/Main/VBox/Buttons"]
 custom_minimum_size = Vector2(400, 75)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 36
@@ -3827,8 +3827,8 @@ text = "Resume"
 [node name="Reset" type="Button" parent="UiManager/Menus/Main/VBox/Buttons"]
 custom_minimum_size = Vector2(400, 75)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 36
@@ -3840,8 +3840,8 @@ text = "I am stuck!"
 [node name="Options" type="Button" parent="UiManager/Menus/Main/VBox/Buttons"]
 custom_minimum_size = Vector2(400, 75)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 36
@@ -3859,8 +3859,8 @@ alignment = 1
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 36
@@ -3877,8 +3877,8 @@ expand_icon = true
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 36
@@ -3981,8 +3981,8 @@ alignment = 1
 [node name="Low" type="Button" parent="UiManager/Menus/Options/VBox/Graphics/General"]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 26
@@ -3995,8 +3995,8 @@ text = "LOW"
 [node name="Medium" type="Button" parent="UiManager/Menus/Options/VBox/Graphics/General"]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 26
@@ -4010,8 +4010,8 @@ text = "MEDIUM"
 [node name="High" type="Button" parent="UiManager/Menus/Options/VBox/Graphics/General"]
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("75_q7g5h")
 theme_override_font_sizes/font_size = 26
