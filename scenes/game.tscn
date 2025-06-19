@@ -1,4 +1,4 @@
-[gd_scene load_steps=186 format=4 uid="uid://bdpgnc1txjso8"]
+[gd_scene load_steps=183 format=4 uid="uid://bdpgnc1txjso8"]
 
 [ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
 [ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
@@ -48,7 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://cfrdc368p2ciw" path="res://tools/brush/BrushGrass.tscn" id="44_1jj0s"]
 [ext_resource type="PackedScene" uid="uid://c3gqnt4pncokt" path="res://assets/scenes/natures/grass_2.scn" id="45_8rigp"]
 [ext_resource type="PackedScene" uid="uid://bubwk0xndw1c8" path="res://assets/scenes/natures/grass_3.scn" id="46_4acse"]
-[ext_resource type="Script" uid="uid://pdaet0m3dy1w" path="res://scripts/UiManager.gd" id="46_nk40p"]
+[ext_resource type="Script" uid="uid://pdaet0m3dy1w" path="res://scripts/managers/UiManager.gd" id="46_nk40p"]
 [ext_resource type="PackedScene" uid="uid://disu76fpgt3pa" path="res://scenes/dialogs/photo/where_born.tscn" id="47_5vjek"]
 [ext_resource type="PackedScene" uid="uid://kccn4wtmnqxo" path="res://tools/brush/BrushTree.tscn" id="47_wo0e5"]
 [ext_resource type="PackedScene" uid="uid://d2jsuu3kmmu33" path="res://assets/scenes/natures/tree_palm_tall.scn" id="48_bs7bt"]
@@ -66,18 +66,19 @@
 [ext_resource type="AudioStream" uid="uid://ldcb7fuyl425" path="res://audio/impact_2.wav" id="55_emjfu"]
 [ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="56_au57e"]
 [ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/dialogs/exp/exp_amilon.tscn" id="68_pstgr"]
+[ext_resource type="PackedScene" uid="uid://hsqs41eqsxk" path="res://scenes/HUDs/fps.tscn" id="69_ja1h7"]
+[ext_resource type="PackedScene" uid="uid://cnakwrmrwsqp4" path="res://scenes/HUDs/area_overlay.tscn" id="70_p4npv"]
+[ext_resource type="PackedScene" uid="uid://bukahr6c8i8nn" path="res://scenes/HUDs/car_infos.tscn" id="71_xjcjm"]
 [ext_resource type="AudioStream" uid="uid://c83ihvaulblyw" path="res://assets/kenney/interface-sounds/select_005.ogg" id="73_hfuq1"]
 [ext_resource type="Script" uid="uid://dcxqbnaddn4dy" path="res://scripts/HUD.gd" id="73_i0xs2"]
 [ext_resource type="AudioStream" uid="uid://dc6f5ovhc0bpy" path="res://assets/kenney/interface-sounds/drop_004.ogg" id="74_vq0br"]
 [ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="75_q7g5h"]
-[ext_resource type="Texture2D" uid="uid://uoi0any32s55" path="res://assets/img/gear-icon.png" id="77_13fi4"]
 [ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/panel.stylebox" id="77_a34bd"]
 [ext_resource type="StyleBox" uid="uid://cnidg2mjanu0q" path="res://assets/styles/button_normal.stylebox" id="77_l3c7y"]
 [ext_resource type="StyleBox" uid="uid://cy3uk2xyxrlnx" path="res://assets/styles/button_hover.stylebox" id="78_6c44r"]
 [ext_resource type="StyleBox" uid="uid://bldmdbgu37dyd" path="res://assets/styles/panel_header.stylebox" id="78_cg818"]
 [ext_resource type="PackedScene" uid="uid://dmyhkht6egj43" path="res://assets/scenes/natures/sign.scn" id="78_o0w3k"]
 [ext_resource type="Script" uid="uid://cxoq282awwsdo" path="res://scripts/MenuMain.gd" id="78_o3kw1"]
-[ext_resource type="Texture2D" uid="uid://bh0kcnt2mnwr5" path="res://assets/img/speedometer-icon.png" id="78_ujuqy"]
 [ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog_title_label.res" id="79_o4acj"]
 [ext_resource type="StyleBox" uid="uid://bb56yriex56l4" path="res://assets/styles/button_pressed.stylebox" id="79_ukwlv"]
 [ext_resource type="Texture2D" uid="uid://fkdsuwgj60ag" path="res://assets/img/linkedin-logo.png" id="83_xdvh6"]
@@ -1228,25 +1229,6 @@ streams_count = 3
 stream_0/stream = ExtResource("54_8eyxk")
 stream_1/stream = ExtResource("55_emjfu")
 stream_2/stream = ExtResource("56_au57e")
-
-[sub_resource type="LabelSettings" id="LabelSettings_ylj7i"]
-font_size = 26
-font_color = Color(1, 1, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_phbwc"]
-font_size = 26
-
-[sub_resource type="LabelSettings" id="LabelSettings_fojs1"]
-font = ExtResource("75_q7g5h")
-font_size = 64
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_s4mdk"]
-font = ExtResource("75_q7g5h")
-font_size = 64
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="OccluderInstance3D"]
 occluder = ExtResource("1_xjmf5")
@@ -3656,7 +3638,7 @@ layout_mode = 1
 [node name="ExpAmilon" parent="UiManager/Popups" instance=ExtResource("68_pstgr")]
 layout_mode = 1
 
-[node name="HUD" type="Control" parent="UiManager" node_paths=PackedStringArray("_fps_group", "_fps", "_gear", "_speed", "_overlay_group", "_overlay")]
+[node name="HUD" type="Control" parent="UiManager"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3665,100 +3647,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("73_i0xs2")
-_fps_group = NodePath("Fps")
-_fps = NodePath("Fps/Value")
-_gear = NodePath("CarInfos/Gear/Value")
-_speed = NodePath("CarInfos/Speed/Value")
-_overlay_group = NodePath("AreaOverlay")
-_overlay = NodePath("AreaOverlay/Label")
 
-[node name="Fps" type="HBoxContainer" parent="UiManager/HUD"]
-visible = false
+[node name="Fps" parent="UiManager/HUD" instance=ExtResource("69_ja1h7")]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 112.0
-offset_bottom = 60.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 92.0
+offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="UiManager/HUD/Fps"]
-layout_mode = 2
-text = "FPS: "
-label_settings = SubResource("LabelSettings_ylj7i")
-
-[node name="Value" type="Label" parent="UiManager/HUD/Fps"]
-layout_mode = 2
-text = "96"
-label_settings = SubResource("LabelSettings_phbwc")
-
-[node name="AreaOverlay" type="Control" parent="UiManager/HUD"]
+[node name="AreaOverlay" parent="UiManager/HUD" instance=ExtResource("70_p4npv")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
-[node name="Label" type="Label" parent="UiManager/HUD/AreaOverlay"]
+[node name="CarInfos" parent="UiManager/HUD" instance=ExtResource("71_xjcjm")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -820.0
-offset_top = -100.0
-offset_right = -20.0
-offset_bottom = -20.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Area name"
-label_settings = SubResource("LabelSettings_fojs1")
-horizontal_alignment = 2
-
-[node name="CarInfos" type="VBoxContainer" parent="UiManager/HUD"]
-custom_minimum_size = Vector2(150, 100)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = -330.0
-offset_right = 420.0
-offset_bottom = -20.0
-grow_vertical = 0
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Gear" type="HBoxContainer" parent="UiManager/HUD/CarInfos"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="TextureRect" parent="UiManager/HUD/CarInfos/Gear"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-texture = ExtResource("77_13fi4")
-expand_mode = 2
-
-[node name="Value" type="Label" parent="UiManager/HUD/CarInfos/Gear"]
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_s4mdk")
-
-[node name="Speed" type="HBoxContainer" parent="UiManager/HUD/CarInfos"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="TextureRect" parent="UiManager/HUD/CarInfos/Speed"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-texture = ExtResource("78_ujuqy")
-expand_mode = 2
-
-[node name="Value" type="Label" parent="UiManager/HUD/CarInfos/Speed"]
-layout_mode = 2
-text = "99"
-label_settings = SubResource("LabelSettings_s4mdk")
 
 [node name="Menus" type="Control" parent="UiManager"]
 layout_mode = 1
