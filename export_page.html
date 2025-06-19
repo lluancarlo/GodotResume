@@ -51,14 +51,7 @@
         <canvas id="canvas"></canvas>
     </div>
 
-    <script>
-if (!window.SharedArrayBuffer) {
-	document.getElementById('status').style.display = 'none';
-	setTimeout(() => document.getElementById('status').style.display = '', 1500);
-}
-</script>
-<script src="coi-serviceworker.min.js"></script>
-<script src="godot.javascript"></script>
+    <script src="godot.javascript"></script>
     <script>
         // Inicia o jogo
         const engine = new Engine();
@@ -71,4 +64,3 @@ if (!window.SharedArrayBuffer) {
     </script>
 </body>
 </html>
-
