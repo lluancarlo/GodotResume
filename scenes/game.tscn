@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=4 uid="uid://bdpgnc1txjso8"]
+[gd_scene load_steps=182 format=4 uid="uid://bdpgnc1txjso8"]
 
 [ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
 [ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
@@ -66,11 +66,10 @@
 [ext_resource type="AudioStream" uid="uid://ldcb7fuyl425" path="res://audio/impact_2.wav" id="55_emjfu"]
 [ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="56_au57e"]
 [ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/dialogs/exp/exp_amilon.tscn" id="68_pstgr"]
-[ext_resource type="PackedScene" uid="uid://hsqs41eqsxk" path="res://scenes/HUDs/fps.tscn" id="69_ja1h7"]
-[ext_resource type="PackedScene" uid="uid://cnakwrmrwsqp4" path="res://scenes/HUDs/area_overlay.tscn" id="70_p4npv"]
-[ext_resource type="PackedScene" uid="uid://bukahr6c8i8nn" path="res://scenes/HUDs/car_infos.tscn" id="71_xjcjm"]
+[ext_resource type="PackedScene" uid="uid://kxotfw2ywu2c" path="res://scenes/HUDs/ui_debug_mode.tscn" id="69_ja1h7"]
+[ext_resource type="PackedScene" uid="uid://cnakwrmrwsqp4" path="res://scenes/HUDs/ui_text_overlay.tscn" id="70_p4npv"]
+[ext_resource type="PackedScene" uid="uid://bukahr6c8i8nn" path="res://scenes/HUDs/ui_car_infos.tscn" id="71_xjcjm"]
 [ext_resource type="AudioStream" uid="uid://c83ihvaulblyw" path="res://assets/kenney/interface-sounds/select_005.ogg" id="73_hfuq1"]
-[ext_resource type="Script" uid="uid://dcxqbnaddn4dy" path="res://scripts/HUD.gd" id="73_i0xs2"]
 [ext_resource type="AudioStream" uid="uid://dc6f5ovhc0bpy" path="res://assets/kenney/interface-sounds/drop_004.ogg" id="74_vq0br"]
 [ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="75_q7g5h"]
 [ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/panel.stylebox" id="77_a34bd"]
@@ -3571,7 +3570,7 @@ transform = Transform3D(-1, 0, -8.74229e-08, 0, 1, 0, 8.74229e-08, 0, -1, 0, 1, 
 script = ExtResource("1_gptlb")
 min_distance = 2.0
 
-[node name="UiManager" type="Control" parent="." node_paths=PackedStringArray("_player", "_audio_open", "_audio_close", "_popups_control", "_where_born_dialog", "_where_living_dialog", "_university_dialog", "_exp_consinco_dialog", "_exp_magit_dialog", "_exp_topgaming_dialog", "_exp_deltaengine_dialog", "_exp_amilon_dialog", "_hud", "menu_main", "menu_options")]
+[node name="UiManager" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -3583,21 +3582,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("46_nk40p")
-_player = NodePath("../Player")
-_audio_open = NodePath("AudioOpen")
-_audio_close = NodePath("AudioClose")
-_popups_control = NodePath("Popups")
-_where_born_dialog = NodePath("Popups/WhereBorn")
-_where_living_dialog = NodePath("Popups/WhereLiving")
-_university_dialog = NodePath("Popups/University")
-_exp_consinco_dialog = NodePath("Popups/ExpConsinco")
-_exp_magit_dialog = NodePath("Popups/ExpMagit")
-_exp_topgaming_dialog = NodePath("Popups/ExpTopGaming")
-_exp_deltaengine_dialog = NodePath("Popups/ExpDeltaEngine")
-_exp_amilon_dialog = NodePath("Popups/ExpAmilon")
-_hud = NodePath("HUD")
-menu_main = NodePath("Menus/Main")
-menu_options = NodePath("Menus/Options")
 
 [node name="Popups" type="Control" parent="UiManager"]
 layout_mode = 1
@@ -3646,19 +3630,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("73_i0xs2")
 
-[node name="Fps" parent="UiManager/HUD" instance=ExtResource("69_ja1h7")]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 92.0
-offset_bottom = 40.0
-
-[node name="AreaOverlay" parent="UiManager/HUD" instance=ExtResource("70_p4npv")]
+[node name="UIDebugMode" parent="UiManager/HUD" instance=ExtResource("69_ja1h7")]
+visible = false
 layout_mode = 1
 
-[node name="CarInfos" parent="UiManager/HUD" instance=ExtResource("71_xjcjm")]
+[node name="UITextOverlay" parent="UiManager/HUD" instance=ExtResource("70_p4npv")]
+layout_mode = 1
+
+[node name="UICarInfos" parent="UiManager/HUD" instance=ExtResource("71_xjcjm")]
 layout_mode = 1
 
 [node name="Menus" type="Control" parent="UiManager"]

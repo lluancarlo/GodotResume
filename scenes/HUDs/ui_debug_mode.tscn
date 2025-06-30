@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://kxotfw2ywu2c"]
+
+[ext_resource type="Script" uid="uid://bfvl4jwfny80" path="res://scripts/ui/ui_debug_mode.gd" id="1_idq6x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ylj7i"]
+font_size = 26
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_phbwc"]
+font_size = 26
+
+[node name="UIDebugMode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_idq6x")
+
+[node name="Desktop" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="Desktop"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 112.0
+offset_bottom = 60.0
+
+[node name="Label" type="Label" parent="Desktop/HBox"]
+layout_mode = 2
+text = "FPS: "
+label_settings = SubResource("LabelSettings_ylj7i")
+
+[node name="Value" type="Label" parent="Desktop/HBox"]
+layout_mode = 2
+text = "96"
+label_settings = SubResource("LabelSettings_phbwc")
+
+[node name="Mobile" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="Mobile"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = 20.0
+offset_right = 46.0
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Mobile/HBox"]
+layout_mode = 2
+text = "FPS: "
+label_settings = SubResource("LabelSettings_ylj7i")
+
+[node name="Value" type="Label" parent="Mobile/HBox"]
+layout_mode = 2
+text = "96"
+label_settings = SubResource("LabelSettings_phbwc")

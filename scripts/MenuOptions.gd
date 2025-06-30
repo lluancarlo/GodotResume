@@ -35,9 +35,9 @@ func _on_menu_pressed() -> void:
 		_on_close_pressed()
 
 
-func on_graphics_selected(selected: bool, config: Config) -> void:
+func on_graphics_selected(_selected: bool, config: Config) -> void:
 	_audio_switch.play()
-	if (not menu_options_graphics_low_btn.button_pressed and 
+	if (not menu_options_graphics_low_btn.button_pressed and
 		not menu_options_graphics_medium_btn.button_pressed and
 		not menu_options_graphics_high_btn.button_pressed):
 		if config == Config.LOW:
@@ -47,7 +47,7 @@ func on_graphics_selected(selected: bool, config: Config) -> void:
 		else:
 			menu_options_graphics_high_btn.set_pressed_no_signal(true)
 		return
-	
+
 	if config == Config.LOW:
 		menu_options_graphics_medium_btn.set_pressed_no_signal(false)
 		menu_options_graphics_high_btn.set_pressed_no_signal(false)
@@ -57,7 +57,7 @@ func on_graphics_selected(selected: bool, config: Config) -> void:
 	else:
 		menu_options_graphics_low_btn.set_pressed_no_signal(false)
 		menu_options_graphics_medium_btn.set_pressed_no_signal(false)
-	
+
 	set_all_configs(config)
 
 

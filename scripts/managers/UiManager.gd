@@ -1,25 +1,33 @@
 extends Control
 class_name UiManager
 
+# Signals
 signal menu_pressed()
-@export var _player : PlayerCar
-@export_group(&"Sounds")
-@export var _audio_open : AudioStreamPlayer
-@export var _audio_close : AudioStreamPlayer
-@export_group(&"Dialogs")
-@export var _popups_control : Control
-@export var _where_born_dialog : BasePopup
-@export var _where_living_dialog : BasePopup
-@export var _university_dialog : BasePopup
-@export var _exp_consinco_dialog : BasePopup
-@export var _exp_magit_dialog : BasePopup
-@export var _exp_topgaming_dialog : BasePopup
-@export var _exp_deltaengine_dialog : BasePopup
-@export var _exp_amilon_dialog : BasePopup
-@export_category(&"Node Paths")
-@export var _hud : HUD
-@export var menu_main : PanelContainer
-@export var menu_options : PanelContainer
+
+# NODES
+#== ??
+@onready var _player : PlayerCar
+#== Sounds
+@onready var _audio_open : AudioStreamPlayer
+@onready var _audio_close : AudioStreamPlayer
+#== Dialogs
+@onready var _popups_control : Control = $Popups
+@onready var _where_born_dialog : CustomPopup = $Popups/WhereBorn
+@onready var _where_living_dialog : CustomPopup = $Popups/WhereLiving
+@onready var _university_dialog : CustomPopup = $Popups/University
+@onready var _exp_consinco_dialog : CustomPopup = $Popups/ExpConsinco
+@onready var _exp_magit_dialog : CustomPopup = $Popups/ExpMagit
+@onready var _exp_topgaming_dialog : CustomPopup = $Popups/ExpTopGaming
+@onready var _exp_deltaengine_dialog : CustomPopup = $Popups/ExpDeltaEngine
+@onready var _exp_amilon_dialog : CustomPopup = $Popups/ExpAmilon
+#== HUD
+@onready var _hud_text_overlay : UITextOverlay = $HUD/UITextOverlay
+@onready var _hud_car_infos : UICarInfos = $HUD/UICarInfos
+#== Menus
+@onready var menu_main : PanelContainer
+@onready var menu_options : PanelContainer
+
+# Variables
 var game_paused : bool
 var opened_popup : Control
 
@@ -83,15 +91,15 @@ func _on_popup_closed() -> void:
 
 
 func show_area_overlay(area_name: String) -> void:
-	_hud.show_overlay_area(area_name)
+	_hud_text_overlay.show_text(area_name)
 
 
 func update_gear(gear: int) -> void:
-	_hud.update_gear(gear)
+	_hud_car_infos.update_gear(gear)
 
 
 func update_speed(speed: int) -> void:
-	_hud.update_speed(speed)
+	_hud_car_infos.update_speed(speed)
 
 
 func _on_options_close_pressed() -> void:
