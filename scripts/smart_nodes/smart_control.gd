@@ -15,10 +15,10 @@ func _ready() -> void:
 
 	isMobile = OS.has_feature("web_android") or OS.has_feature("web_ios")
 	if isMobile:
-		_mobile.visible = true
+		_mobile.show()
 		_desktop.queue_free()
 	else:
-		_desktop.visible = true
+		_desktop.show()
 		_mobile.queue_free()
 
 

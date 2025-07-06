@@ -15,7 +15,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5g5hq")
 
-[node name="Direction" type="HBoxContainer" parent="."]
+[node name="Mobile" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Direction" type="HBoxContainer" parent="Mobile"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -27,14 +35,14 @@ offset_bottom = -50.0
 grow_vertical = 0
 theme_override_constants/separation = 100
 
-[node name="Left" type="TextureButton" parent="Direction"]
+[node name="Left" type="TextureButton" parent="Mobile/Direction"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("1_5qv2e")
 texture_pressed = ExtResource("2_3fuoj")
 stretch_mode = 0
 
-[node name="Right" type="TextureButton" parent="Direction"]
+[node name="Right" type="TextureButton" parent="Mobile/Direction"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("1_5qv2e")
@@ -42,7 +50,7 @@ texture_pressed = ExtResource("2_3fuoj")
 stretch_mode = 0
 flip_h = true
 
-[node name="Buttons" type="HBoxContainer" parent="."]
+[node name="Buttons" type="HBoxContainer" parent="Mobile"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -57,26 +65,34 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 100
 
-[node name="Gas" type="Button" parent="Buttons"]
+[node name="Gas" type="Button" parent="Mobile/Buttons"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "GAS"
 
-[node name="Break" type="Button" parent="Buttons"]
+[node name="Break" type="Button" parent="Mobile/Buttons"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "BREAK"
 
-[node name="Interact" type="Button" parent="Buttons"]
+[node name="Interact" type="Button" parent="Mobile/Buttons"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "INTERACT"
 
-[connection signal="button_down" from="Direction/Left" to="." method="_on_left_button_down"]
-[connection signal="button_up" from="Direction/Left" to="." method="_on_left_button_up"]
-[connection signal="button_down" from="Direction/Right" to="." method="_on_right_button_down"]
-[connection signal="button_up" from="Direction/Right" to="." method="_on_right_button_up"]
-[connection signal="button_down" from="Buttons/Gas" to="." method="_on_gas_button_down"]
-[connection signal="button_up" from="Buttons/Gas" to="." method="_on_gas_button_up"]
-[connection signal="button_down" from="Buttons/Break" to="." method="_on_break_button_down"]
-[connection signal="button_up" from="Buttons/Break" to="." method="_on_break_button_up"]
+[node name="Desktop" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="Mobile/Direction/Left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="Mobile/Direction/Left" to="." method="_on_left_button_up"]
+[connection signal="button_down" from="Mobile/Direction/Right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="Mobile/Direction/Right" to="." method="_on_right_button_up"]
+[connection signal="button_down" from="Mobile/Buttons/Gas" to="." method="_on_gas_button_down"]
+[connection signal="button_up" from="Mobile/Buttons/Gas" to="." method="_on_gas_button_up"]
+[connection signal="button_down" from="Mobile/Buttons/Break" to="." method="_on_break_button_down"]
+[connection signal="button_up" from="Mobile/Buttons/Break" to="." method="_on_break_button_up"]

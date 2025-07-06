@@ -2,11 +2,6 @@ extends SmartControl
 class_name MobileInputs
 
 
-func _ready() -> void:
-	if not super.get_is_mobile():
-		self.queue_free()
-
-
 func _on_left_button_down() -> void:
 	PlayerInput.axisX += 1
 
