@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://csqwlgoc8n3ea"]
+
+[ext_resource type="Script" uid="uid://cwgrdpqsfrrso" path="res://scripts/BaseDialog.gd" id="1_hbskx"]
+[ext_resource type="StyleBox" uid="uid://bpoipta04kn26" path="res://assets/styles/dialog/dialog_panel_head.stylebox" id="2_8brmu"]
+[ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog/dialog_font_title.res" id="2_hj8ve"]
+[ext_resource type="Texture2D" uid="uid://bpkubgvvqftqw" path="res://assets/kenney/ui-pack/png/grey_crossWhite.png" id="3_8brmu"]
+[ext_resource type="Texture2D" uid="uid://dohmkqjl8x4yn" path="res://assets/kenney/ui-pack/png/grey_crossGrey.png" id="4_1ut60"]
+[ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/dialog/dialog_panel_body.stylebox" id="5_bj1e0"]
+[ext_resource type="LabelSettings" uid="uid://c5m2syvcfelod" path="res://assets/styles/dialog/dialog_font_body_medium.res" id="6_rfgjm"]
+[ext_resource type="StyleBox" uid="uid://bk6s0f6qblspg" path="res://assets/styles/dialog/dialog_panel_anotherpanel.stylebox" id="7_8brmu"]
+
+[node name="BaseDialogWithPhoto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hbskx")
+
+[node name="Dialog" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -254.5
+offset_right = 400.0
+offset_bottom = 254.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Head" type="PanelContainer" parent="Dialog"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_8brmu")
+
+[node name="Title" type="Label" parent="Dialog/Head"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+label_settings = ExtResource("2_hj8ve")
+
+[node name="Close" type="TextureButton" parent="Dialog/Head"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("3_8brmu")
+texture_pressed = ExtResource("3_8brmu")
+texture_hover = ExtResource("4_1ut60")
+stretch_mode = 5
+
+[node name="Body" type="PanelContainer" parent="Dialog"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("5_bj1e0")
+
+[node name="Content" type="VBoxContainer" parent="Dialog/Body"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PanelImage" type="PanelContainer" parent="Dialog/Body/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("7_8brmu")
+
+[node name="Image" type="TextureRect" parent="Dialog/Body/Content/PanelImage"]
+custom_minimum_size = Vector2(360, 237.38)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="Text" type="Label" parent="Dialog/Body/Content"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "Description"
+label_settings = ExtResource("6_rfgjm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Dialog/Head/Close" to="." method="_on_close_pressed"]

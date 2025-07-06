@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kxotfw2ywu2c"]
 
-[ext_resource type="Script" uid="uid://bfvl4jwfny80" path="res://scripts/ui/ui_debug_mode.gd" id="1_idq6x"]
+[ext_resource type="Script" uid="uid://bfvl4jwfny80" path="res://scripts/ui/ui_debug.gd" id="1_idq6x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ylj7i"]
 font_size = 26
@@ -9,13 +9,14 @@ font_color = Color(1, 1, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_phbwc"]
 font_size = 26
 
-[node name="UIDebugMode" type="Control"]
+[node name="UIDebug" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_idq6x")
 
 [node name="Desktop" type="Control" parent="."]
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBox" type="HBoxContainer" parent="Desktop"]
 layout_mode = 1
@@ -50,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBox" type="HBoxContainer" parent="Mobile"]
 layout_mode = 1

@@ -4,7 +4,7 @@ class_name Brush
 
 ## Brush size in meters
 @export var brushSize : float = 1
-## Spawned objects per brush radius 
+## Spawned objects per brush radius
 @export var brushDensity : int = 10
 
 @export_category("Paintable Settings")
@@ -36,12 +36,12 @@ func isPaintableObjectsValid() -> bool:
 	if (paintableObjects.any(func(obj): return obj == null)):
 		paintableObjects = paintableObjects.filter(func(obj): return obj != null)
 	return paintableObjects.size() != 0
-	
+
 func getRotation():
 	var x = randf_range(deg_to_rad(randomRotMin.x), deg_to_rad(randomRotMax.x))
 	var y = randf_range(deg_to_rad(randomRotMin.y), deg_to_rad(randomRotMax.y))
 	var z = randf_range(deg_to_rad(randomRotMin.z), deg_to_rad(randomRotMax.z))
-	
+
 	return Vector3(x, y, z)
 
 
@@ -71,10 +71,10 @@ func draw_sphere(pos: Vector3, radius = 0.05, color = Color.WHITE, persist_frame
 	var sphere_mesh := SphereMesh.new()
 	sphere_mesh.rings = 8
 	sphere_mesh.radial_segments = 16
-	
+
 	var material := ShaderMaterial.new()
 	material.shader	= IndicatorShader
-	
+
 	mesh_instance.mesh = sphere_mesh
 	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	mesh_instance.position = pos
@@ -82,20 +82,24 @@ func draw_sphere(pos: Vector3, radius = 0.05, color = Color.WHITE, persist_frame
 	sphere_mesh.radius = radius
 	sphere_mesh.height = radius*2
 	sphere_mesh.material = material
-	
+
 	material.set_shader_parameter("albedo", Color(0,0,0,0))
 	material.set_shader_parameter("wire_color", color)
-	
+
 	material.set_shader_parameter("wire_width", 0.4)
 	material.set_shader_parameter("wire_smoothness", 0)
-	
+
 	return await queue_free_draw(mesh_instance, persist_frames)
 
 func queue_free_draw(mesh_instance: MeshInstance3D, persist_frames: int):
 	self.add_child(mesh_instance)
-	
+
 	for i in range(persist_frames):
 		await get_tree().process_frame
-	
+
 	if(is_instance_valid(mesh_instance)):
 		mesh_instance.queue_free()
+
+
+func close_current_ui() -> void:
+	pass # Replace with function body.

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdb2vo63yb3v7"
-path="res://.godot/imported/totvs-logo.jpg-19a1a80e5a267c2f480c898d5a6460b5.ctex"
+uid="uid://84asb6us11q5"
+path="res://.godot/imported/totvs-logo.png-51f20286907dbe1c4ddcb938c76f9b42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/totvs-logo.jpg"
-dest_files=["res://.godot/imported/totvs-logo.jpg-19a1a80e5a267c2f480c898d5a6460b5.ctex"]
+source_file="res://assets/img/totvs-logo.png"
+dest_files=["res://.godot/imported/totvs-logo.png-51f20286907dbe1c4ddcb938c76f9b42.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxkkl26e6u22s"
-path="res://.godot/imported/github-logo.png-7e121f026d4ac78e81432672a84c15d2.ctex"
+uid="uid://dytx74ouohctj"
+path="res://.godot/imported/button_rectangle_line.png-a9bb25f9705c17d91e63c43dc55cd82b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/github-logo.png"
-dest_files=["res://.godot/imported/github-logo.png-7e121f026d4ac78e81432672a84c15d2.ctex"]
+source_file="res://assets/kenney/ui-pack/png/button_rectangle_line.png"
+dest_files=["res://.godot/imported/button_rectangle_line.png-a9bb25f9705c17d91e63c43dc55cd82b.ctex"]
 
 [params]
 

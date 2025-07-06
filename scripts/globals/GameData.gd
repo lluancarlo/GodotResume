@@ -1,15 +1,16 @@
 extends Node
 
-enum Popups {
+enum Popups
+{
 	Warning,
-	WhereBorn,
-	WhereLiving,
+	Born,
+	Live,
 	University,
-	Exp_Consinco,
-	Exp_Magit,
-	Exp_TopGaming,
-	Exp_DeltaEngine,
-	Exp_Amilon
+	Consinco,
+	Magit,
+	TopGaming,
+	DeltaEngine,
+	Amilon
 }
 
 var on_popup_id : int

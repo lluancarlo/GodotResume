@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djmjf7xotlk25"
-path="res://.godot/imported/grey_box.png-d47de394c85351d8df5b74d0ce986c32.ctex"
+path="res://.godot/imported/grey_box.png-35c125572e4aa2d82ef17ff4fd4f2ad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/ui-pack/PNG/grey_box.png"
-dest_files=["res://.godot/imported/grey_box.png-d47de394c85351d8df5b74d0ce986c32.ctex"]
+source_file="res://assets/kenney/ui-pack/png/grey_box.png"
+dest_files=["res://.godot/imported/grey_box.png-35c125572e4aa2d82ef17ff4fd4f2ad7.ctex"]
 
 [params]
 

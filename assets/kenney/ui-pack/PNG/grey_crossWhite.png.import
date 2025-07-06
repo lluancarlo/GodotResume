@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpkubgvvqftqw"
-path="res://.godot/imported/grey_crossWhite.png-98ec934e1a776fe8d353defcfa856482.ctex"
+path="res://.godot/imported/grey_crossWhite.png-8d8a5ff5b9a8d95c05ab68bbd27b0581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/ui-pack/PNG/grey_crossWhite.png"
-dest_files=["res://.godot/imported/grey_crossWhite.png-98ec934e1a776fe8d353defcfa856482.ctex"]
+source_file="res://assets/kenney/ui-pack/png/grey_crossWhite.png"
+dest_files=["res://.godot/imported/grey_crossWhite.png-8d8a5ff5b9a8d95c05ab68bbd27b0581.ctex"]
 
 [params]
 

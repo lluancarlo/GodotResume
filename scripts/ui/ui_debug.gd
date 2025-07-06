@@ -1,5 +1,5 @@
 extends SmartControl
-class_name UIDebugMode
+class_name UIDebug
 
 
 # NODES

@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dsj6r12wc4gra"]
+
+[ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="1_na602"]
+
+[resource]
+font = ExtResource("1_na602")
+font_size = 22
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)

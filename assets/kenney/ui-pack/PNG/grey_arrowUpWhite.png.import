@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsuiu6k1gadw0"
-path="res://.godot/imported/grey_arrowUpWhite.png-caa4797e939cc7d0d20647f7d5f4d501.ctex"
+path="res://.godot/imported/grey_arrowUpWhite.png-39ae68021c178eb7e8e0a3d82c8120d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/ui-pack/PNG/grey_arrowUpWhite.png"
-dest_files=["res://.godot/imported/grey_arrowUpWhite.png-caa4797e939cc7d0d20647f7d5f4d501.ctex"]
+source_file="res://assets/kenney/ui-pack/png/grey_arrowUpWhite.png"
+dest_files=["res://.godot/imported/grey_arrowUpWhite.png-39ae68021c178eb7e8e0a3d82c8120d8.ctex"]
 
 [params]
 

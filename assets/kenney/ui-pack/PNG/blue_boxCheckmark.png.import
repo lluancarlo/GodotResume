@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5bhc6sbpdlfd"
-path="res://.godot/imported/blue_boxCheckmark.png-2f57d573a8497c7cf88ac8e614cdf7f1.ctex"
+path="res://.godot/imported/blue_boxCheckmark.png-dc09e31883d53e16cd438c90c5737606.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/ui-pack/PNG/blue_boxCheckmark.png"
-dest_files=["res://.godot/imported/blue_boxCheckmark.png-2f57d573a8497c7cf88ac8e614cdf7f1.ctex"]
+source_file="res://assets/kenney/ui-pack/png/blue_boxCheckmark.png"
+dest_files=["res://.godot/imported/blue_boxCheckmark.png-dc09e31883d53e16cd438c90c5737606.ctex"]
 
 [params]
 

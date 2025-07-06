@@ -6,7 +6,6 @@ signal gear_changed(gear: int)
 signal speed_changed(speed: int)
 
 # Nodes
-@onready var _mesh_instance := $Body as MeshInstance3D
 @onready var _wheel_fl := $WheelFL as VehicleWheel3D
 @onready var _wheel_fr := $WheelFR as VehicleWheel3D
 @onready var _audio_engine := $AudioEngine as AudioStreamPlayer3D
@@ -67,7 +66,6 @@ func update_gear(gear: int) -> void:
 
 func update_speed(speed: int) -> void:
 	if speed != previous_speed:
-		print(speed)
 		speed_changed.emit(speed)
 		previous_speed = speed
 

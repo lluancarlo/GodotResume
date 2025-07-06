@@ -1,0 +1,147 @@
+[gd_scene load_steps=12 format=3 uid="uid://cl5cbv0pf7v4m"]
+
+[ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/dialog/dialog_panel_body.stylebox" id="1_156l5"]
+[ext_resource type="Script" uid="uid://cwgrdpqsfrrso" path="res://scripts/BaseDialog.gd" id="1_cw83b"]
+[ext_resource type="StyleBox" uid="uid://bpoipta04kn26" path="res://assets/styles/dialog/dialog_panel_head.stylebox" id="2_cw83b"]
+[ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog/dialog_font_title.res" id="3_ysc8j"]
+[ext_resource type="Texture2D" uid="uid://bpkubgvvqftqw" path="res://assets/kenney/ui-pack/png/grey_crossWhite.png" id="4_6ofc6"]
+[ext_resource type="Texture2D" uid="uid://dohmkqjl8x4yn" path="res://assets/kenney/ui-pack/png/grey_crossGrey.png" id="5_p4k0i"]
+[ext_resource type="LabelSettings" uid="uid://c5m2syvcfelod" path="res://assets/styles/dialog/dialog_font_body_medium.res" id="6_3kwh8"]
+[ext_resource type="LabelSettings" uid="uid://b0h037oplcutf" path="res://assets/styles/dialog/dialog_font_body_medium_blue.tres" id="7_h4iqu"]
+[ext_resource type="StyleBox" uid="uid://bk6s0f6qblspg" path="res://assets/styles/dialog/dialog_panel_anotherpanel.stylebox" id="7_ysc8j"]
+[ext_resource type="LabelSettings" uid="uid://defv3tobpyrn5" path="res://assets/styles/dialog/dialog_font_body_small.res" id="8_w0j6l"]
+[ext_resource type="AnimationLibrary" uid="uid://kods3hkqqgcd" path="res://ui_anims.res" id="11_6ofc6"]
+
+[node name="BaseDialogWithLogo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cw83b")
+
+[node name="Dialog" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -254.5
+offset_right = 400.0
+offset_bottom = 237.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Head" type="PanelContainer" parent="Dialog"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_cw83b")
+
+[node name="Title" type="Label" parent="Dialog/Head"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Title"
+label_settings = ExtResource("3_ysc8j")
+
+[node name="Close" type="TextureButton" parent="Dialog/Head"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("4_6ofc6")
+texture_pressed = ExtResource("4_6ofc6")
+texture_hover = ExtResource("5_p4k0i")
+stretch_mode = 5
+
+[node name="Body" type="PanelContainer" parent="Dialog"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_156l5")
+
+[node name="Content" type="VBoxContainer" parent="Dialog/Body"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MainInfo" type="HBoxContainer" parent="Dialog/Body/Content"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="PanelImage" type="PanelContainer" parent="Dialog/Body/Content/MainInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("7_ysc8j")
+
+[node name="Logo" type="TextureButton" parent="Dialog/Body/Content/MainInfo/PanelImage"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+stretch_mode = 0
+
+[node name="Info" type="VBoxContainer" parent="Dialog/Body/Content/MainInfo"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Position" type="VBoxContainer" parent="Dialog/Body/Content/MainInfo/Info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Position"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Position"
+label_settings = ExtResource("6_3kwh8")
+
+[node name="Value" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Position"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Position"
+label_settings = ExtResource("7_h4iqu")
+
+[node name="Period" type="VBoxContainer" parent="Dialog/Body/Content/MainInfo/Info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Period"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Period"
+label_settings = ExtResource("6_3kwh8")
+
+[node name="Value" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Period"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Period"
+label_settings = ExtResource("7_h4iqu")
+
+[node name="Description" type="Label" parent="Dialog/Body/Content"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Description"
+label_settings = ExtResource("8_w0j6l")
+autowrap_mode = 2
+
+[node name="Skills" type="HBoxContainer" parent="Dialog/Body/Content"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Dialog/Body/Content/Skills"]
+layout_mode = 2
+text = "Skills: "
+label_settings = ExtResource("6_3kwh8")
+
+[node name="Value" type="Label" parent="Dialog/Body/Content/Skills"]
+layout_mode = 2
+text = "Skills"
+label_settings = ExtResource("7_h4iqu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Dialog/Body")
+libraries = {
+&"ui_anims": ExtResource("11_6ofc6")
+}
+
+[connection signal="pressed" from="Dialog/Head/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Dialog/Body/Content/MainInfo/PanelImage/Logo" to="." method="open_link"]

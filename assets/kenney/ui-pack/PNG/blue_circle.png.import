@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpc3whcrnp4g7"
-path="res://.godot/imported/blue_circle.png-5f0b88fa26db736ca49b60db142e6cef.ctex"
+path="res://.godot/imported/blue_circle.png-045310b88694565d171cf25d880db994.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/ui-pack/PNG/blue_circle.png"
-dest_files=["res://.godot/imported/blue_circle.png-5f0b88fa26db736ca49b60db142e6cef.ctex"]
+source_file="res://assets/kenney/ui-pack/png/blue_circle.png"
+dest_files=["res://.godot/imported/blue_circle.png-045310b88694565d171cf25d880db994.ctex"]
 
 [params]
 

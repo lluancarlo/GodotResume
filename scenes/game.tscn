@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=4 uid="uid://bdpgnc1txjso8"]
+[gd_scene load_steps=165 format=4 uid="uid://bdpgnc1txjso8"]
 
 [ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
 [ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
@@ -49,50 +49,33 @@
 [ext_resource type="PackedScene" uid="uid://c3gqnt4pncokt" path="res://assets/scenes/natures/grass_2.scn" id="45_8rigp"]
 [ext_resource type="PackedScene" uid="uid://bubwk0xndw1c8" path="res://assets/scenes/natures/grass_3.scn" id="46_4acse"]
 [ext_resource type="Script" uid="uid://pdaet0m3dy1w" path="res://scripts/managers/UiManager.gd" id="46_nk40p"]
-[ext_resource type="PackedScene" uid="uid://disu76fpgt3pa" path="res://scenes/dialogs/photo/where_born.tscn" id="47_5vjek"]
+[ext_resource type="PackedScene" uid="uid://disu76fpgt3pa" path="res://scenes/huds/dialogs/with_photo/born.tscn" id="47_5vjek"]
 [ext_resource type="PackedScene" uid="uid://kccn4wtmnqxo" path="res://tools/brush/BrushTree.tscn" id="47_wo0e5"]
 [ext_resource type="PackedScene" uid="uid://d2jsuu3kmmu33" path="res://assets/scenes/natures/tree_palm_tall.scn" id="48_bs7bt"]
-[ext_resource type="PackedScene" uid="uid://bd6hoe1geynij" path="res://scenes/dialogs/photo/where_living.tscn" id="48_ve5t5"]
-[ext_resource type="PackedScene" uid="uid://bdqq5jmdyf4i5" path="res://scenes/dialogs/photo/university.tscn" id="49_dmpl8"]
+[ext_resource type="PackedScene" uid="uid://bd6hoe1geynij" path="res://scenes/huds/dialogs/with_photo/live.tscn" id="48_ve5t5"]
+[ext_resource type="PackedScene" uid="uid://bdqq5jmdyf4i5" path="res://scenes/huds/dialogs/with_photo/university.tscn" id="49_dmpl8"]
 [ext_resource type="PackedScene" uid="uid://ctr6sn6yu67gr" path="res://assets/scenes/natures/canoe.scn" id="50_5vm2s"]
-[ext_resource type="PackedScene" uid="uid://dcdlodypf3vm3" path="res://scenes/dialogs/exp/exp_consinco.tscn" id="50_fls2k"]
+[ext_resource type="PackedScene" uid="uid://dcdlodypf3vm3" path="res://scenes/huds/dialogs/with_logo/consinco.tscn" id="50_fls2k"]
 [ext_resource type="ArrayMesh" uid="uid://fs6ljxxcvkaa" path="res://assets/meshes/sedan.mesh" id="51_adspf"]
-[ext_resource type="PackedScene" uid="uid://c140u5eel72t" path="res://scenes/dialogs/exp/exp_magit.tscn" id="51_sh20g"]
+[ext_resource type="PackedScene" uid="uid://c140u5eel72t" path="res://scenes/huds/dialogs/with_logo/magit.tscn" id="51_sh20g"]
 [ext_resource type="ArrayMesh" uid="uid://cu26ix7o0j0xq" path="res://assets/meshes/wheel.mesh" id="52_uodu7"]
-[ext_resource type="PackedScene" uid="uid://c7oj73ifm34e4" path="res://scenes/dialogs/exp/exp_topgaming.tscn" id="52_w1l6t"]
+[ext_resource type="PackedScene" uid="uid://c7oj73ifm34e4" path="res://scenes/huds/dialogs/with_logo/topgaming.tscn" id="52_w1l6t"]
 [ext_resource type="AudioStream" uid="uid://cp84x63ws4rnt" path="res://audio/engine.wav" id="53_8swy2"]
-[ext_resource type="PackedScene" uid="uid://ct2jpqt7tix5j" path="res://scenes/dialogs/exp/exp_deltaengine.tscn" id="53_uymfx"]
+[ext_resource type="PackedScene" uid="uid://ct2jpqt7tix5j" path="res://scenes/huds/dialogs/with_logo/deltaengine.tscn" id="53_uymfx"]
 [ext_resource type="AudioStream" uid="uid://djduywofbk318" path="res://audio/impact_1.wav" id="54_8eyxk"]
 [ext_resource type="AudioStream" uid="uid://ldcb7fuyl425" path="res://audio/impact_2.wav" id="55_emjfu"]
 [ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="56_au57e"]
-[ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/dialogs/exp/exp_amilon.tscn" id="68_pstgr"]
-[ext_resource type="PackedScene" uid="uid://kxotfw2ywu2c" path="res://scenes/HUDs/ui_debug_mode.tscn" id="69_ja1h7"]
-[ext_resource type="PackedScene" uid="uid://cnakwrmrwsqp4" path="res://scenes/HUDs/ui_text_overlay.tscn" id="70_p4npv"]
-[ext_resource type="PackedScene" uid="uid://bukahr6c8i8nn" path="res://scenes/HUDs/ui_car_infos.tscn" id="71_xjcjm"]
+[ext_resource type="PackedScene" uid="uid://dsculw6uyoscf" path="res://scenes/huds/menus/main.tscn" id="63_3x338"]
+[ext_resource type="PackedScene" uid="uid://jxerk00bt81p" path="res://scenes/huds/menus/options.tscn" id="64_1yg85"]
+[ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/huds/dialogs/with_logo/amilon.tscn" id="68_pstgr"]
+[ext_resource type="PackedScene" uid="uid://kxotfw2ywu2c" path="res://scenes/huds/ui_debug.tscn" id="69_ja1h7"]
+[ext_resource type="PackedScene" uid="uid://cnakwrmrwsqp4" path="res://scenes/huds/ui_text_overlay.tscn" id="70_p4npv"]
+[ext_resource type="PackedScene" uid="uid://bukahr6c8i8nn" path="res://scenes/huds/ui_car_infos.tscn" id="71_xjcjm"]
 [ext_resource type="AudioStream" uid="uid://c83ihvaulblyw" path="res://assets/kenney/interface-sounds/select_005.ogg" id="73_hfuq1"]
 [ext_resource type="AudioStream" uid="uid://dc6f5ovhc0bpy" path="res://assets/kenney/interface-sounds/drop_004.ogg" id="74_vq0br"]
-[ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="75_q7g5h"]
-[ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/panel.stylebox" id="77_a34bd"]
-[ext_resource type="StyleBox" uid="uid://cnidg2mjanu0q" path="res://assets/styles/button_normal.stylebox" id="77_l3c7y"]
-[ext_resource type="StyleBox" uid="uid://cy3uk2xyxrlnx" path="res://assets/styles/button_hover.stylebox" id="78_6c44r"]
-[ext_resource type="StyleBox" uid="uid://bldmdbgu37dyd" path="res://assets/styles/panel_header.stylebox" id="78_cg818"]
 [ext_resource type="PackedScene" uid="uid://dmyhkht6egj43" path="res://assets/scenes/natures/sign.scn" id="78_o0w3k"]
-[ext_resource type="Script" uid="uid://cxoq282awwsdo" path="res://scripts/MenuMain.gd" id="78_o3kw1"]
-[ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog_title_label.res" id="79_o4acj"]
-[ext_resource type="StyleBox" uid="uid://bb56yriex56l4" path="res://assets/styles/button_pressed.stylebox" id="79_ukwlv"]
-[ext_resource type="Texture2D" uid="uid://fkdsuwgj60ag" path="res://assets/img/linkedin-logo.png" id="83_xdvh6"]
-[ext_resource type="Texture2D" uid="uid://d2wfh31bg5rdf" path="res://assets/img/github-logo.png" id="84_owrei"]
-[ext_resource type="Script" uid="uid://q2dfmx3siebt" path="res://scripts/MenuOptions.gd" id="85_4n6f3"]
-[ext_resource type="Texture2D" uid="uid://dsuiu6k1gadw0" path="res://assets/kenney/ui-pack/PNG/grey_arrowUpWhite.png" id="86_345ol"]
-[ext_resource type="LabelSettings" uid="uid://c5m2syvcfelod" path="res://assets/styles/dialog_content_label.res" id="86_fdc3m"]
-[ext_resource type="Texture2D" uid="uid://c0ej6o8464t06" path="res://assets/kenney/ui-pack/PNG/grey_arrowUpGrey.png" id="87_5f1im"]
-[ext_resource type="Texture2D" uid="uid://dpc3whcrnp4g7" path="res://assets/kenney/ui-pack/PNG/blue_circle.png" id="87_t1al2"]
-[ext_resource type="StyleBox" uid="uid://cvwkj7m12y8xd" path="res://assets/styles/slider.stylebox" id="88_ng4s7"]
-[ext_resource type="StyleBox" uid="uid://d3cv32x5hyoou" path="res://assets/styles/slider_selected_area.stylebox" id="89_cc5c1"]
-[ext_resource type="Texture2D" uid="uid://c5bhc6sbpdlfd" path="res://assets/kenney/ui-pack/PNG/blue_boxCheckmark.png" id="92_k8b10"]
-[ext_resource type="AudioStream" uid="uid://ccevkd1encrxm" path="res://assets/kenney/ui-pack/Bonus/switch2.ogg" id="92_wfqfk"]
-[ext_resource type="AudioStream" uid="uid://doyht14ygmpie" path="res://assets/kenney/ui-pack/Bonus/click1.ogg" id="93_ajrje"]
-[ext_resource type="Texture2D" uid="uid://djmjf7xotlk25" path="res://assets/kenney/ui-pack/PNG/grey_box.png" id="93_vjfiu"]
+[ext_resource type="AudioStream" uid="uid://ccevkd1encrxm" path="res://assets/kenney/ui-pack/bonus/switch2.ogg" id="92_wfqfk"]
+[ext_resource type="AudioStream" uid="uid://doyht14ygmpie" path="res://assets/kenney/ui-pack/bonus/click1.ogg" id="93_ajrje"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h7h3w"]
 sky_top_color = Color(0.504927, 0.569293, 0.726509, 1)
@@ -3484,7 +3467,7 @@ transform = Transform3D(-0.796899, 0, -0.604112, 0, 1, 0, 0.604112, 0, -0.796899
 transform = Transform3D(0.604112, 0, -0.796899, 0, 1, 0, 0.796899, 0, 0.604112, -38.8281, -2.56936, -18.5282)
 
 [node name="Player" type="VehicleBody3D" parent="."]
-transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 0, 0.5, -8)
+transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, -0.0460392, 0.487675, -7.94687)
 mass = 50.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.15, 0)
@@ -3570,7 +3553,7 @@ transform = Transform3D(-1, 0, -8.74229e-08, 0, 1, 0, 8.74229e-08, 0, -1, 0, 1, 
 script = ExtResource("1_gptlb")
 min_distance = 2.0
 
-[node name="UiManager" type="Control" parent="."]
+[node name="UiManager" type="Control" parent="." node_paths=PackedStringArray("_player")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -3582,45 +3565,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("46_nk40p")
-
-[node name="Popups" type="Control" parent="UiManager"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="WhereBorn" parent="UiManager/Popups" instance=ExtResource("47_5vjek")]
-layout_mode = 1
-offset_top = -331.0
-offset_bottom = 331.0
-
-[node name="WhereLiving" parent="UiManager/Popups" instance=ExtResource("48_ve5t5")]
-layout_mode = 1
-
-[node name="University" parent="UiManager/Popups" instance=ExtResource("49_dmpl8")]
-layout_mode = 1
-
-[node name="ExpConsinco" parent="UiManager/Popups" instance=ExtResource("50_fls2k")]
-layout_mode = 1
-
-[node name="ExpMagit" parent="UiManager/Popups" instance=ExtResource("51_sh20g")]
-layout_mode = 1
-offset_top = -327.5
-offset_bottom = 327.5
-
-[node name="ExpTopGaming" parent="UiManager/Popups" instance=ExtResource("52_w1l6t")]
-layout_mode = 1
-offset_top = -298.5
-offset_bottom = 298.5
-
-[node name="ExpDeltaEngine" parent="UiManager/Popups" instance=ExtResource("53_uymfx")]
-layout_mode = 1
-
-[node name="ExpAmilon" parent="UiManager/Popups" instance=ExtResource("68_pstgr")]
-layout_mode = 1
+_player = NodePath("../Player")
 
 [node name="HUD" type="Control" parent="UiManager"]
 layout_mode = 1
@@ -3631,8 +3576,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="UIDebugMode" parent="UiManager/HUD" instance=ExtResource("69_ja1h7")]
-visible = false
+[node name="UIDebug" parent="UiManager/HUD" instance=ExtResource("69_ja1h7")]
 layout_mode = 1
 
 [node name="UITextOverlay" parent="UiManager/HUD" instance=ExtResource("70_p4npv")]
@@ -3650,271 +3594,44 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Main" type="PanelContainer" parent="UiManager/Menus" node_paths=PackedStringArray("options_menu", "_audio_click")]
+[node name="Main" parent="UiManager/Menus" instance=ExtResource("63_3x338")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -321.0
-offset_top = -374.0
-offset_right = 322.0
-offset_bottom = 255.0
+
+[node name="Options" parent="UiManager/Menus" instance=ExtResource("64_1yg85")]
+layout_mode = 1
+
+[node name="Popups" type="Control" parent="UiManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("77_a34bd")
-script = ExtResource("78_o3kw1")
-linkedin_link = "https://linkedin.com/in/luancarlosouza/"
-github_link = "https://github.com/lluancarlo/"
-options_menu = NodePath("../Options")
-_audio_click = NodePath("../../AudioClick")
+mouse_filter = 2
 
-[node name="VBox" type="VBoxContainer" parent="UiManager/Menus/Main"]
-layout_mode = 2
-theme_override_constants/separation = 60
-
-[node name="Header" type="PanelContainer" parent="UiManager/Menus/Main/VBox"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_styles/panel = ExtResource("78_cg818")
-
-[node name="Title" type="Label" parent="UiManager/Menus/Main/VBox/Header"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "MENU"
-label_settings = ExtResource("79_o4acj")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Buttons" type="VBoxContainer" parent="UiManager/Menus/Main/VBox"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 50
-
-[node name="Resume" type="Button" parent="UiManager/Menus/Main/VBox/Buttons"]
-custom_minimum_size = Vector2(400, 75)
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-text = "Resume"
-
-[node name="Reset" type="Button" parent="UiManager/Menus/Main/VBox/Buttons"]
-custom_minimum_size = Vector2(400, 75)
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-text = "I am stuck!"
-
-[node name="Options" type="Button" parent="UiManager/Menus/Main/VBox/Buttons"]
-custom_minimum_size = Vector2(400, 75)
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-text = "Options"
-
-[node name="Social" type="HBoxContainer" parent="UiManager/Menus/Main/VBox/Buttons"]
-layout_mode = 2
-theme_override_constants/separation = 30
-alignment = 1
-
-[node name="LinkedIn" type="Button" parent="UiManager/Menus/Main/VBox/Buttons/Social"]
-custom_minimum_size = Vector2(100, 75)
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-text = "
-"
-icon = ExtResource("83_xdvh6")
-icon_alignment = 1
-expand_icon = true
-
-[node name="GitHub" type="Button" parent="UiManager/Menus/Main/VBox/Buttons/Social"]
-custom_minimum_size = Vector2(100, 75)
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-text = "
-"
-icon = ExtResource("84_owrei")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Options" type="PanelContainer" parent="UiManager/Menus" node_paths=PackedStringArray("_audio_switch", "_audio_click", "menu_options_graphics_low_btn", "menu_options_graphics_medium_btn", "menu_options_graphics_high_btn")]
+[node name="Born" parent="UiManager/Popups" instance=ExtResource("47_5vjek")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -321.5
-offset_top = -227.0
-offset_right = 321.5
-offset_bottom = 227.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("77_a34bd")
-script = ExtResource("85_4n6f3")
-_audio_switch = NodePath("../../AudioSwitch")
-_audio_click = NodePath("../../AudioClick")
-menu_options_graphics_low_btn = NodePath("VBox/Graphics/General/Low")
-menu_options_graphics_medium_btn = NodePath("VBox/Graphics/General/Medium")
-menu_options_graphics_high_btn = NodePath("VBox/Graphics/General/High")
 
-[node name="VBox" type="VBoxContainer" parent="UiManager/Menus/Options"]
-layout_mode = 2
-theme_override_constants/separation = 60
+[node name="Live" parent="UiManager/Popups" instance=ExtResource("48_ve5t5")]
+layout_mode = 1
 
-[node name="Header" type="PanelContainer" parent="UiManager/Menus/Options/VBox"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_styles/panel = ExtResource("78_cg818")
+[node name="University" parent="UiManager/Popups" instance=ExtResource("49_dmpl8")]
+layout_mode = 1
 
-[node name="Close" type="TextureButton" parent="UiManager/Menus/Options/VBox/Header"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 0
-texture_normal = ExtResource("86_345ol")
-texture_pressed = ExtResource("86_345ol")
-texture_hover = ExtResource("87_5f1im")
-stretch_mode = 5
+[node name="Amilon" parent="UiManager/Popups" instance=ExtResource("68_pstgr")]
+layout_mode = 1
 
-[node name="Title" type="Label" parent="UiManager/Menus/Options/VBox/Header"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "OPTIONS"
-label_settings = ExtResource("79_o4acj")
+[node name="Consinco" parent="UiManager/Popups" instance=ExtResource("50_fls2k")]
+layout_mode = 1
 
-[node name="Audio" type="VBoxContainer" parent="UiManager/Menus/Options/VBox"]
-layout_mode = 2
+[node name="DeltaEngine" parent="UiManager/Popups" instance=ExtResource("53_uymfx")]
+layout_mode = 1
 
-[node name="Label" type="Label" parent="UiManager/Menus/Options/VBox/Audio"]
-layout_mode = 2
-text = "Audio"
-label_settings = ExtResource("79_o4acj")
+[node name="Magit" parent="UiManager/Popups" instance=ExtResource("51_sh20g")]
+layout_mode = 1
 
-[node name="General" type="HBoxContainer" parent="UiManager/Menus/Options/VBox/Audio"]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="UiManager/Menus/Options/VBox/Audio/General"]
-layout_mode = 2
-text = "General"
-label_settings = ExtResource("86_fdc3m")
-
-[node name="HSlider" type="HSlider" parent="UiManager/Menus/Options/VBox/Audio/General"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_icons/grabber = ExtResource("87_t1al2")
-theme_override_icons/grabber_highlight = ExtResource("87_t1al2")
-theme_override_styles/slider = ExtResource("88_ng4s7")
-theme_override_styles/grabber_area = ExtResource("89_cc5c1")
-theme_override_styles/grabber_area_highlight = ExtResource("89_cc5c1")
-value = 75.0
-
-[node name="Graphics" type="VBoxContainer" parent="UiManager/Menus/Options/VBox"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="UiManager/Menus/Options/VBox/Graphics"]
-layout_mode = 2
-text = "Graphics"
-label_settings = ExtResource("79_o4acj")
-
-[node name="General" type="HBoxContainer" parent="UiManager/Menus/Options/VBox/Graphics"]
-layout_mode = 2
-theme_override_constants/separation = 50
-alignment = 1
-
-[node name="Low" type="Button" parent="UiManager/Menus/Options/VBox/Graphics/General"]
-custom_minimum_size = Vector2(150, 30)
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-toggle_mode = true
-text = "LOW"
-
-[node name="Medium" type="Button" parent="UiManager/Menus/Options/VBox/Graphics/General"]
-custom_minimum_size = Vector2(150, 30)
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-toggle_mode = true
-button_pressed = true
-text = "MEDIUM"
-
-[node name="High" type="Button" parent="UiManager/Menus/Options/VBox/Graphics/General"]
-custom_minimum_size = Vector2(150, 30)
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("75_q7g5h")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/hover = ExtResource("78_6c44r")
-theme_override_styles/pressed = ExtResource("79_ukwlv")
-theme_override_styles/normal = ExtResource("77_l3c7y")
-toggle_mode = true
-text = "HIGH"
-
-[node name="ShowFps" type="HBoxContainer" parent="UiManager/Menus/Options/VBox/Graphics"]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="UiManager/Menus/Options/VBox/Graphics/ShowFps"]
-layout_mode = 2
-text = "Show Fps"
-label_settings = ExtResource("86_fdc3m")
-
-[node name="CheckButton" type="CheckButton" parent="UiManager/Menus/Options/VBox/Graphics/ShowFps"]
-layout_mode = 2
-theme_override_icons/checked = ExtResource("92_k8b10")
-theme_override_icons/unchecked = ExtResource("93_vjfiu")
+[node name="TopGaming" parent="UiManager/Popups" instance=ExtResource("52_w1l6t")]
+layout_mode = 1
 
 [node name="AudioOpen" type="AudioStreamPlayer" parent="UiManager"]
 stream = ExtResource("73_hfuq1")
@@ -3934,28 +3651,18 @@ stream = ExtResource("93_ajrje")
 [connection signal="body_shape_exited" from="City/Experiences/Area3D" to="City/Experiences" method="_on_area_3d_body_shape_exited"]
 [connection signal="gear_changed" from="Player" to="UiManager" method="update_gear"]
 [connection signal="speed_changed" from="Player" to="UiManager" method="update_speed"]
-[connection signal="menu_pressed" from="UiManager" to="UiManager/Menus/Main" method="_on_menu_pressed"]
-[connection signal="menu_pressed" from="UiManager" to="UiManager/Menus/Options" method="_on_menu_pressed"]
-[connection signal="closed" from="UiManager/Popups/WhereBorn" to="UiManager" method="_on_popup_closed"]
-[connection signal="closed" from="UiManager/Popups/WhereLiving" to="UiManager" method="_on_popup_closed"]
-[connection signal="closed" from="UiManager/Popups/University" to="UiManager" method="_on_popup_closed"]
-[connection signal="closed" from="UiManager/Popups/ExpConsinco" to="UiManager" method="_on_popup_closed"]
-[connection signal="closed" from="UiManager/Popups/ExpMagit" to="UiManager" method="_on_popup_closed"]
-[connection signal="closed" from="UiManager/Popups/ExpTopGaming" to="UiManager" method="_on_popup_closed"]
-[connection signal="closed" from="UiManager/Popups/ExpDeltaEngine" to="UiManager" method="_on_popup_closed"]
-[connection signal="closed" from="UiManager/Popups/ExpAmilon" to="UiManager" method="_on_popup_closed"]
-[connection signal="options_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_main_options_pressed"]
-[connection signal="reset_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_main_reset_pressed"]
-[connection signal="pressed" from="UiManager/Menus/Main/VBox/Buttons/Resume" to="UiManager/Menus/Main" method="_on_resume_pressed"]
-[connection signal="pressed" from="UiManager/Menus/Main/VBox/Buttons/Reset" to="UiManager/Menus/Main" method="_on_reset_pressed"]
-[connection signal="pressed" from="UiManager/Menus/Main/VBox/Buttons/Options" to="UiManager/Menus/Main" method="_on_options_pressed"]
-[connection signal="pressed" from="UiManager/Menus/Main/VBox/Buttons/Social/LinkedIn" to="UiManager/Menus/Main" method="_on_linked_in_pressed"]
-[connection signal="pressed" from="UiManager/Menus/Main/VBox/Buttons/Social/GitHub" to="UiManager/Menus/Main" method="_on_git_hub_pressed"]
-[connection signal="close_pressed" from="UiManager/Menus/Options" to="UiManager" method="_on_options_close_pressed"]
-[connection signal="show_fps" from="UiManager/Menus/Options" to="UiManager/HUD" method="_on_options_show_fps"]
-[connection signal="pressed" from="UiManager/Menus/Options/VBox/Header/Close" to="UiManager/Menus/Options" method="_on_close_pressed"]
-[connection signal="value_changed" from="UiManager/Menus/Options/VBox/Audio/General/HSlider" to="UiManager/Menus/Options" method="set_audios"]
-[connection signal="toggled" from="UiManager/Menus/Options/VBox/Graphics/General/Low" to="UiManager/Menus/Options" method="on_graphics_selected" binds= [0]]
-[connection signal="toggled" from="UiManager/Menus/Options/VBox/Graphics/General/Medium" to="UiManager/Menus/Options" method="on_graphics_selected" binds= [1]]
-[connection signal="toggled" from="UiManager/Menus/Options/VBox/Graphics/General/High" to="UiManager/Menus/Options" method="on_graphics_selected" binds= [2]]
-[connection signal="toggled" from="UiManager/Menus/Options/VBox/Graphics/ShowFps/CheckButton" to="UiManager/Menus/Options" method="_on_fps_toggle_pressed"]
+[connection signal="click" from="UiManager/Menus/Main" to="UiManager" method="_on_ui_click"]
+[connection signal="options_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_menu_main_options_pressed"]
+[connection signal="restart_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_menu_main_restart_pressed"]
+[connection signal="resume_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_menu_main_resume_pressed"]
+[connection signal="click" from="UiManager/Menus/Options" to="UiManager" method="_on_ui_click"]
+[connection signal="close_pressed" from="UiManager/Menus/Options" to="UiManager" method="_on_menu_options_close_pressed"]
+[connection signal="show_fps" from="UiManager/Menus/Options" to="UiManager" method="_on_menu_options_show_fps"]
+[connection signal="closed" from="UiManager/Popups/Born" to="UiManager" method="close_current_ui"]
+[connection signal="closed" from="UiManager/Popups/Live" to="UiManager" method="close_current_ui"]
+[connection signal="closed" from="UiManager/Popups/University" to="UiManager" method="close_current_ui"]
+[connection signal="closed" from="UiManager/Popups/Amilon" to="UiManager" method="close_current_ui"]
+[connection signal="closed" from="UiManager/Popups/Consinco" to="UiManager" method="close_current_ui"]
+[connection signal="closed" from="UiManager/Popups/DeltaEngine" to="UiManager" method="close_current_ui"]
+[connection signal="closed" from="UiManager/Popups/Magit" to="UiManager" method="close_current_ui"]
+[connection signal="closed" from="UiManager/Popups/TopGaming" to="UiManager" method="close_current_ui"]

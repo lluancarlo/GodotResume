@@ -1,13 +1,24 @@
-extends PanelContainer
+extends Control
 class_name MenuOption
 
 
+# Signals
+signal click()
 signal show_fps(show: bool)
 signal close_pressed()
+
+
+# Enums
 enum Config { LOW, MEDIUM, HIGH }
-@export_category(&"Audio")
-@export var _audio_switch : AudioStreamPlayer
-@export var _audio_click : AudioStreamPlayer
+
+
+# NODES
+#== Buttons
+@onready var menu_options_graphics_low_btn : TextureButton = $Dialog/Body/Content/Graphics/Content/General/Buttons/Low
+@onready var menu_options_graphics_medium_btn : TextureButton = $Dialog/Body/Content/Graphics/Content/General/Buttons/Medium
+@onready var menu_options_graphics_high_btn : TextureButton = $Dialog/Body/Content/Graphics/Content/General/Buttons/High
+
+# Export
 @export_category(&"Game Configs")
 @export_subgroup(&"Low")
 @export var low_vibilitity_range = 25
@@ -18,16 +29,13 @@ enum Config { LOW, MEDIUM, HIGH }
 @export_subgroup(&"High")
 @export var high_vibilitity_range = 0
 @export var high_shadow_distance = 60
-@export_category(&"Node Paths")
-@export var menu_options_graphics_low_btn : Button
-@export var menu_options_graphics_medium_btn : Button
-@export var menu_options_graphics_high_btn : Button
 
-var current_config := Config.MEDIUM
+var current_config : Config
 
 
 func _ready() -> void:
-	hide()
+	set_buttons_visual(Config.MEDIUM)
+	set_configs(Config.MEDIUM)
 
 
 func _on_menu_pressed() -> void:
@@ -35,8 +43,9 @@ func _on_menu_pressed() -> void:
 		_on_close_pressed()
 
 
-func on_graphics_selected(_selected: bool, config: Config) -> void:
-	_audio_switch.play()
+func quality_selected(config: Config) -> void:
+	click.emit()
+
 	if (not menu_options_graphics_low_btn.button_pressed and
 		not menu_options_graphics_medium_btn.button_pressed and
 		not menu_options_graphics_high_btn.button_pressed):
@@ -48,20 +57,46 @@ func on_graphics_selected(_selected: bool, config: Config) -> void:
 			menu_options_graphics_high_btn.set_pressed_no_signal(true)
 		return
 
+	set_buttons_visual(config)
+	set_configs(config)
+
+
+func _on_low_toggled(_toggled_on: bool) -> void:
+	quality_selected(Config.LOW)
+
+
+func _on_medium_toggled(_toggled_on: bool) -> void:
+	quality_selected(Config.MEDIUM)
+
+
+func _on_high_toggled(_toggled_on: bool) -> void:
+	quality_selected(Config.HIGH)
+
+
+func set_buttons_visual(config: Config) -> void:
+	var dark_modulate = Color(0.5, 0.5, 0.5)
+	var default_modulate = Color(1, 1, 1)
 	if config == Config.LOW:
+		menu_options_graphics_low_btn.modulate = default_modulate
 		menu_options_graphics_medium_btn.set_pressed_no_signal(false)
+		menu_options_graphics_medium_btn.modulate = dark_modulate
 		menu_options_graphics_high_btn.set_pressed_no_signal(false)
+		menu_options_graphics_high_btn.modulate = dark_modulate
 	elif config == Config.MEDIUM:
+		menu_options_graphics_medium_btn.modulate = default_modulate
 		menu_options_graphics_low_btn.set_pressed_no_signal(false)
+		menu_options_graphics_low_btn.modulate = dark_modulate
 		menu_options_graphics_high_btn.set_pressed_no_signal(false)
+		menu_options_graphics_high_btn.modulate = dark_modulate
 	else:
+		menu_options_graphics_high_btn.modulate = default_modulate
 		menu_options_graphics_low_btn.set_pressed_no_signal(false)
+		menu_options_graphics_low_btn.modulate = dark_modulate
 		menu_options_graphics_medium_btn.set_pressed_no_signal(false)
+		menu_options_graphics_medium_btn.modulate = dark_modulate
 
-	set_all_configs(config)
 
-
-func set_all_configs(config: Config) -> void:
+func set_configs(config: Config) -> void:
 	current_config = config
 	call_in_all_children(get_tree().current_scene, set_config)
 	var sun = find_node(get_tree().current_scene, DirectionalLight3D) as DirectionalLight3D
@@ -69,7 +104,7 @@ func set_all_configs(config: Config) -> void:
 	sun.directional_shadow_max_distance = get_shadow_distance(config)
 
 
-func set_audios(volume: float) -> void:
+func set_global_volume(volume: float) -> void:
 	AudioServer.set_bus_volume_db(0, lerp(-30, 10, volume / 100))
 
 
@@ -119,10 +154,10 @@ func get_shadow_distance(config: Config) -> int:
 
 
 func _on_fps_toggle_pressed(toggled_on: bool) -> void:
-	_audio_switch.play()
+	click.emit()
 	show_fps.emit(toggled_on)
 
 
 func _on_close_pressed() -> void:
-	_audio_click.play()
+	click.emit()
 	close_pressed.emit()
