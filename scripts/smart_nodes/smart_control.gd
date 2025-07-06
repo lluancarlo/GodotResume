@@ -13,7 +13,7 @@ func _ready() -> void:
 	assert(_desktop != null, "Cannot find _desktop node on the extended class !")
 	assert(_mobile != null, "Cannot find _mobile node on the extended class !")
 
-	isMobile = true#OS.has_feature("web_android") or OS.has_feature("web_ios")
+	isMobile = OS.has_feature("web_android") or OS.has_feature("web_ios")
 	if isMobile:
 		_mobile.visible = true
 		_desktop.queue_free()
