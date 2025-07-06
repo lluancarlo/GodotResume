@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsau8jsvplp5v"]
+
+[ext_resource type="Script" uid="uid://btwhkog4ae0xl" path="res://scripts/ui/mobile_inputs.gd" id="1_5g5hq"]
+[ext_resource type="Texture2D" uid="uid://bcvobonj3xrw2" path="res://assets/kenney/ui-pack/png/arrow_basic_w.png" id="1_5qv2e"]
+[ext_resource type="Texture2D" uid="uid://b0whcxdl8db0d" path="res://assets/kenney/ui-pack/png/arrow_basic_w_pressed.png" id="2_3fuoj"]
+
+[node name="MobileInputs" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5g5hq")
+
+[node name="Direction" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -150.0
+offset_right = 350.0
+offset_bottom = -50.0
+grow_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Left" type="TextureButton" parent="Direction"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_5qv2e")
+texture_pressed = ExtResource("2_3fuoj")
+stretch_mode = 0
+
+[node name="Right" type="TextureButton" parent="Direction"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_5qv2e")
+texture_pressed = ExtResource("2_3fuoj")
+stretch_mode = 0
+flip_h = true
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -551.0
+offset_top = -150.0
+offset_right = -51.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Gas" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "GAS"
+
+[node name="Break" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "BREAK"
+
+[node name="Interact" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "INTERACT"
+
+[connection signal="button_down" from="Direction/Left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="Direction/Left" to="." method="_on_left_button_up"]
+[connection signal="button_down" from="Direction/Right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="Direction/Right" to="." method="_on_right_button_up"]
+[connection signal="button_down" from="Buttons/Gas" to="." method="_on_gas_button_down"]
+[connection signal="button_up" from="Buttons/Gas" to="." method="_on_gas_button_up"]
+[connection signal="button_down" from="Buttons/Break" to="." method="_on_break_button_down"]
+[connection signal="button_up" from="Buttons/Break" to="." method="_on_break_button_up"]

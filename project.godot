@@ -18,8 +18,8 @@ config/icon="res://project-icon.png"
 
 [autoload]
 
-PlayerInput="*res://scripts/globals/PlayerInput.gd"
-GameData="*res://scripts/globals/GameData.gd"
+PlayerInput="*res://scripts/globals/player_input.gd"
+GameData="*res://scripts/globals/game_data.gd"
 
 [display]
 

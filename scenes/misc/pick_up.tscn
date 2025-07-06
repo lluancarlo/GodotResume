@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhxcynap6n88l"]
 
-[ext_resource type="Script" uid="uid://c4obk2ean1ecj" path="res://scripts/PickUp.gd" id="1_ul7e6"]
+[ext_resource type="Script" uid="uid://c4obk2ean1ecj" path="res://scripts/gameplay/pick_up.gd" id="1_ul7e6"]
 [ext_resource type="QuadMesh" uid="uid://b028udy8kuuja" path="res://assets/meshes/pick_up.tres" id="2_6msgh"]
 [ext_resource type="FontFile" uid="uid://gqqdohjg3y7j" path="res://assets/fonts/Montreal-Regular.ttf" id="3_gruea"]
 [ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="4_1os0l"]

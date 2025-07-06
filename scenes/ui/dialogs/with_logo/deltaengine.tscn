@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct2jpqt7tix5j"]
+
+[ext_resource type="PackedScene" uid="uid://cl5cbv0pf7v4m" path="res://scenes/ui/dialogs/with_logo/base_dialog_with_logo.tscn" id="1_o56q6"]
+[ext_resource type="Texture2D" uid="uid://c1ax3xwrvp5qs" path="res://assets/img/deltaengine-logo.png" id="2_i56nx"]
+
+[node name="DeltaEngine" instance=ExtResource("1_o56q6")]
+link = "https://deltaengine.net/"
+
+[node name="Title" parent="Dialog/Head" index="0"]
+text = "Delta Engine GmbH"
+
+[node name="Logo" parent="Dialog/Body/Content/MainInfo/PanelImage" index="0"]
+texture_normal = ExtResource("2_i56nx")
+
+[node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Position" index="1"]
+text = "Game Developer"
+
+[node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Period" index="1"]
+text = "Nov 2023 - Apr 2024"
+
+[node name="Description" parent="Dialog/Body/Content" index="1"]
+text = "Game development using in-house engine called Delta Engine. I've worked in RTS game for PC and Mobile, deciding about gameplay and implementing mechanics."
+
+[node name="Value" parent="Dialog/Body/Content/Skills" index="1"]
+text = "C#, .Net, Unit Testing, Game Design"
