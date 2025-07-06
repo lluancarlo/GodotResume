@@ -74,7 +74,7 @@ func get_rpm() -> float:
 	return (_wheel_fl.get_rpm() + _wheel_fr.get_rpm()) / 2.0
 
 
-func set_break_light(on: bool) -> void:
+func set_break_light(_on: bool) -> void:
 	pass #TODO
 
 

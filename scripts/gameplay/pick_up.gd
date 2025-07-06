@@ -40,7 +40,7 @@ func _on_area_3d_body_shape_entered(_br: RID, body: Node3D, _bsi: int, _lsi: int
 		_audio_effect.play()
 		_label_interaction.visible = true
 		player_nearby = true
-		GameData.on_popup_id = popup_id
+		GameData.set_popup_id(popup_id)
 
 
 func _on_area_3d_body_shape_exited(_br: RID, body: Node3D, _bsi: int, _lsi: int) -> void:
@@ -48,4 +48,4 @@ func _on_area_3d_body_shape_exited(_br: RID, body: Node3D, _bsi: int, _lsi: int)
 		_animation.play("enter")
 		_label_interaction.visible = false
 		player_nearby = false
-		GameData.on_popup_id = 0
+		GameData.set_popup_id(0)

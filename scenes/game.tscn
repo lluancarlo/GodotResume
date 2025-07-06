@@ -3639,15 +3639,19 @@ layout_mode = 1
 
 [node name="AudioOpen" type="AudioStreamPlayer" parent="UiManager"]
 stream = ExtResource("73_hfuq1")
+volume_db = -10.0
 
 [node name="AudioClose" type="AudioStreamPlayer" parent="UiManager"]
 stream = ExtResource("74_vq0br")
+volume_db = -10.0
 
 [node name="AudioSwitch" type="AudioStreamPlayer" parent="UiManager"]
 stream = ExtResource("92_wfqfk")
+volume_db = -10.0
 
 [node name="AudioClick" type="AudioStreamPlayer" parent="UiManager"]
 stream = ExtResource("93_ajrje")
+volume_db = -10.0
 
 [connection signal="body_shape_entered" from="City/Personal/Area3D" to="City/Personal" method="_on_area_3d_body_shape_entered"]
 [connection signal="body_shape_exited" from="City/Personal/Area3D" to="City/Personal" method="_on_area_3d_body_shape_exited"]

@@ -4,8 +4,6 @@ class_name BaseDialog
 signal closed()
 
 @export var link : String
-@onready var _anim : AnimationPlayer = $AnimationPlayer
-@onready var _close_button : TextureButton = $Dialog/Head/Close
 
 var anim_duration : float = 0.2
 

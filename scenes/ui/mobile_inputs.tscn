@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsau8jsvplp5v"]
+[gd_scene load_steps=8 format=3 uid="uid://dsau8jsvplp5v"]
 
 [ext_resource type="Script" uid="uid://btwhkog4ae0xl" path="res://scripts/ui/mobile_inputs.gd" id="1_5g5hq"]
-[ext_resource type="Texture2D" uid="uid://bcvobonj3xrw2" path="res://assets/kenney/ui-pack/png/arrow_basic_w.png" id="1_5qv2e"]
-[ext_resource type="Texture2D" uid="uid://b0whcxdl8db0d" path="res://assets/kenney/ui-pack/png/arrow_basic_w_pressed.png" id="2_3fuoj"]
+[ext_resource type="Texture2D" uid="uid://bggehqtmrsjj0" path="res://assets/kenney/ui-pack/png/shadedDark24.png" id="2_c8org"]
+[ext_resource type="Texture2D" uid="uid://boq1vvi0esekw" path="res://assets/kenney/ui-pack/png/shadedDark25.png" id="3_87nie"]
+[ext_resource type="Texture2D" uid="uid://ckx4fureci1sq" path="res://assets/kenney/ui-pack/png/shadedDark26.png" id="4_3l8us"]
+[ext_resource type="Texture2D" uid="uid://cdxetsnrbt8eg" path="res://assets/kenney/ui-pack/png/shadedDark27.png" id="5_62lbf"]
+[ext_resource type="Texture2D" uid="uid://dr566meg7it4m" path="res://assets/kenney/ui-pack/png/shadedDark21.png" id="7_62lbf"]
+[ext_resource type="Texture2D" uid="uid://dms8b3bfj47oc" path="res://assets/kenney/ui-pack/png/shadedDark33.png" id="7_qaau4"]
 
 [node name="MobileInputs" type="Control"]
 layout_mode = 3
@@ -23,62 +27,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Direction" type="HBoxContainer" parent="Mobile"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = -150.0
-offset_right = 350.0
-offset_bottom = -50.0
-grow_vertical = 0
-theme_override_constants/separation = 100
+[node name="Left" type="TouchScreenButton" parent="Mobile"]
+position = Vector2(30, 570)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("2_c8org")
+action = "left"
 
-[node name="Left" type="TextureButton" parent="Mobile/Direction"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture_normal = ExtResource("1_5qv2e")
-texture_pressed = ExtResource("2_3fuoj")
-stretch_mode = 0
+[node name="Right" type="TouchScreenButton" parent="Mobile"]
+position = Vector2(200, 570)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("3_87nie")
+action = "right"
 
-[node name="Right" type="TextureButton" parent="Mobile/Direction"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture_normal = ExtResource("1_5qv2e")
-texture_pressed = ExtResource("2_3fuoj")
-stretch_mode = 0
-flip_h = true
+[node name="Gas" type="TouchScreenButton" parent="Mobile"]
+position = Vector2(800, 570)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_3l8us")
+action = "forward"
 
-[node name="Buttons" type="HBoxContainer" parent="Mobile"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -551.0
-offset_top = -150.0
-offset_right = -51.0
-offset_bottom = -50.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/separation = 100
+[node name="Back" type="TouchScreenButton" parent="Mobile"]
+position = Vector2(950, 570)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("5_62lbf")
+action = "back"
 
-[node name="Gas" type="Button" parent="Mobile/Buttons"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "GAS"
+[node name="Menu" type="TouchScreenButton" parent="Mobile"]
+position = Vector2(1150, 580)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_qaau4")
+action = "menu"
 
-[node name="Break" type="Button" parent="Mobile/Buttons"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "BREAK"
-
-[node name="Interact" type="Button" parent="Mobile/Buttons"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "INTERACT"
+[node name="Interact" type="TouchScreenButton" parent="Mobile"]
+position = Vector2(1150, 450)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_62lbf")
+action = "interactive"
 
 [node name="Desktop" type="Control" parent="."]
 layout_mode = 1
@@ -88,11 +71,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="button_down" from="Mobile/Direction/Left" to="." method="_on_left_button_down"]
-[connection signal="button_up" from="Mobile/Direction/Left" to="." method="_on_left_button_up"]
-[connection signal="button_down" from="Mobile/Direction/Right" to="." method="_on_right_button_down"]
-[connection signal="button_up" from="Mobile/Direction/Right" to="." method="_on_right_button_up"]
-[connection signal="button_down" from="Mobile/Buttons/Gas" to="." method="_on_gas_button_down"]
-[connection signal="button_up" from="Mobile/Buttons/Gas" to="." method="_on_gas_button_up"]
-[connection signal="button_down" from="Mobile/Buttons/Break" to="." method="_on_break_button_down"]
-[connection signal="button_up" from="Mobile/Buttons/Break" to="." method="_on_break_button_up"]
+[connection signal="pressed" from="Mobile/Left" to="." method="_on_left_pressed"]
+[connection signal="released" from="Mobile/Left" to="." method="_on_left_released"]
+[connection signal="pressed" from="Mobile/Right" to="." method="_on_right_pressed"]
+[connection signal="released" from="Mobile/Right" to="." method="_on_right_released"]
+[connection signal="pressed" from="Mobile/Gas" to="." method="_on_gas_pressed"]
+[connection signal="released" from="Mobile/Gas" to="." method="_on_gas_released"]
+[connection signal="pressed" from="Mobile/Back" to="." method="_on_back_pressed"]
+[connection signal="released" from="Mobile/Back" to="." method="_on_back_released"]
+[connection signal="pressed" from="Mobile/Menu" to="." method="_on_menu_pressed"]
+[connection signal="released" from="Mobile/Menu" to="." method="_on_menu_released"]
+[connection signal="pressed" from="Mobile/Interact" to="." method="_on_interact_pressed"]
+[connection signal="released" from="Mobile/Interact" to="." method="_on_interact_released"]

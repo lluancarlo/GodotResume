@@ -38,6 +38,7 @@ var current_ui : Control
 func _ready():
 	PlayerInput.interactive_pressed.connect(_on_interactive_pressed)
 
+	_mobile_inputs.show()
 	_hud_debug.hide()
 	_hud_text_overlay.hide()
 	_hud_car_infos.show()

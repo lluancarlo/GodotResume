@@ -1,5 +1,7 @@
 extends Node
 
+signal popup_id_changed()
+
 enum Popups
 {
 	Warning,
@@ -14,3 +16,7 @@ enum Popups
 }
 
 var on_popup_id : int
+
+func set_popup_id(id: int) -> void:
+	on_popup_id = id
+	popup_id_changed.emit()

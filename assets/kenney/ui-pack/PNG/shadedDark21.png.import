@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0whcxdl8db0d"
-path="res://.godot/imported/arrow_basic_w_pressed.png-98063b4f677be26cd362ff4fd1903733.ctex"
+uid="uid://dr566meg7it4m"
+path="res://.godot/imported/shadedDark21.png-8d4670085dc9746110dbf5517e4bd22a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney/ui-pack/png/arrow_basic_w_pressed.png"
-dest_files=["res://.godot/imported/arrow_basic_w_pressed.png-98063b4f677be26cd362ff4fd1903733.ctex"]
+source_file="res://assets/kenney/ui-pack/png/shadedDark21.png"
+dest_files=["res://.godot/imported/shadedDark21.png-8d4670085dc9746110dbf5517e4bd22a.ctex"]
 
 [params]
 
