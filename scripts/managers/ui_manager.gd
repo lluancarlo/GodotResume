@@ -2,17 +2,17 @@ extends Control
 class_name UiManager
 
 
-# NODES
+#== NODES
 @onready var _mobile_inputs : MobileInputs = $MobileInputs
-#== HUD
+#==== HUD
 @onready var _hud_debug : UIDebug = $HUD/UIDebug
 @onready var _hud_text_overlay : UITextOverlay = $HUD/UITextOverlay
 @onready var _hud_car_infos : UICarInfos = $HUD/UICarInfos
-#== Menus
+#==== Menus
 @onready var _menus : Control = $Menus
 @onready var _menu_main : MenuMain = $Menus/Main
 @onready var _menu_options : MenuOption = $Menus/Options
-#== Popups
+#==== Popups
 @onready var _popups : Control = $Popups
 @onready var _dialog_born : BaseDialog = $Popups/Born
 @onready var _dialog_live : BaseDialog = $Popups/Live
@@ -22,15 +22,15 @@ class_name UiManager
 @onready var _dialog_topgaming : BaseDialog = $Popups/TopGaming
 @onready var _dialog_deltaengine : BaseDialog = $Popups/DeltaEngine
 @onready var _dialog_amilon : BaseDialog = $Popups/Amilon
-#== Sounds
+#==== Sounds
 @onready var _audio_open : AudioStreamPlayer = $AudioOpen
 @onready var _audio_close : AudioStreamPlayer = $AudioClose
 @onready var _audio_click : AudioStreamPlayer = $AudioClick
 
-# Export
+#== Export
 @export var _player : PlayerCar
 
-# Variables
+#== Variables
 var current_dialog : BaseDialog
 var current_ui : Control
 
@@ -73,7 +73,7 @@ func _on_interactive_pressed() -> void:
 		
 
 
-# General
+#== General
 func _on_ui_click() -> void:
 	_audio_click.play()
 
@@ -113,13 +113,15 @@ func close_current_ui(play_sound: bool = true) -> void:
 	_player.can_drive = true
 
 
-# HUD
-#== TextOverlay
-func show_area_overlay(area_name: String) -> void:
-	_hud_text_overlay.show_text(area_name)
+#== HUD
+#==== TextOverlay
+func _on_world_area_3d_entered_area(areaName: String) -> void:
+	_hud_text_overlay.show()
+	await _hud_text_overlay.show_text(areaName)
+	_hud_text_overlay.hide()
 
 
-#== CarInfos
+#==== CarInfos
 func update_gear(gear: int) -> void:
 	_hud_car_infos.update_gear(gear)
 
@@ -128,8 +130,8 @@ func update_speed(speed: int) -> void:
 	_hud_car_infos.update_speed(speed)
 
 
-# Menus
-#== Main
+#== Menus
+#==== Main
 func _on_menu_main_resume_pressed() -> void:
 	close_current_ui(false)
 	get_tree().paused = false
@@ -146,7 +148,7 @@ func _on_menu_main_options_pressed() -> void:
 	open_ui(_menu_options)
 
 
-#== Options
+#==== Options
 func _on_menu_options_close_pressed() -> void:
 	close_current_ui(false)
 	open_ui(_menu_main)
@@ -159,7 +161,7 @@ func _on_menu_options_show_fps(show_fps: bool) -> void:
 		_hud_debug.hide()
 
 
-# Popups
+#== Popups
 func get_popup_by_id(id: int) -> BaseDialog:
 	match(id):
 		GameData.Popups.Born:
