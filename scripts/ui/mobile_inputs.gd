@@ -2,12 +2,12 @@ extends SmartControl
 class_name MobileInputs
 
 
-@onready var _button_left : TouchScreenButton = $Mobile/Left
-@onready var _button_right : TouchScreenButton = $Mobile/Right
-@onready var _button_gas : TouchScreenButton = $Mobile/Gas
-@onready var _button_back : TouchScreenButton = $Mobile/Back
-@onready var _button_menu : TouchScreenButton = $Mobile/Menu
-@onready var _button_interact : TouchScreenButton = $Mobile/Interact
+@onready var _button_left : TouchScreenButton = $Mobile/Directions/Left/Button
+@onready var _button_right : TouchScreenButton = $Mobile/Directions/Right/Right
+@onready var _button_gas : TouchScreenButton = $Mobile/Buttons/Gas/Button
+@onready var _button_back : TouchScreenButton = $Mobile/Buttons/Back/Button
+@onready var _button_menu : TouchScreenButton = $Mobile/Menu/Button
+@onready var _button_interact : TouchScreenButton = $Mobile/Interact/Button
 
 
 func _on_button_visual_change(button: TouchScreenButton, press: bool) -> void:

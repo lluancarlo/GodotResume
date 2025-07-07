@@ -7,8 +7,8 @@ class_name UICarInfos
 @onready var _desktop_gear : Label = $Desktop/VBox/Gear/Value
 @onready var _desktop_speed : Label = $Desktop/VBox/Speed/Value
 #== MOBILE
-@onready var _mobile_gear : Label = $Mobile/Gear/Value
-@onready var _mobile_speed : Label = $Mobile/Speed/Value
+@onready var _mobile_gear : Label = $Mobile/VBox/Gear/Value
+@onready var _mobile_speed : Label = $Mobile/VBox/Speed/Value
 
 
 func update_gear(value: int) -> void:
