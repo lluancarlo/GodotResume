@@ -42,7 +42,7 @@ label_settings = SubResource("LabelSettings_ylj7i")
 
 [node name="Value" type="Label" parent="Desktop/HBox"]
 layout_mode = 2
-text = "96"
+text = "999"
 label_settings = SubResource("LabelSettings_phbwc")
 
 [node name="Mobile" type="Control" parent="."]
@@ -72,5 +72,5 @@ label_settings = SubResource("LabelSettings_ylj7i")
 
 [node name="Value" type="Label" parent="Mobile/HBox"]
 layout_mode = 2
-text = "96"
+text = "999"
 label_settings = SubResource("LabelSettings_phbwc")

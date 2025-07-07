@@ -17,6 +17,6 @@ func _physics_process(_delta: float) -> void:
 func update_fps(value: int) -> void:
 	var text = str(value)
 	if super.get_is_mobile():
-		_desktop_fps_value.text = text
-	else:
 		_mobile_fps_value.text = text
+	else:
+		_desktop_fps_value.text = text
