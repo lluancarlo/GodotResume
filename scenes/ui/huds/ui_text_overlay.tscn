@@ -19,7 +19,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_4k4de")
 
-[node name="Label" type="Label" parent="."]
+[node name="DesktopLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -30,6 +30,23 @@ offset_left = -820.0
 offset_top = -100.0
 offset_right = -20.0
 offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Area name"
+label_settings = SubResource("LabelSettings_fojs1")
+horizontal_alignment = 2
+
+[node name="MobileLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -820.0
+offset_top = -240.0
+offset_right = -20.0
+offset_bottom = -160.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Area name"

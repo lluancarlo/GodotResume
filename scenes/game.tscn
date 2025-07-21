@@ -66,7 +66,7 @@
 [ext_resource type="AudioStream" uid="uid://djduywofbk318" path="res://audio/impact_1.wav" id="54_8eyxk"]
 [ext_resource type="AudioStream" uid="uid://ldcb7fuyl425" path="res://audio/impact_2.wav" id="55_emjfu"]
 [ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="56_au57e"]
-[ext_resource type="PackedScene" uid="uid://dsau8jsvplp5v" path="res://scenes/ui/mobile_inputs.tscn" id="60_1yg85"]
+[ext_resource type="PackedScene" uid="uid://dsau8jsvplp5v" path="res://scenes/ui/mobile/mobile_inputs.tscn" id="60_1yg85"]
 [ext_resource type="PackedScene" uid="uid://dsculw6uyoscf" path="res://scenes/ui/menus/main.tscn" id="63_3x338"]
 [ext_resource type="PackedScene" uid="uid://jxerk00bt81p" path="res://scenes/ui/menus/options.tscn" id="64_1yg85"]
 [ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/ui/dialogs/with_logo/amilon.tscn" id="68_pstgr"]
@@ -1632,7 +1632,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0.0637456, -10.5)
 
 [node name="ConstructionPylon6" parent="World/Props/Center/Roads" instance=ExtResource("12_cov35")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0.0637456, -10.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.4, 0.0637456, -10.5)
 
 [node name="Nature" type="Node3D" parent="World/Props/Center"]
 

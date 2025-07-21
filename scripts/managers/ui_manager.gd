@@ -36,21 +36,21 @@ var current_ui : Control
 
 
 func _ready():
-	PlayerInput.interactive_pressed.connect(_on_interactive_pressed)
+	if GameData.isMobile:
+		_mobile_inputs.show()
+	else:
+		_mobile_inputs.hide()
 
-	_mobile_inputs.show()
+	_hud_car_infos.show()
 	_hud_debug.hide()
 	_hud_text_overlay.hide()
-	_hud_car_infos.show()
-
 	for menu in _menus.get_children():
 		menu.hide()
-
 	for popup in _popups.get_children():
 		popup.hide()
 
 
-func _physics_process(_d: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("menu"):
 		if current_dialog != null:
 			close_current_ui()
@@ -61,22 +61,19 @@ func _physics_process(_d: float) -> void:
 		elif current_ui == null:
 			open_ui(_menu_main)
 			get_tree().paused = true
-
-
-
-func _on_interactive_pressed() -> void:
-	if GameData.on_popup_id != 0:
-		if current_dialog != null:
-			close_current_ui()
-		else:
-			open_dialog(get_popup_by_id(GameData.on_popup_id))
-		
+	
+	if Input.is_action_just_pressed("interactive"):
+		if GameData.on_popup_id != 0:
+			if current_dialog != null:
+				close_current_ui()
+			else:
+				open_dialog(get_popup_by_id(GameData.on_popup_id))
 
 
 #== General
 func _on_ui_click() -> void:
 	_audio_click.play()
-
+	
 
 func open_ui(ui: Control, play_sound: bool = true) -> void:
 	if play_sound:

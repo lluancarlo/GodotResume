@@ -27,15 +27,16 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var current_rpm = get_rpm()
-	var acceleration = PlayerInput.axisY
+	var acceleration = Input.get_axis("back", "forward")
 	
 	# Limit reverse speed
 	if current_rpm < 0 && linear_velocity.length() > 3:
 		acceleration = 0
 
 	if can_drive:
-		var max_steering = 0.8 - (linear_velocity.length() / 30.0)
-		steering = lerp(steering, PlayerInput.axisX * max_steering, 6 * delta)
+		var axis_x =  Input.get_axis("right", "left")
+		var max_steering = 0.8 - (linear_velocity.length() / 30.0)	
+		steering = lerp(steering, axis_x * max_steering, 6 * delta)
 		engine_force = acceleration * max_torque * ( 1 - current_rpm / max_rpm)
 	else:
 		linear_velocity = Vector3.ZERO
