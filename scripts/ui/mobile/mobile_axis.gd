@@ -35,6 +35,7 @@ func _on_back_gui_input(event: InputEvent) -> void:
 		if direction != last_direction:
 			joystick_moved.emit(direction)
 			last_direction = direction
+			visual_change(true)
 	
 	elif event is InputEventScreenTouch and not event.pressed:
 		_knob.position = knob_origin
@@ -43,7 +44,9 @@ func _on_back_gui_input(event: InputEvent) -> void:
 		if direction != last_direction:
 			joystick_moved.emit(direction)
 			last_direction = direction
+			visual_change(false)
 
 
-func quantize(value: Vector2, step: float) -> float:
-	return round(value / step) * step
+func visual_change(pressed: bool) -> void:
+	_back.modulate.a = 0.5 if pressed else 1.0
+	_knob.modulate.a = 0.5 if pressed else 1.0
