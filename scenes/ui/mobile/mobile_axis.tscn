@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://d2wholeswqqp4" path="res://assets/kenney/ui-pack/png/shadedDark01.png" id="2_8gre7"]
 
 [node name="MobileAxis" type="Control"]
-custom_minimum_size = Vector2(160, 160)
+custom_minimum_size = Vector2(225, 225)
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("1_8gre7")
 
 [node name="Back" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(160, 160)
+custom_minimum_size = Vector2(225, 225)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,24 +25,25 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(80, 80)
+pivot_offset = Vector2(112.5, 112.5)
 mouse_default_cursor_shape = 6
 texture = ExtResource("1_a7ia3")
 
 [node name="Knob" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
+offset_left = -62.5
+offset_top = -62.5
+offset_right = 62.5
+offset_bottom = 62.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(50, 50)
+pivot_offset = Vector2(62.5, 62.5)
 mouse_filter = 2
 texture = ExtResource("2_8gre7")
 

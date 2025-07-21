@@ -21,7 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_5g5hq")
 
 [node name="Menu" type="Control" parent="."]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -33,12 +33,12 @@ offset_bottom = 125.0
 grow_horizontal = 0
 
 [node name="Button" type="TouchScreenButton" parent="Menu"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("7_qaau4")
 action = "menu"
 
 [node name="Interact" type="Control" parent="."]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -53,9 +53,9 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Button" type="TouchScreenButton" parent="Interact"]
-position = Vector2(0, 100)
+position = Vector2(0, 150)
 rotation = 4.71239
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("7_62lbf")
 action = "interactive"
 
@@ -104,29 +104,29 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -515.0
-offset_top = -145.0
-offset_right = -250.0
+offset_left = -545.0
+offset_top = -185.0
+offset_right = -200.0
 offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 25
 
 [node name="Gas" type="Control" parent="Buttons"]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 
 [node name="Button" type="TouchScreenButton" parent="Buttons/Gas"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture_normal = ExtResource("4_3l8us")
 action = "forward"
 
 [node name="Back" type="Control" parent="Buttons"]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 
 [node name="Button" type="TouchScreenButton" parent="Buttons/Back"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture_normal = ExtResource("5_62lbf")
 action = "back"
 

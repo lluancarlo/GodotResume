@@ -74,10 +74,12 @@ func _on_interact_released() -> void:
 
 
 func _on_mobile_axis_joystick_moved(direction: Vector2) -> void:
-	if direction == Vector2.ZERO:
+	if direction.x == 0:
 		Input.action_press("right", 0.0)
 		Input.action_press("left", 0.0)
 	elif direction.x > 0:
 		Input.action_press("right", direction.x)
+		Input.action_press("left", 0.0)
 	else:
+		Input.action_press("right", 0.0)
 		Input.action_press("left", -direction.x)
