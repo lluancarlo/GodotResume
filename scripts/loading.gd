@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 
 func transition_to_game() -> void:
 	while load_in_progress:
-		pass
+		await get_tree().process_frame
 	
 	await create_tween().tween_property(_menu_language, "modulate:a", 0.0, 0.5).from(1.0).finished
 	_menu_language.hide()
