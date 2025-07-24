@@ -7,19 +7,19 @@
 link = "https://amilon.com/"
 
 [node name="Title" parent="Dialog/Head" index="0"]
-text = "Amilon"
+text = "POPUP_EXP_AMILON_TITLE"
 
 [node name="Logo" parent="Dialog/Body/Content/MainInfo/PanelImage" index="0"]
 texture_normal = ExtResource("2_nbg61")
 
 [node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Position" index="1"]
-text = "Full-Stack Developer"
+text = "POPUP_EXP_AMILON_POSITION"
 
 [node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Period" index="1"]
-text = "Set 2024 - Present"
+text = "POPUP_EXP_AMILON_PERIOD"
 
 [node name="Description" parent="Dialog/Body/Content" index="1"]
-text = "Full-Stack development with C# and JavaScript, using AspNet Core, Razor Pages and SQL Server."
+text = "POPUP_EXP_AMILON_BODY"
 
-[node name="Value" parent="Dialog/Body/Content/Skills" index="1"]
-text = "C#, .Net, MySql, Javascript, Vue, React JS"
+[node name="Value" parent="Dialog/Body/Content/Skills" index="2"]
+text = "POPUP_EXP_AMILON_SKILLS"

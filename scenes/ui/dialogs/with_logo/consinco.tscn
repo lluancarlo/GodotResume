@@ -9,19 +9,19 @@ offset_bottom = 284.0
 link = "https://consinco.com.br/"
 
 [node name="Title" parent="Dialog/Head" index="0"]
-text = "Consinco By Totvs"
+text = "POPUP_EXP_CONSINCO_TITLE"
 
 [node name="Logo" parent="Dialog/Body/Content/MainInfo/PanelImage" index="0"]
 texture_normal = ExtResource("2_gl8k5")
 
 [node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Position" index="1"]
-text = "Full-Stack Developer"
+text = "POPUP_EXP_CONSINCO_POSITION"
 
 [node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Period" index="1"]
-text = "Apr 2018 - Oct 2020"
+text = "POPUP_EXP_CONSINCO_PERIOD"
 
 [node name="Description" parent="Dialog/Body/Content" index="1"]
-text = "Desktop development with Centura and Oracle DB with SQL, WEB with C# and Javascript, using .NET, API, Angular and Kendo UI, fixing bugs and creating new features in order to promote the efficient development of the system as a whole, validating changes and functionality as well as writing documentation."
+text = "POPUP_EXP_CONSINCO_BODY"
 
-[node name="Value" parent="Dialog/Body/Content/Skills" index="1"]
-text = "C#, .Net, Oracle PL/Sql, Javascript, Angular"
+[node name="Value" parent="Dialog/Body/Content/Skills" index="2"]
+text = "POPUP_EXP_CONSINCO_SKILLS"

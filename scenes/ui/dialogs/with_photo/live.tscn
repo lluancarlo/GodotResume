@@ -6,10 +6,10 @@
 [node name="Live" instance=ExtResource("1_id7v5")]
 
 [node name="Title" parent="Dialog/Head" index="0"]
-text = "Where do I live?"
+text = "POPUP_LIVE_TITLE"
 
 [node name="Image" parent="Dialog/Body/Content/PanelImage" index="0"]
 texture = ExtResource("2_558m3")
 
 [node name="Text" parent="Dialog/Body/Content" index="1"]
-text = "I live in Teramo, a city in Italy. Apart of awesome food and history, the city has nice people, good weather and well located."
+text = "POPUP_LIVE_BODY"

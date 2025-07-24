@@ -92,7 +92,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Position"]
 layout_mode = 2
 size_flags_vertical = 1
-text = "Position"
+text = "POPUP_GENERAL_POSITION"
 label_settings = ExtResource("6_3kwh8")
 
 [node name="Value" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Position"]
@@ -107,7 +107,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Period"]
 layout_mode = 2
 size_flags_vertical = 1
-text = "Period"
+text = "POPUP_GENERAL_PERIOD"
 label_settings = ExtResource("6_3kwh8")
 
 [node name="Value" type="Label" parent="Dialog/Body/Content/MainInfo/Info/Period"]
@@ -129,7 +129,12 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Dialog/Body/Content/Skills"]
 layout_mode = 2
-text = "Skills: "
+text = "POPUP_GENERAL_SKILLS"
+label_settings = ExtResource("6_3kwh8")
+
+[node name="Label2" type="Label" parent="Dialog/Body/Content/Skills"]
+layout_mode = 2
+text = ":"
 label_settings = ExtResource("6_3kwh8")
 
 [node name="Value" type="Label" parent="Dialog/Body/Content/Skills"]

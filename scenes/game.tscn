@@ -1,10 +1,8 @@
-[gd_scene load_steps=167 format=4 uid="uid://bdpgnc1txjso8"]
+[gd_scene load_steps=158 format=4 uid="uid://bdpgnc1txjso8"]
 
 [ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
 [ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
-[ext_resource type="Script" uid="uid://bir66qsg60bsw" path="res://scripts/gameplay/follow_camera.gd" id="1_gptlb"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dri4wbusws3m7" path="res://resources/game.occ" id="1_xjmf5"]
-[ext_resource type="Script" uid="uid://bfjix56whrvap" path="res://scripts/gameplay/player_car.gd" id="2_hp3v1"]
 [ext_resource type="PackedScene" uid="uid://cwk2lgxoq5sg2" path="res://assets/scenes/natures/cliff_half_rock.scn" id="2_n6s6i"]
 [ext_resource type="Script" uid="uid://bffoyil21xlyi" path="res://scripts/managers/world_manager.gd" id="2_s0g06"]
 [ext_resource type="Material" uid="uid://b2e3q04uueo5m" path="res://assets/materials/water.material" id="2_wx30m"]
@@ -56,16 +54,11 @@
 [ext_resource type="PackedScene" uid="uid://bdqq5jmdyf4i5" path="res://scenes/ui/dialogs/with_photo/university.tscn" id="49_dmpl8"]
 [ext_resource type="PackedScene" uid="uid://ctr6sn6yu67gr" path="res://assets/scenes/natures/canoe.scn" id="50_5vm2s"]
 [ext_resource type="PackedScene" uid="uid://dcdlodypf3vm3" path="res://scenes/ui/dialogs/with_logo/consinco.tscn" id="50_fls2k"]
-[ext_resource type="ArrayMesh" uid="uid://fs6ljxxcvkaa" path="res://assets/meshes/sedan.mesh" id="51_adspf"]
 [ext_resource type="Script" uid="uid://dwbbh3rldhfni" path="res://scripts/gameplay/trigger_zone.gd" id="51_s0g06"]
 [ext_resource type="PackedScene" uid="uid://c140u5eel72t" path="res://scenes/ui/dialogs/with_logo/magit.tscn" id="51_sh20g"]
-[ext_resource type="ArrayMesh" uid="uid://cu26ix7o0j0xq" path="res://assets/meshes/wheel.mesh" id="52_uodu7"]
+[ext_resource type="PackedScene" uid="uid://giw4d2ocn1ut" path="res://scenes/player_car.tscn" id="52_o8oq8"]
 [ext_resource type="PackedScene" uid="uid://c7oj73ifm34e4" path="res://scenes/ui/dialogs/with_logo/topgaming.tscn" id="52_w1l6t"]
-[ext_resource type="AudioStream" uid="uid://cp84x63ws4rnt" path="res://audio/engine.wav" id="53_8swy2"]
 [ext_resource type="PackedScene" uid="uid://ct2jpqt7tix5j" path="res://scenes/ui/dialogs/with_logo/deltaengine.tscn" id="53_uymfx"]
-[ext_resource type="AudioStream" uid="uid://djduywofbk318" path="res://audio/impact_1.wav" id="54_8eyxk"]
-[ext_resource type="AudioStream" uid="uid://ldcb7fuyl425" path="res://audio/impact_2.wav" id="55_emjfu"]
-[ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="56_au57e"]
 [ext_resource type="PackedScene" uid="uid://dsau8jsvplp5v" path="res://scenes/ui/mobile/mobile_inputs.tscn" id="60_1yg85"]
 [ext_resource type="PackedScene" uid="uid://dsculw6uyoscf" path="res://scenes/ui/menus/main.tscn" id="63_3x338"]
 [ext_resource type="PackedScene" uid="uid://jxerk00bt81p" path="res://scenes/ui/menus/options.tscn" id="64_1yg85"]
@@ -1205,15 +1198,6 @@ size = Vector3(26.2329, 5, 40.7003)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hf6ys"]
 size = Vector3(20, 6, 65)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nhhaw"]
-points = PackedVector3Array(-0.769444, 0.486267, -0.286111, 0.786084, 0.602622, -0.286111, 0.786084, 0.486157, -0.286111, -0.574851, 0.525126, 1.26944, 0.608607, 0.000478412, 1.22571, -0.63, 0.1, -1.139, 0.453497, 1.08252, 0.544111, -0.41403, 1.05493, -0.186068, 0.609, 0.1, -1.176, -0.629866, 0, 1.1889, 0.552664, 0.525126, -1.18046, -0.574851, 0.525126, -1.18046, 0.552664, 0.525126, 1.26944, -0.444665, 1.09195, 0.553215, 0.430668, 1.05492, -0.186067, -0.769444, 0.602732, -0.286111, 0.669298, 0.213927, 1.23046, -0.613831, 0.213927, -1.21944, -0.613831, 0.213927, 1.26944, 0.630471, 0.213927, -1.21944, 0.639315, 0.00623976, 1.17578, 0.669298, 0.486157, 0.841393, 0.639, 0.1, -1.126, -0.652658, 0.213927, 1.23046, -0.463165, 1.03417, -0.19252, -0.652658, 0.213927, -1.18046, 0.669298, 0.213927, -1.18046, 0.630471, 0.213927, 1.26944, -0.592377, -1.11022e-16, 1.22653, -0.592, 0.1, -1.177, -0.769444, 0.486267, -0.441545, 0.786084, 0.486157, -0.441545)
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rsaax"]
-streams_count = 3
-stream_0/stream = ExtResource("54_8eyxk")
-stream_1/stream = ExtResource("55_emjfu")
-stream_2/stream = ExtResource("56_au57e")
-
 [node name="Game" type="OccluderInstance3D"]
 occluder = ExtResource("1_xjmf5")
 
@@ -1885,7 +1869,7 @@ transform = Transform3D(0.707107, 0, 0.707106, 0, 1, 0, -0.707106, 0, 0.707107, 
 
 [node name="Sign" parent="World/Props/Personal/Props" instance=ExtResource("78_o0w3k")]
 transform = Transform3D(0.846249, 0, 0.532788, 0, 1, 0, -0.532788, 0, 0.846249, 10.8089, 0.01, 2.309)
-text = "Personal"
+text = "HUD_AREA_OVERLAY_PERSONAL"
 
 [node name="Roads" type="Node3D" parent="World/Props/Personal"]
 
@@ -2953,7 +2937,7 @@ transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 5.9886
 
 [node name="Sign" parent="World/Props/Professional/Props" instance=ExtResource("78_o0w3k")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -11, 0, -3)
-text = "Experiences"
+text = "HUD_AREA_OVERLAY_PROFESSIONAL"
 
 [node name="Roads" type="Node3D" parent="World/Props/Professional"]
 
@@ -3412,149 +3396,65 @@ transform = Transform3D(0.594207, 0, 0.804312, 0, 1, 0, -0.804312, 0, 0.594207, 
 [node name="Consinco" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -12.7064)
 popup_id = 4
-placeholder = "Consinco - 2018 to 2020"
+placeholder = "Consinco | 2018 -> 2020"
 
 [node name="Magit" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -18.8835)
 popup_id = 5
-placeholder = "Magit - 2020 to 2022"
+placeholder = "Magit | 2020 -> 2022"
 
 [node name="TopGaming" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -24.8835)
 popup_id = 6
-placeholder = "Top Gaming - 2022 to 2023"
+placeholder = "Top Gaming | 2022 -> 2023"
 
 [node name="DeltaEngine" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -30.7773)
 popup_id = 7
-placeholder = "Delta Engine - 2023 to 2024"
+placeholder = "Delta Engine | 2023 -> 2024"
 
 [node name="Amilon" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9481, -1.94629, -36.7773)
 popup_id = 8
-placeholder = "Amilon - 2024 to Present"
+placeholder = "Amilon | 2024 -> Today"
 
 [node name="PickupWhereBorn" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7744, 0.0591327, 10.0538)
 popup_id = 1
-placeholder = "Where Was I born"
+placeholder = "POPUP_BORN_TITLE"
 
 [node name="PickupWhereLiving" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7744, 0.0591327, 18.0538)
 popup_id = 2
-placeholder = "Where do I live"
+placeholder = "POPUP_LIVE_TITLE"
 
 [node name="PickupUniversity" parent="World/Interactive" instance=ExtResource("35_xtc3j")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.1515, 0.0591327, 28.8811)
 popup_id = 3
-placeholder = "My Degree"
+placeholder = "POPUP_UNIVERSITY_TITLE"
 
-[node name="Personal" type="Area3D" parent="World/Interactive"]
+[node name="HUD_AREA_OVERLAY_PERSONAL" type="Area3D" parent="World/Interactive"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
 monitorable = false
 script = ExtResource("51_s0g06")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Interactive/Personal"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Interactive/HUD_AREA_OVERLAY_PERSONAL"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 11.1655)
 shape = SubResource("BoxShape3D_b0jxl")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Interactive/Personal"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Interactive/HUD_AREA_OVERLAY_PERSONAL"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88354, 3, -18.6498)
 shape = SubResource("BoxShape3D_q6s4x")
 
-[node name="Professional" type="Area3D" parent="World/Interactive"]
+[node name="HUD_AREA_OVERLAY_PROFESSIONAL" type="Area3D" parent="World/Interactive"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -23)
 script = ExtResource("51_s0g06")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Interactive/Professional"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Interactive/HUD_AREA_OVERLAY_PROFESSIONAL"]
 shape = SubResource("BoxShape3D_hf6ys")
 
-[node name="Player" type="VehicleBody3D" parent="World"]
-transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, -0.0460392, 0.487675, -7.94687)
-mass = 50.0
-center_of_mass_mode = 1
-center_of_mass = Vector3(0, 0.15, 0)
-can_sleep = false
-script = ExtResource("2_hp3v1")
-
-[node name="Body" type="MeshInstance3D" parent="World/Player"]
-transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0, 0.2, 0)
-mesh = ExtResource("51_adspf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player"]
-transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0, 0.197907, 0)
-shape = SubResource("ConvexPolygonShape3D_nhhaw")
-
-[node name="WheelFL" type="VehicleWheel3D" parent="World/Player"]
-transform = Transform3D(0.999998, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999998, 0.45, 0.260228, 0.529999)
-use_as_traction = true
-use_as_steering = true
-wheel_roll_influence = 0.5
-wheel_radius = 0.3
-wheel_rest_length = 0.08
-suspension_travel = 0.385
-suspension_stiffness = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Player/WheelFL"]
-transform = Transform3D(0.8, 0, -3.55271e-15, 0, 0.8, 0, 3.55271e-15, 0, 0.8, -0.15, 0, 0)
-mesh = ExtResource("52_uodu7")
-
-[node name="WheelFR" type="VehicleWheel3D" parent="World/Player"]
-transform = Transform3D(0.999998, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999998, -0.45, 0.260228, 0.529999)
-use_as_traction = true
-use_as_steering = true
-wheel_roll_influence = 0.5
-wheel_radius = 0.3
-wheel_rest_length = 0.08
-suspension_travel = 0.385
-suspension_stiffness = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Player/WheelFR"]
-transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0.15, 0, 0)
-mesh = ExtResource("52_uodu7")
-
-[node name="WheelRL" type="VehicleWheel3D" parent="World/Player"]
-transform = Transform3D(0.999999, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999999, 0.45, 0.260228, -0.529999)
-wheel_roll_influence = 0.5
-wheel_radius = 0.3
-wheel_rest_length = 0.08
-suspension_travel = 0.385
-suspension_stiffness = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Player/WheelRL"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.15, 0, 0)
-mesh = ExtResource("52_uodu7")
-
-[node name="WheelRR" type="VehicleWheel3D" parent="World/Player"]
-transform = Transform3D(0.999999, 0, -3.19744e-14, 0, 1, 0, 3.19744e-14, 0, 0.999999, -0.45, 0.260228, -0.529999)
-wheel_roll_influence = 0.5
-wheel_radius = 0.3
-wheel_rest_length = 0.08
-suspension_travel = 0.385
-suspension_stiffness = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Player/WheelRR"]
-transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0.15, 0, 0)
-mesh = ExtResource("52_uodu7")
-
-[node name="AudioEngine" type="AudioStreamPlayer3D" parent="World/Player"]
-stream = ExtResource("53_8swy2")
-volume_db = -25.0
-pitch_scale = 0.2
-autoplay = true
-
-[node name="AudioImpact" type="AudioStreamPlayer3D" parent="World/Player"]
-stream = SubResource("AudioStreamRandomizer_rsaax")
-volume_db = -20.0
-
-[node name="CameraBase" type="Node3D" parent="World/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="Camera3D" type="Camera3D" parent="World/Player/CameraBase"]
-process_mode = 3
-transform = Transform3D(-1, 0, -8.74229e-08, 0, 1, 0, 8.74229e-08, 0, -1, 0, 1, -5)
-script = ExtResource("1_gptlb")
-min_distance = 2.0
+[node name="PlayerCar" parent="World" instance=ExtResource("52_o8oq8")]
+transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 0, 0, -8.1)
 
 [node name="UiManager" type="Control" parent="." node_paths=PackedStringArray("_player")]
 process_mode = 3
@@ -3568,7 +3468,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("46_nk40p")
-_player = NodePath("../World/Player")
+_player = NodePath("../World/PlayerCar")
 
 [node name="MobileInputs" parent="UiManager" instance=ExtResource("60_1yg85")]
 layout_mode = 1
@@ -3655,13 +3555,21 @@ volume_db = -10.0
 stream = ExtResource("93_ajrje")
 volume_db = -10.0
 
+[node name="Blackscreen" type="ColorRect" parent="UiManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [connection signal="Area3d_entered_area" from="World" to="UiManager" method="_on_world_area_3d_entered_area"]
-[connection signal="collision_node3d_entered" from="World/Interactive/Personal" to="World" method="_on_collision_node_3d_entered"]
-[connection signal="collision_node3d_exited" from="World/Interactive/Personal" to="World" method="_on_collision_node_3d_exited"]
-[connection signal="collision_node3d_entered" from="World/Interactive/Professional" to="World" method="_on_collision_node_3d_entered"]
-[connection signal="collision_node3d_exited" from="World/Interactive/Professional" to="World" method="_on_collision_node_3d_exited"]
-[connection signal="gear_changed" from="World/Player" to="UiManager" method="update_gear"]
-[connection signal="speed_changed" from="World/Player" to="UiManager" method="update_speed"]
+[connection signal="collision_node3d_entered" from="World/Interactive/HUD_AREA_OVERLAY_PERSONAL" to="World" method="_on_collision_node_3d_entered"]
+[connection signal="collision_node3d_exited" from="World/Interactive/HUD_AREA_OVERLAY_PERSONAL" to="World" method="_on_collision_node_3d_exited"]
+[connection signal="collision_node3d_entered" from="World/Interactive/HUD_AREA_OVERLAY_PROFESSIONAL" to="World" method="_on_collision_node_3d_entered"]
+[connection signal="collision_node3d_exited" from="World/Interactive/HUD_AREA_OVERLAY_PROFESSIONAL" to="World" method="_on_collision_node_3d_exited"]
 [connection signal="click" from="UiManager/Menus/Main" to="UiManager" method="_on_ui_click"]
 [connection signal="options_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_menu_main_options_pressed"]
 [connection signal="restart_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_menu_main_restart_pressed"]

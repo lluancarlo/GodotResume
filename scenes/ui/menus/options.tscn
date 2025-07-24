@@ -61,7 +61,7 @@ stretch_mode = 5
 [node name="Title" type="Label" parent="Dialog/Head"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Options"
+text = "MENU_OPTIONS_BUTTON"
 label_settings = ExtResource("6_kk3jc")
 
 [node name="Body" type="PanelContainer" parent="Dialog"]
@@ -82,7 +82,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Dialog/Body/Content/Audio/Content"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Audio"
+text = "MENU_OPTIONS_AUDIO_TITLE"
 label_settings = ExtResource("7_tctsv")
 
 [node name="General" type="HBoxContainer" parent="Dialog/Body/Content/Audio/Content"]
@@ -92,7 +92,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Dialog/Body/Content/Audio/Content/General"]
 layout_mode = 2
-text = "General"
+text = "MENU_OPTIONS_AUDIO_GENERAL"
 label_settings = ExtResource("8_kr3dd")
 
 [node name="HSlider" type="HSlider" parent="Dialog/Body/Content/Audio/Content/General"]
@@ -117,7 +117,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Dialog/Body/Content/Graphics/Content"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Video"
+text = "MENU_OPTIONS_VIDEO_TITLE"
 label_settings = ExtResource("7_tctsv")
 
 [node name="General" type="HBoxContainer" parent="Dialog/Body/Content/Graphics/Content"]
@@ -128,7 +128,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Dialog/Body/Content/Graphics/Content/General"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Quality"
+text = "MENU_OPTIONS_VIDEO_TITLE"
 label_settings = ExtResource("8_kr3dd")
 
 [node name="Buttons" type="HBoxContainer" parent="Dialog/Body/Content/Graphics/Content/General"]
@@ -159,7 +159,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("11_imkne")
 theme_override_font_sizes/font_size = 22
-text = "Low"
+text = "MENU_OPTIONS_VIDEO_QUALITY_LOW"
 label_settings = ExtResource("16_7g444")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -188,7 +188,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("11_imkne")
 theme_override_font_sizes/font_size = 22
-text = "Medium"
+text = "MENU_OPTIONS_VIDEO_QUALITY_MED"
 label_settings = ExtResource("16_7g444")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -217,7 +217,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("11_imkne")
 theme_override_font_sizes/font_size = 22
-text = "High"
+text = "MENU_OPTIONS_VIDEO_QUALITY_HIGH"
 label_settings = ExtResource("16_7g444")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -232,7 +232,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Dialog/Body/Content/Advanced/Content"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Advanced"
+text = "MENU_OPTIONS_ADVANCED_TITLE"
 label_settings = ExtResource("7_tctsv")
 
 [node name="ShowFps" type="HBoxContainer" parent="Dialog/Body/Content/Advanced/Content"]
@@ -242,7 +242,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Dialog/Body/Content/Advanced/Content/ShowFps"]
 layout_mode = 2
-text = "Show FPS"
+text = "MENU_OPTIONS_ADVANCED_FPS"
 label_settings = ExtResource("8_kr3dd")
 
 [node name="CheckButton" type="CheckButton" parent="Dialog/Body/Content/Advanced/Content/ShowFps"]

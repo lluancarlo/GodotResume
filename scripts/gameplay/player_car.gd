@@ -23,6 +23,9 @@ var previous_speed : int
 
 func _ready() -> void:
 	initial_position = position
+	
+	create_tween().tween_property(_audio_engine, "volume_db", _audio_engine.volume_db, 1.5).from(-80)
+	create_tween().tween_property(_audio_impact, "volume_db", _audio_impact.volume_db, 1.5).from(-80)
 
 
 func _physics_process(delta: float) -> void:

@@ -6,7 +6,7 @@ class_name UIDebug
 #== DESKTOP
 @onready var _desktop_fps_value : Label = $Desktop/HBox/Value
 #== MOBILE
-@onready var _mobile_fps_value : Label = $Desktop/HBox/Value
+@onready var _mobile_fps_value : Label = $Mobile/HBox/Value
 
 
 func _physics_process(_delta: float) -> void:

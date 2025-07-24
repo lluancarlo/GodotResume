@@ -10,10 +10,10 @@ offset_top = -310.5
 offset_bottom = 310.5
 
 [node name="Title" parent="Dialog/Head" index="0"]
-text = "Where Was I born"
+text = "POPUP_BORN_TITLE"
 
 [node name="Image" parent="Dialog/Body/Content/PanelImage" index="0"]
 texture = ExtResource("2_xtk6h")
 
 [node name="Text" parent="Dialog/Body/Content" index="1"]
-text = "I am from a city called Ribeirão Preto, in brazil. It used to be called as 'Coffee land' because of the huge production of coffee in 19 century. Today, it is considered the 'Brazilian California' for its social and economic development."
+text = "POPUP_BORN_BODY"

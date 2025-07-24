@@ -3,6 +3,7 @@ class_name UiManager
 
 
 #== NODES
+@onready var _blackscreen : ColorRect = $Blackscreen
 @onready var _mobile_inputs : MobileInputs = $MobileInputs
 #==== HUD
 @onready var _hud_debug : UIDebug = $HUD/UIDebug
@@ -48,6 +49,8 @@ func _ready():
 		menu.hide()
 	for popup in _popups.get_children():
 		popup.hide()
+	
+	create_tween().tween_property(_blackscreen, "modulate:a", 0.0, 1.5).from(1.0).finished
 
 
 func _physics_process(_delta: float) -> void:
@@ -114,7 +117,7 @@ func close_current_ui(play_sound: bool = true) -> void:
 #==== TextOverlay
 func _on_world_area_3d_entered_area(areaName: String) -> void:
 	_hud_text_overlay.show()
-	await _hud_text_overlay.show_text(areaName)
+	await _hud_text_overlay.show_text(tr(areaName))
 	_hud_text_overlay.hide()
 
 

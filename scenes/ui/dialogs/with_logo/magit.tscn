@@ -7,22 +7,19 @@
 link = "https://www.mag-it.com.br/en"
 
 [node name="Title" parent="Dialog/Head" index="0"]
-text = "Magit IT"
+text = "POPUP_EXP_MAGIT_TITLE"
 
 [node name="Logo" parent="Dialog/Body/Content/MainInfo/PanelImage" index="0"]
 texture_normal = ExtResource("2_p5dsg")
 
 [node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Position" index="1"]
-text = "Full-Stack Developer"
+text = "POPUP_EXP_MAGIT_POSITION"
 
 [node name="Value" parent="Dialog/Body/Content/MainInfo/Info/Period" index="1"]
-text = "Oct 2020 - Jul 2022"
+text = "POPUP_EXP_MAGIT_PERIOD"
 
 [node name="Description" parent="Dialog/Body/Content" index="1"]
-text = "- Front-End with JavaScript (AngularJS, ReactJS, Bootstrap).
-- Back-End with C# (ASP.Net Core, Entity Framework, Unit Tests with FluentAssertions, Bogus, Rich and Anemic Domain Model, Mediator Pattern with MediatR, Onion Architecture, Solid Principles) and NodeJS (with AdonisJS).
-- Database with SQL Server, MySql, PostgreSQL and Oracle PL/SQL.
-- Devops with Jira and Azure, Pipeline Build and Release, code versioning git, Sprint & Kanban."
+text = "POPUP_EXP_MAGIT_BODY"
 
-[node name="Value" parent="Dialog/Body/Content/Skills" index="1"]
-text = "C#, .Net, Sql, Javascript, Angular, React Js"
+[node name="Value" parent="Dialog/Body/Content/Skills" index="2"]
+text = "POPUP_EXP_MAGIT_SKILLS"

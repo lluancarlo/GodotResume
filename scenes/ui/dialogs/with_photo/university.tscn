@@ -10,10 +10,10 @@ offset_top = -267.5
 offset_bottom = 267.5
 
 [node name="Title" parent="Dialog/Head" index="0"]
-text = "Graduation?"
+text = "POPUP_UNIVERSITY_TITLE"
 
 [node name="Image" parent="Dialog/Body/Content/PanelImage" index="0"]
 texture = ExtResource("2_e68jc")
 
 [node name="Text" parent="Dialog/Body/Content" index="1"]
-text = "Yes, I have a degree on Computer Science. I finished it on 2018 at University Estacio, in Ribeirão Preto."
+text = "POPUP_UNIVERSITY_BODY"
