@@ -3456,25 +3456,15 @@ shape = SubResource("BoxShape3D_hf6ys")
 [node name="PlayerCar" parent="World" instance=ExtResource("52_o8oq8")]
 transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 0, 0, -8.1)
 
-[node name="UiManager" type="Control" parent="." node_paths=PackedStringArray("_player")]
+[node name="UiManager" type="CanvasLayer" parent="." node_paths=PackedStringArray("_player")]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
 script = ExtResource("46_nk40p")
 _player = NodePath("../World/PlayerCar")
 
 [node name="MobileInputs" parent="UiManager" instance=ExtResource("60_1yg85")]
-layout_mode = 1
 
 [node name="HUD" type="Control" parent="UiManager"]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3492,7 +3482,7 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="Menus" type="Control" parent="UiManager"]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3507,7 +3497,7 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="Popups" type="Control" parent="UiManager"]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3556,7 +3546,6 @@ stream = ExtResource("93_ajrje")
 volume_db = -10.0
 
 [node name="Blackscreen" type="ColorRect" parent="UiManager"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
