@@ -20,11 +20,11 @@ enum Popups
 
 
 var on_popup_id : int
-var isMobile : bool
+var is_mobile : bool
 
 
 func _ready() -> void:
-	isMobile = OS.has_feature("web_android") or OS.has_feature("web_ios")
+	is_mobile = OS.has_feature("web_android") or OS.has_feature("web_ios")
 
 
 func set_popup_id(id: int) -> void:

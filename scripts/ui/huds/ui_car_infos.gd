@@ -14,7 +14,7 @@ class_name UICarInfos
 
 
 func _ready() -> void:
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		_desktop.queue_free()
 	else:
 		_mobile.queue_free()
@@ -22,7 +22,7 @@ func _ready() -> void:
 
 func update_gear(value: int) -> void:
 	var text = str(value) if value > 0 else 'R'
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		_mobile_gear.text = text
 	else:
 		_desktop_gear.text = text
@@ -30,7 +30,7 @@ func update_gear(value: int) -> void:
 
 func update_speed(value: int) -> void:
 	var text = str(value)
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		_mobile_speed.text = text
 	else:
 		_desktop_speed.text = text

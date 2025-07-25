@@ -12,7 +12,7 @@ class_name UIDebug
 
 
 func _ready() -> void:
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		_desktop.queue_free()
 	else:
 		_mobile.queue_free()
@@ -25,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 
 func update_fps(value: int) -> void:
 	var text = str(value)
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		_mobile_fps_value.text = text
 	else:
 		_desktop_fps_value.text = text

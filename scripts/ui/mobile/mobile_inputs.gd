@@ -16,7 +16,7 @@ func _on_button_visual_change(button: TouchScreenButton, press: bool) -> void:
 
 func _ready() -> void:
 	await get_tree().process_frame
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		GameData.popup_id_changed.connect(_on_popup_changed)
 		_button_interact.visible = false
 

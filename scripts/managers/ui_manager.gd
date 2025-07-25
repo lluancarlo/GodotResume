@@ -37,7 +37,7 @@ var current_ui : Control
 
 
 func _ready():
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		_mobile_inputs.show()
 	else:
 		_mobile_inputs.hide()

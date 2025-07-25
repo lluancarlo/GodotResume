@@ -12,7 +12,7 @@ class_name UITextOverlay
 
 
 func _ready() -> void:
-	if GameData.isMobile:
+	if GameData.is_mobile:
 		_desktop_label.queue_free()
 	else:
 		_mobile_label.queue_free()
