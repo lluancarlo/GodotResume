@@ -1,8 +1,7 @@
-[gd_scene load_steps=158 format=4 uid="uid://bdpgnc1txjso8"]
+[gd_scene load_steps=157 format=4 uid="uid://bdpgnc1txjso8"]
 
 [ext_resource type="PackedScene" uid="uid://bsbcd2txkjyvc" path="res://assets/scenes/roads/road_straight.scn" id="1_2obj8"]
 [ext_resource type="PackedScene" uid="uid://bvd2ymb6hilfe" path="res://assets/scenes/roads/road_curve.scn" id="1_bp8cq"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dri4wbusws3m7" path="res://resources/game.occ" id="1_xjmf5"]
 [ext_resource type="PackedScene" uid="uid://cwk2lgxoq5sg2" path="res://assets/scenes/natures/cliff_half_rock.scn" id="2_n6s6i"]
 [ext_resource type="Script" uid="uid://bffoyil21xlyi" path="res://scripts/managers/world_manager.gd" id="2_s0g06"]
 [ext_resource type="Material" uid="uid://b2e3q04uueo5m" path="res://assets/materials/water.material" id="2_wx30m"]
@@ -1198,8 +1197,7 @@ size = Vector3(26.2329, 5, 40.7003)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hf6ys"]
 size = Vector3(20, 6, 65)
 
-[node name="Game" type="OccluderInstance3D"]
-occluder = ExtResource("1_xjmf5")
+[node name="Game" type="Node3D"]
 
 [node name="World" type="Node3D" parent="."]
 script = ExtResource("2_s0g06")
@@ -3559,6 +3557,8 @@ color = Color(0, 0, 0, 1)
 [connection signal="collision_node3d_exited" from="World/Interactive/HUD_AREA_OVERLAY_PERSONAL" to="World" method="_on_collision_node_3d_exited"]
 [connection signal="collision_node3d_entered" from="World/Interactive/HUD_AREA_OVERLAY_PROFESSIONAL" to="World" method="_on_collision_node_3d_entered"]
 [connection signal="collision_node3d_exited" from="World/Interactive/HUD_AREA_OVERLAY_PROFESSIONAL" to="World" method="_on_collision_node_3d_exited"]
+[connection signal="gear_changed" from="World/PlayerCar" to="UiManager" method="update_gear"]
+[connection signal="speed_changed" from="World/PlayerCar" to="UiManager" method="update_speed"]
 [connection signal="click" from="UiManager/Menus/Main" to="UiManager" method="_on_ui_click"]
 [connection signal="options_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_menu_main_options_pressed"]
 [connection signal="restart_pressed" from="UiManager/Menus/Main" to="UiManager" method="_on_menu_main_restart_pressed"]

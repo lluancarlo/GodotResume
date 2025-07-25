@@ -4,9 +4,18 @@ class_name UIDebug
 
 # NODES
 #== DESKTOP
+@onready var _desktop : Control = $Desktop
 @onready var _desktop_fps_value : Label = $Desktop/HBox/Value
 #== MOBILE
+@onready var _mobile : Control = $Mobile
 @onready var _mobile_fps_value : Label = $Mobile/HBox/Value
+
+
+func _ready() -> void:
+	if GameData.isMobile:
+		_desktop.queue_free()
+	else:
+		_mobile.queue_free()
 
 
 func _physics_process(_delta: float) -> void:

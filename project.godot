@@ -87,5 +87,5 @@ locale/translations=PackedStringArray("res://resources/localization - localizati
 occlusion_culling/bvh_build_quality=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 occlusion_culling/occlusion_rays_per_thread=128
-occlusion_culling/use_occlusion_culling=true
