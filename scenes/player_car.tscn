@@ -94,7 +94,7 @@ autoplay = true
 
 [node name="AudioImpact" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_rsaax")
-volume_db = -20.0
+volume_db = -30.0
 
 [node name="CameraBase" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
