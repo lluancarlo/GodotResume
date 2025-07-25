@@ -78,10 +78,6 @@ menu={
 
 pointing/emulate_touch_from_mouse=true
 
-[internationalization]
-
-locale/translations=PackedStringArray("res://resources/localization - localization.en_US.translation", "res://resources/localization - localization.es_ES.translation", "res://resources/localization - localization.it_IT.translation", "res://resources/localization - localization.pt_BR.translation")
-
 [rendering]
 
 occlusion_culling/bvh_build_quality=0
