@@ -24,7 +24,7 @@ var isMobile : bool
 
 
 func _ready() -> void:
-	isMobile = true#OS.has_feature("web_android") or OS.has_feature("web_ios")
+	isMobile = OS.has_feature("web_android") or OS.has_feature("web_ios")
 
 
 func set_popup_id(id: int) -> void:
