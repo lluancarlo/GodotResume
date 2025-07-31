@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://obwbty04aya"
 path.s3tc="res://.godot/imported/flag_brazil.png-da6817758885066aeaefaac9c675335d.s3tc.ctex"
+path.etc2="res://.godot/imported/flag_brazil.png-da6817758885066aeaefaac9c675335d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/materials/textures/flag_brazil.png"
-dest_files=["res://.godot/imported/flag_brazil.png-da6817758885066aeaefaac9c675335d.s3tc.ctex"]
+dest_files=["res://.godot/imported/flag_brazil.png-da6817758885066aeaefaac9c675335d.s3tc.ctex", "res://.godot/imported/flag_brazil.png-da6817758885066aeaefaac9c675335d.etc2.ctex"]
 
 [params]
 

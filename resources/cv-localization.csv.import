@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://btoyt8i3f5c4u"
+
+[deps]
+
+files=["res://resources/cv-localization.en_US.translation", "res://resources/cv-localization.it_IT.translation", "res://resources/cv-localization.pt_BR.translation", "res://resources/cv-localization.es_ES.translation"]
+
+source_file="res://resources/cv-localization.csv"
+dest_files=["res://resources/cv-localization.en_US.translation", "res://resources/cv-localization.it_IT.translation", "res://resources/cv-localization.pt_BR.translation", "res://resources/cv-localization.es_ES.translation"]
+
+[params]
+
+compress=true
+delimiter=0

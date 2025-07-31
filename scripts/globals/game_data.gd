@@ -1,32 +1,25 @@
 extends Node
 #class_name GameData
 
-
-signal popup_id_changed()
-
-
-enum Popups
+#== ENUMS
+enum PickUps
 {
-	Warning,
-	Born,
-	Live,
-	University,
-	Consinco,
-	Magit,
-	TopGaming,
-	DeltaEngine,
-	Amilon
+	None = 0,
+	Warning = 1,
+	Born = 2,
+	Live = 3,
+	University = 4,
+	Consinco = 5,
+	Magit = 6,
+	TopGaming = 7,
+	DeltaEngine = 8,
+	Amilon = 9
 }
 
-
-var on_popup_id : int
+#== VARIABLES
 var is_mobile : bool
+var can_drive : bool
 
-
+#== FUNCTION
 func _ready() -> void:
 	is_mobile = OS.has_feature("web_android") or OS.has_feature("web_ios")
-
-
-func set_popup_id(id: int) -> void:
-	on_popup_id = id
-	popup_id_changed.emit()

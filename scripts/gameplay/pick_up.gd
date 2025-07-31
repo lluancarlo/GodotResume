@@ -1,11 +1,13 @@
 extends Node3D
 
+signal player_on_area_3d(pickup_id)
+
 @onready var _mesh = $Mesh as MeshInstance3D
 @onready var _label_title = $LabelTitle as Label3D
 @onready var _label_interaction = $LabelInteraction as Label3D
 @onready var _animation = $AnimationPlayer as AnimationPlayer
 @onready var _audio_effect = $AudioEffect as AudioStreamPlayer
-@export var popup_id : GameData.Popups
+@export var pickup_id : GameData.PickUps
 @export var placeholder := "Title"
 @export var interaction_color := Color("#00ccdc")
 
@@ -40,7 +42,7 @@ func _on_area_3d_body_shape_entered(_br: RID, body: Node3D, _bsi: int, _lsi: int
 		_audio_effect.play()
 		_label_interaction.visible = true
 		player_nearby = true
-		GameData.set_popup_id(popup_id)
+		player_on_area_3d.emit(pickup_id)
 
 
 func _on_area_3d_body_shape_exited(_br: RID, body: Node3D, _bsi: int, _lsi: int) -> void:
@@ -48,4 +50,4 @@ func _on_area_3d_body_shape_exited(_br: RID, body: Node3D, _bsi: int, _lsi: int)
 		_animation.play("enter")
 		_label_interaction.visible = false
 		player_nearby = false
-		GameData.set_popup_id(0)
+		player_on_area_3d.emit(0)

@@ -1,0 +1,178 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfddeqkdw3ir8"]
+
+[ext_resource type="StyleBox" uid="uid://bpoipta04kn26" path="res://assets/styles/dialog/dialog_panel_head.stylebox" id="1_6wcl6"]
+[ext_resource type="Script" uid="uid://3gkfnt7m7we0" path="res://scripts/ui/menus/menu_language.gd" id="1_ruswl"]
+[ext_resource type="LabelSettings" uid="uid://cx543th5c70vg" path="res://assets/styles/dialog/dialog_font_title.res" id="2_sujhr"]
+[ext_resource type="Texture2D" uid="uid://dsuiu6k1gadw0" path="res://assets/kenney/ui-pack/png/grey_arrowUpWhite.png" id="2_ynb43"]
+[ext_resource type="Texture2D" uid="uid://c0ej6o8464t06" path="res://assets/kenney/ui-pack/png/grey_arrowUpGrey.png" id="3_ruswl"]
+[ext_resource type="StyleBox" uid="uid://vwjj77sx78ms" path="res://assets/styles/dialog/dialog_panel_body.stylebox" id="3_ynb43"]
+[ext_resource type="Texture2D" uid="uid://cryab0wffeaem" path="res://assets/kenney/ui-pack/png/button_rectangle_depth_gloss.png" id="4_ruswl"]
+[ext_resource type="Texture2D" uid="uid://dstgav4uls5vd" path="res://assets/kenney/ui-pack/png/button_rectangle_gloss.png" id="5_d5tuq"]
+[ext_resource type="Texture2D" uid="uid://kyrbibh5fh4v" path="res://assets/img/flag-usa-600x316.png" id="6_587i6"]
+[ext_resource type="Texture2D" uid="uid://c0jwwtprlybtd" path="res://assets/img/flag-italy-1000x667.png" id="7_kaw64"]
+[ext_resource type="Texture2D" uid="uid://dk34xe8yetjp" path="res://assets/img/flag-brazil-600x420.png" id="8_35h5c"]
+[ext_resource type="Texture2D" uid="uid://cr518ftdwp3ah" path="res://assets/img/flag-spain-600x400.png" id="9_cgux6"]
+
+[node name="Language" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ruswl")
+
+[node name="Dialog" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -226.0
+offset_right = 250.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Head" type="PanelContainer" parent="Dialog"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_6wcl6")
+
+[node name="Back" type="TextureButton" parent="Dialog/Head"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_ynb43")
+texture_pressed = ExtResource("2_ynb43")
+texture_hover = ExtResource("3_ruswl")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Dialog/Head"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MENU_LANGUAGE_TITLE"
+label_settings = ExtResource("2_sujhr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="PanelContainer" parent="Dialog"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_ynb43")
+
+[node name="GridContainer" type="GridContainer" parent="Dialog/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="English" type="TextureButton" parent="Dialog/Body/GridContainer"]
+custom_minimum_size = Vector2(150, 145)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ruswl")
+texture_pressed = ExtResource("5_d5tuq")
+stretch_mode = 0
+
+[node name="Flag" type="TextureRect" parent="Dialog/Body/GridContainer/English"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -54.5
+offset_right = 75.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_587i6")
+expand_mode = 1
+
+[node name="Italian" type="TextureButton" parent="Dialog/Body/GridContainer"]
+custom_minimum_size = Vector2(150, 145)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ruswl")
+texture_pressed = ExtResource("5_d5tuq")
+stretch_mode = 0
+
+[node name="Flag" type="TextureRect" parent="Dialog/Body/GridContainer/Italian"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -54.5
+offset_right = 75.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_kaw64")
+expand_mode = 1
+
+[node name="Portuguese" type="TextureButton" parent="Dialog/Body/GridContainer"]
+custom_minimum_size = Vector2(150, 145)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ruswl")
+texture_pressed = ExtResource("5_d5tuq")
+stretch_mode = 0
+
+[node name="Flag" type="TextureRect" parent="Dialog/Body/GridContainer/Portuguese"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -54.5
+offset_right = 75.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_35h5c")
+expand_mode = 1
+
+[node name="Spanish" type="TextureButton" parent="Dialog/Body/GridContainer"]
+custom_minimum_size = Vector2(150, 145)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ruswl")
+texture_pressed = ExtResource("5_d5tuq")
+stretch_mode = 0
+
+[node name="Flag" type="TextureRect" parent="Dialog/Body/GridContainer/Spanish"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -54.5
+offset_right = 75.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_cgux6")
+expand_mode = 1
+
+[connection signal="pressed" from="Dialog/Head/Back" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Dialog/Body/GridContainer/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="Dialog/Body/GridContainer/Italian" to="." method="_on_italian_pressed"]
+[connection signal="pressed" from="Dialog/Body/GridContainer/Portuguese" to="." method="_on_portuguese_pressed"]
+[connection signal="pressed" from="Dialog/Body/GridContainer/Spanish" to="." method="_on_spanish_pressed"]

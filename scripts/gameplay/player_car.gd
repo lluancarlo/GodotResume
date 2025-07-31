@@ -15,7 +15,6 @@ signal speed_changed(speed: int)
 var initial_position : Vector3
 var max_rpm := 8000
 var max_torque := mass * 2.0
-var can_drive := true
 var previous_velocity : float
 var previous_gear : int
 var previous_speed : int
@@ -23,9 +22,6 @@ var previous_speed : int
 
 func _ready() -> void:
 	initial_position = position
-	
-	create_tween().tween_property(_audio_engine, "volume_db", _audio_engine.volume_db, 1.5).from(-80)
-	create_tween().tween_property(_audio_impact, "volume_db", _audio_impact.volume_db, 1.5).from(-80)
 
 
 func _physics_process(delta: float) -> void:
@@ -36,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	if current_rpm < 0 && linear_velocity.length() > 3:
 		acceleration = 0
 
-	if can_drive:
+	if GameData.can_drive:
 		var axis_x =  Input.get_axis("right", "left")
 		var max_steering = 0.8 - (linear_velocity.length() / 30.0)	
 		steering = lerp(steering, axis_x * max_steering, 6 * delta)
@@ -51,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	_audio_engine.pitch_scale = lerpf(_audio_engine.pitch_scale, new_pitch, 0.2)
 
 	# Impact sound
-	if can_drive && abs(linear_velocity.length() - previous_velocity) > 1.0:
+	if GameData.can_drive && abs(linear_velocity.length() - previous_velocity) > 1.0:
 		_audio_impact.play()
 
 	# Back light

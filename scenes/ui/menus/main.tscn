@@ -51,6 +51,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Body" type="PanelContainer" parent="Dialog"]
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("1_a8dfd")
 
@@ -58,6 +59,7 @@ theme_override_styles/panel = ExtResource("1_a8dfd")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 25
+alignment = 1
 
 [node name="Resume" type="TextureButton" parent="Dialog/Body/Buttons"]
 custom_minimum_size = Vector2(250, 50)
@@ -107,6 +109,30 @@ label_settings = ExtResource("7_kbeif")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Language" type="TextureButton" parent="Dialog/Body/Buttons"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_mcxlr")
+texture_pressed = ExtResource("10_e3vg0")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Dialog/Body/Buttons/Language"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -14.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MENU_LANGUAGE_BUTTON"
+label_settings = ExtResource("7_kbeif")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Options" type="TextureButton" parent="Dialog/Body/Buttons"]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
@@ -152,6 +178,7 @@ stretch_mode = 0
 
 [connection signal="pressed" from="Dialog/Body/Buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Dialog/Body/Buttons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Dialog/Body/Buttons/Language" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="Dialog/Body/Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Dialog/Body/Buttons/Social/LinkedIn" to="." method="_on_linked_in_pressed"]
 [connection signal="pressed" from="Dialog/Body/Buttons/Social/GitHub" to="." method="_on_github_pressed"]

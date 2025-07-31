@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=3 uid="uid://giw4d2ocn1ut"]
+
+[ext_resource type="Script" uid="uid://bfjix56whrvap" path="res://scripts/gameplay/player_car.gd" id="1_y4ebs"]
+[ext_resource type="ArrayMesh" uid="uid://fs6ljxxcvkaa" path="res://assets/meshes/sedan.mesh" id="2_0kxao"]
+[ext_resource type="ArrayMesh" uid="uid://cu26ix7o0j0xq" path="res://assets/meshes/wheel.mesh" id="3_7iysn"]
+[ext_resource type="AudioStream" uid="uid://cp84x63ws4rnt" path="res://audio/engine.wav" id="4_ha3po"]
+[ext_resource type="AudioStream" uid="uid://djduywofbk318" path="res://audio/impact_1.wav" id="5_e73mi"]
+[ext_resource type="AudioStream" uid="uid://ldcb7fuyl425" path="res://audio/impact_2.wav" id="6_bq8fc"]
+[ext_resource type="AudioStream" uid="uid://doe003r0lcxqg" path="res://audio/impact_3.wav" id="7_o1df7"]
+[ext_resource type="Script" uid="uid://bir66qsg60bsw" path="res://scripts/gameplay/follow_camera.gd" id="8_s557j"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nhhaw"]
+points = PackedVector3Array(-0.769444, 0.486267, -0.286111, 0.786084, 0.602622, -0.286111, 0.786084, 0.486157, -0.286111, -0.574851, 0.525126, 1.26944, 0.608607, 0.000478412, 1.22571, -0.63, 0.1, -1.139, 0.453497, 1.08252, 0.544111, -0.41403, 1.05493, -0.186068, 0.609, 0.1, -1.176, -0.629866, 0, 1.1889, 0.552664, 0.525126, -1.18046, -0.574851, 0.525126, -1.18046, 0.552664, 0.525126, 1.26944, -0.444665, 1.09195, 0.553215, 0.430668, 1.05492, -0.186067, -0.769444, 0.602732, -0.286111, 0.669298, 0.213927, 1.23046, -0.613831, 0.213927, -1.21944, -0.613831, 0.213927, 1.26944, 0.630471, 0.213927, -1.21944, 0.639315, 0.00623976, 1.17578, 0.669298, 0.486157, 0.841393, 0.639, 0.1, -1.126, -0.652658, 0.213927, 1.23046, -0.463165, 1.03417, -0.19252, -0.652658, 0.213927, -1.18046, 0.669298, 0.213927, -1.18046, 0.630471, 0.213927, 1.26944, -0.592377, -1.11022e-16, 1.22653, -0.592, 0.1, -1.177, -0.769444, 0.486267, -0.441545, 0.786084, 0.486157, -0.441545)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rsaax"]
+streams_count = 3
+stream_0/stream = ExtResource("5_e73mi")
+stream_1/stream = ExtResource("6_bq8fc")
+stream_2/stream = ExtResource("7_o1df7")
+
+[node name="PlayerCar" type="VehicleBody3D"]
+transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 0, 0, 0)
+mass = 50.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.15, 0)
+can_sleep = false
+script = ExtResource("1_y4ebs")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0, 0.2, 0)
+mesh = ExtResource("2_0kxao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0, 0.197907, 0)
+shape = SubResource("ConvexPolygonShape3D_nhhaw")
+
+[node name="WheelFL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.999998, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999998, 0.45, 0.260228, 0.529999)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.3
+wheel_rest_length = 0.08
+suspension_travel = 0.385
+suspension_stiffness = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelFL"]
+transform = Transform3D(0.8, 0, -3.55271e-15, 0, 0.8, 0, 3.55271e-15, 0, 0.8, -0.15, 0, 0)
+mesh = ExtResource("3_7iysn")
+
+[node name="WheelFR" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.999998, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999998, -0.45, 0.260228, 0.529999)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.5
+wheel_radius = 0.3
+wheel_rest_length = 0.08
+suspension_travel = 0.385
+suspension_stiffness = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelFR"]
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0.15, 0, 0)
+mesh = ExtResource("3_7iysn")
+
+[node name="WheelRL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.999999, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999999, 0.45, 0.260228, -0.529999)
+wheel_roll_influence = 0.5
+wheel_radius = 0.3
+wheel_rest_length = 0.08
+suspension_travel = 0.385
+suspension_stiffness = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelRL"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.15, 0, 0)
+mesh = ExtResource("3_7iysn")
+
+[node name="WheelRR" type="VehicleWheel3D" parent="."]
+transform = Transform3D(0.999999, 0, -3.19744e-14, 0, 1, 0, 3.19744e-14, 0, 0.999999, -0.45, 0.260228, -0.529999)
+wheel_roll_influence = 0.5
+wheel_radius = 0.3
+wheel_rest_length = 0.08
+suspension_travel = 0.385
+suspension_stiffness = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelRR"]
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, 0.15, 0, 0)
+mesh = ExtResource("3_7iysn")
+
+[node name="AudioEngine" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_ha3po")
+volume_db = -30.0
+pitch_scale = 0.2
+autoplay = true
+bus = &"Game"
+
+[node name="AudioImpact" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_rsaax")
+volume_db = -30.0
+bus = &"Game"
+
+[node name="CameraBase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraBase"]
+process_mode = 3
+transform = Transform3D(-1, 0, -8.74229e-08, 0, 1, 0, 8.74229e-08, 0, -1, 0, 1, -5)
+script = ExtResource("8_s557j")
+min_distance = 2.0

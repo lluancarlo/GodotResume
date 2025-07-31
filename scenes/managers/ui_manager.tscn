@@ -1,0 +1,146 @@
+[gd_scene load_steps=21 format=3 uid="uid://bprd20su71yvh"]
+
+[ext_resource type="Script" uid="uid://pdaet0m3dy1w" path="res://scripts/managers/ui_manager.gd" id="1_8t74x"]
+[ext_resource type="PackedScene" uid="uid://dsau8jsvplp5v" path="res://scenes/ui/mobile/mobile_inputs.tscn" id="2_y7fyd"]
+[ext_resource type="PackedScene" uid="uid://kxotfw2ywu2c" path="res://scenes/ui/huds/ui_debug.tscn" id="3_ngihc"]
+[ext_resource type="PackedScene" uid="uid://cnakwrmrwsqp4" path="res://scenes/ui/huds/ui_text_overlay.tscn" id="4_4pss4"]
+[ext_resource type="PackedScene" uid="uid://bukahr6c8i8nn" path="res://scenes/ui/huds/ui_car_infos.tscn" id="5_347yf"]
+[ext_resource type="PackedScene" uid="uid://dsculw6uyoscf" path="res://scenes/ui/menus/main.tscn" id="6_qxd1k"]
+[ext_resource type="PackedScene" uid="uid://jxerk00bt81p" path="res://scenes/ui/menus/options.tscn" id="7_jlso2"]
+[ext_resource type="PackedScene" uid="uid://dfddeqkdw3ir8" path="res://scenes/ui/menus/language.tscn" id="8_3alx1"]
+[ext_resource type="PackedScene" uid="uid://disu76fpgt3pa" path="res://scenes/ui/dialogs/with_photo/born.tscn" id="9_2ljg2"]
+[ext_resource type="PackedScene" uid="uid://bd6hoe1geynij" path="res://scenes/ui/dialogs/with_photo/live.tscn" id="10_vfikd"]
+[ext_resource type="PackedScene" uid="uid://bdqq5jmdyf4i5" path="res://scenes/ui/dialogs/with_photo/university.tscn" id="11_gx646"]
+[ext_resource type="PackedScene" uid="uid://cv1tnf7x4mvir" path="res://scenes/ui/dialogs/with_logo/amilon.tscn" id="12_mpgcl"]
+[ext_resource type="PackedScene" uid="uid://dcdlodypf3vm3" path="res://scenes/ui/dialogs/with_logo/consinco.tscn" id="13_weuhy"]
+[ext_resource type="PackedScene" uid="uid://ct2jpqt7tix5j" path="res://scenes/ui/dialogs/with_logo/deltaengine.tscn" id="14_mepwj"]
+[ext_resource type="PackedScene" uid="uid://c140u5eel72t" path="res://scenes/ui/dialogs/with_logo/magit.tscn" id="15_1s2hr"]
+[ext_resource type="PackedScene" uid="uid://c7oj73ifm34e4" path="res://scenes/ui/dialogs/with_logo/topgaming.tscn" id="16_u2m3y"]
+[ext_resource type="AudioStream" uid="uid://c83ihvaulblyw" path="res://assets/kenney/interface-sounds/select_005.ogg" id="17_4rooh"]
+[ext_resource type="AudioStream" uid="uid://dc6f5ovhc0bpy" path="res://assets/kenney/interface-sounds/drop_004.ogg" id="18_tg6oy"]
+[ext_resource type="AudioStream" uid="uid://ccevkd1encrxm" path="res://assets/kenney/ui-pack/bonus/switch2.ogg" id="19_7m4mi"]
+[ext_resource type="AudioStream" uid="uid://doyht14ygmpie" path="res://assets/kenney/ui-pack/bonus/click1.ogg" id="20_e0wm4"]
+
+[node name="UiManager" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_8t74x")
+
+[node name="MobileInputs" parent="." instance=ExtResource("2_y7fyd")]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UIDebug" parent="HUD" instance=ExtResource("3_ngihc")]
+layout_mode = 1
+
+[node name="UITextOverlay" parent="HUD" instance=ExtResource("4_4pss4")]
+layout_mode = 1
+
+[node name="UICarInfos" parent="HUD" instance=ExtResource("5_347yf")]
+layout_mode = 1
+
+[node name="Menus" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Main" parent="Menus" instance=ExtResource("6_qxd1k")]
+layout_mode = 1
+
+[node name="Options" parent="Menus" instance=ExtResource("7_jlso2")]
+layout_mode = 1
+
+[node name="Language" parent="Menus" instance=ExtResource("8_3alx1")]
+layout_mode = 1
+
+[node name="Popups" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Born" parent="Popups" instance=ExtResource("9_2ljg2")]
+layout_mode = 1
+
+[node name="Live" parent="Popups" instance=ExtResource("10_vfikd")]
+layout_mode = 1
+
+[node name="University" parent="Popups" instance=ExtResource("11_gx646")]
+layout_mode = 1
+
+[node name="Amilon" parent="Popups" instance=ExtResource("12_mpgcl")]
+layout_mode = 1
+
+[node name="Consinco" parent="Popups" instance=ExtResource("13_weuhy")]
+layout_mode = 1
+
+[node name="DeltaEngine" parent="Popups" instance=ExtResource("14_mepwj")]
+layout_mode = 1
+
+[node name="Magit" parent="Popups" instance=ExtResource("15_1s2hr")]
+layout_mode = 1
+
+[node name="TopGaming" parent="Popups" instance=ExtResource("16_u2m3y")]
+layout_mode = 1
+
+[node name="AudioOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_4rooh")
+volume_db = -15.0
+
+[node name="AudioClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_tg6oy")
+volume_db = -15.0
+
+[node name="AudioSwitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_7m4mi")
+volume_db = -15.0
+
+[node name="AudioClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_e0wm4")
+volume_db = -15.0
+
+[node name="Blackscreen" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Language" parent="." instance=ExtResource("8_3alx1")]
+show_back_button = false
+
+[connection signal="click" from="Menus/Main" to="." method="_on_ui_click"]
+[connection signal="language_pressed" from="Menus/Main" to="." method="_on_menu_main_language_pressed"]
+[connection signal="options_pressed" from="Menus/Main" to="." method="_on_menu_main_options_pressed"]
+[connection signal="restart_pressed" from="Menus/Main" to="." method="_on_menu_main_restart_pressed"]
+[connection signal="resume_pressed" from="Menus/Main" to="." method="_on_menu_main_resume_pressed"]
+[connection signal="click" from="Menus/Options" to="." method="_on_ui_click"]
+[connection signal="close_pressed" from="Menus/Options" to="." method="_on_menu_options_close_pressed"]
+[connection signal="show_fps" from="Menus/Options" to="." method="_on_menu_options_show_fps"]
+[connection signal="click" from="Menus/Language" to="." method="_on_ui_click"]
+[connection signal="close_pressed" from="Menus/Language" to="." method="_on_menu_language_close_pressed"]
+[connection signal="closed" from="Popups/Born" to="." method="close_current_ui"]
+[connection signal="closed" from="Popups/Live" to="." method="close_current_ui"]
+[connection signal="closed" from="Popups/University" to="." method="close_current_ui"]
+[connection signal="closed" from="Popups/Amilon" to="." method="close_current_ui"]
+[connection signal="closed" from="Popups/Consinco" to="." method="close_current_ui"]
+[connection signal="closed" from="Popups/DeltaEngine" to="." method="close_current_ui"]
+[connection signal="closed" from="Popups/Magit" to="." method="close_current_ui"]
+[connection signal="closed" from="Popups/TopGaming" to="." method="close_current_ui"]
+[connection signal="click" from="Language" to="." method="_on_ui_click"]
+[connection signal="close_pressed" from="Language" to="." method="_on_initial_language_close"]

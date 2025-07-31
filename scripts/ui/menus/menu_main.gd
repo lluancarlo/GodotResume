@@ -4,6 +4,7 @@ class_name MenuMain
 signal click()
 signal resume_pressed()
 signal restart_pressed()
+signal language_pressed()
 signal options_pressed()
 
 
@@ -20,6 +21,11 @@ func _on_resume_pressed() -> void:
 func _on_restart_pressed() -> void:
 	click.emit()
 	restart_pressed.emit()
+
+
+func _on_language_pressed() -> void:
+	click.emit()
+	language_pressed.emit()
 
 
 func _on_options_pressed() -> void:
