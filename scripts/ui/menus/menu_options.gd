@@ -1,24 +1,20 @@
 extends Control
 class_name MenuOption
 
+#== ENUMS
+enum Config { LOW, MEDIUM, HIGH }
 
-# Signals
+#== SIGNALS
 signal click()
 signal show_fps(show: bool)
 signal close_pressed()
 
-
-# Enums
-enum Config { LOW, MEDIUM, HIGH }
-
-
-# NODES
-#== Buttons
+#== NODES
 @onready var menu_options_graphics_low_btn : TextureButton = $Dialog/Body/Content/Graphics/Content/General/Buttons/Low
 @onready var menu_options_graphics_medium_btn : TextureButton = $Dialog/Body/Content/Graphics/Content/General/Buttons/Medium
 @onready var menu_options_graphics_high_btn : TextureButton = $Dialog/Body/Content/Graphics/Content/General/Buttons/High
 
-# Export
+#== EXPORTS
 @export_category(&"Game Configs")
 @export_subgroup(&"Low")
 @export var low_vibilitity_range = 25
@@ -30,18 +26,13 @@ enum Config { LOW, MEDIUM, HIGH }
 @export var high_vibilitity_range = 0
 @export var high_shadow_distance = 60
 
+#== VARIABLES
 var current_config : Config
 
-
+#== FUNCTIONS
 func _ready() -> void:
 	set_buttons_visual(Config.MEDIUM)
 	set_configs(Config.MEDIUM)
-
-
-func _on_menu_pressed() -> void:
-	if visible:
-		_on_close_pressed()
-
 
 func quality_selected(config: Config) -> void:
 	click.emit()
@@ -59,19 +50,6 @@ func quality_selected(config: Config) -> void:
 
 	set_buttons_visual(config)
 	set_configs(config)
-
-
-func _on_low_toggled(_toggled_on: bool) -> void:
-	quality_selected(Config.LOW)
-
-
-func _on_medium_toggled(_toggled_on: bool) -> void:
-	quality_selected(Config.MEDIUM)
-
-
-func _on_high_toggled(_toggled_on: bool) -> void:
-	quality_selected(Config.HIGH)
-
 
 func set_buttons_visual(config: Config) -> void:
 	var dark_modulate = Color(0.5, 0.5, 0.5)
@@ -95,7 +73,6 @@ func set_buttons_visual(config: Config) -> void:
 		menu_options_graphics_medium_btn.set_pressed_no_signal(false)
 		menu_options_graphics_medium_btn.modulate = dark_modulate
 
-
 func set_configs(config: Config) -> void:
 	current_config = config
 	call_in_all_children(get_tree().current_scene, set_config)
@@ -103,15 +80,12 @@ func set_configs(config: Config) -> void:
 	assert(sun != null, "cannot find the DirectionalLight3D")
 	sun.directional_shadow_max_distance = get_shadow_distance(config)
 
-
 func set_global_volume(volume: float) -> void:
 	AudioServer.set_bus_volume_db(0, lerp(-30, 10, volume / 100))
-
 
 func set_config(node: Node) -> void:
 	if (node is MeshInstance3D) and (not node.is_in_group(&"ground")):
 		node.visibility_range_end = get_visibility_range(current_config)
-
 
 func find_node(parent_node: Node, type, deep_look: bool = true):
 	var found_node = null
@@ -124,14 +98,12 @@ func find_node(parent_node: Node, type, deep_look: bool = true):
 			break
 	return found_node
 
-
 func call_in_all_children(main_node: Node, execute: Callable) -> void:
 	for node: Node in main_node.get_children():
 		if (node.get_child_count() > 0):
 			call_in_all_children(node, execute)
 		if (node is MeshInstance3D):
 			execute.call(node)
-
 
 func get_visibility_range(config: Config) -> int:
 	match(config):
@@ -142,7 +114,6 @@ func get_visibility_range(config: Config) -> int:
 		_:
 			return high_vibilitity_range
 
-
 func get_shadow_distance(config: Config) -> int:
 	match(config):
 		Config.LOW:
@@ -152,11 +123,23 @@ func get_shadow_distance(config: Config) -> int:
 		_:
 			return high_shadow_distance
 
+#== SIGNAL FUNCTIONS
+func _on_menu_pressed() -> void:
+	if visible:
+		_on_close_pressed()
+
+func _on_low_toggled(_toggled_on: bool) -> void:
+	quality_selected(Config.LOW)
+
+func _on_medium_toggled(_toggled_on: bool) -> void:
+	quality_selected(Config.MEDIUM)
+
+func _on_high_toggled(_toggled_on: bool) -> void:
+	quality_selected(Config.HIGH)
 
 func _on_fps_toggle_pressed(toggled_on: bool) -> void:
 	click.emit()
 	show_fps.emit(toggled_on)
-
 
 func _on_close_pressed() -> void:
 	click.emit()

@@ -1,18 +1,24 @@
 extends Node3D
 
+#== ENUMS
 enum Arrow { LEFT, RIGHT }
+
+#== NODES
 @onready var _label := $Text as Label3D
 @onready var _arrow := $Arrow as Label3D
+
+#== EXPORTS
 @export var text : String
 @export var direction : Arrow
 @export var interaction_color := Color("#00ccdc")
+
+#== VARIABLES
 var acc : float
 
-
+#== FUNCTIONS
 func _ready() -> void:
 	_label.text = text
 	_arrow.text = '<<<' if direction == Arrow.LEFT else '>>>'
-
 
 func _process(delta: float) -> void:
 	acc += delta

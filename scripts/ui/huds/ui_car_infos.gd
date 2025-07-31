@@ -1,7 +1,6 @@
 extends Control
 class_name UICarInfos
 
-
 # NODES
 #== DESKTOP
 @onready var _desktop : Control = $Desktop
@@ -12,13 +11,12 @@ class_name UICarInfos
 @onready var _mobile_gear : Label = $Mobile/VBox/Gear/Value
 @onready var _mobile_speed : Label = $Mobile/VBox/Speed/Value
 
-
+#== FUNCTIONS
 func _ready() -> void:
 	if GameData.is_mobile:
 		_desktop.queue_free()
 	else:
 		_mobile.queue_free()
-
 
 func update_gear(value: int) -> void:
 	var text = str(value) if value > 0 else 'R'
@@ -26,7 +24,6 @@ func update_gear(value: int) -> void:
 		_mobile_gear.text = text
 	else:
 		_desktop_gear.text = text
-
 
 func update_speed(value: int) -> void:
 	var text = str(value)

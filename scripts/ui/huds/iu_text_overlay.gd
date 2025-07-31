@@ -1,22 +1,19 @@
 extends Control
 class_name UITextOverlay
 
-
-# Configuration
+#== EXPORTS
 @export var fade_duration := 0.5
-# NODES
-#== DESKTOP
+
+#== NODES
 @onready var _desktop_label: Label = $DesktopLabel
-#== MOBILE
 @onready var _mobile_label: Label = $MobileLabel
 
-
+#== FUNCTIONS
 func _ready() -> void:
 	if GameData.is_mobile:
 		_desktop_label.queue_free()
 	else:
 		_mobile_label.queue_free()
-
 
 func show_text(area_name: String, duration: float = 2.0) -> void:
 	var label = _desktop_label if is_instance_valid(_desktop_label) else _mobile_label

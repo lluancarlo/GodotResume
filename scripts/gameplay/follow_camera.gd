@@ -1,28 +1,26 @@
 extends Camera3D
+class_name FollowCamera
 
-# Higher values cause the field of view to increase more at high speeds.
+#== CONS
 const FOV_SPEED_FACTOR = 60
-# Higher values cause the field of view to adapt to speed changes faster.
 const FOV_SMOOTH_FACTOR = 0.2
-# Don't change FOV if moving below this speed. This prevents shadows from flickering when driving slowly.
 const FOV_CHANGE_MIN_SPEED = 0.05
 
+#== EXPORTS
 @export var min_distance := 1.0
 @export var max_distance := 3.0
 @export var angle_v_adjust := 0.0
 @export var height := 1.5
 
+#== VARIABLES
+@onready var previous_position := global_position
 var initial_transform := transform
 var base_fov := fov
-# The field of view to smoothly interpolate to.
 var desired_fov := fov
-# Position on the last physics frame (used to measure speed).
-@onready var previous_position := global_position
 
-
+#== FUNCTIONS
 func _ready():
 	update_camera()
-
 
 func _physics_process(_delta):
 	var target: Vector3 = get_parent().global_transform.origin
@@ -50,7 +48,6 @@ func _physics_process(_delta):
 	transform.basis = Basis(transform.basis[0], deg_to_rad(angle_v_adjust)) * transform.basis
 
 	previous_position = global_position
-
 
 func update_camera():
 	transform = initial_transform

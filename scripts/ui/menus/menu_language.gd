@@ -1,24 +1,24 @@
 extends Control
 class_name MenuLanguage
 
-# Signals
+#== SIGNALS
 signal click()
 signal close_pressed()
 
-# Nodes
+#== NODES
 @onready var _back_button : TextureButton = $Dialog/Head/Back
 
-# Exports
+#== EXPORTS
 @export var show_back_button : bool = true
 
-# Engine Functions
+#== FUNCTIONS
 func _ready() -> void:
 	if show_back_button:
 		_back_button.show()
 	else:
 		_back_button.hide()
 
-# Signals
+# SIGNAL FUNCTIONS
 func _on_close_pressed() -> void:
 	click.emit()
 	close_pressed.emit()
