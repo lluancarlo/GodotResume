@@ -34,7 +34,7 @@ project/assembly_name="Resume3D"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/coi_serviceworker/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
+enabled=PackedStringArray("res://addons/scene_object_brush/plugin.cfg")
 
 [input]
 
