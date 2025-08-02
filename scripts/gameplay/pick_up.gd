@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 		change_colors(Color(interaction_color.r, variation, interaction_color.b));
 
 func change_colors(color: Color) -> void:
+	return
 	_mesh.mesh.material.albedo_color = color
 	_label_interaction.modulate = color
 

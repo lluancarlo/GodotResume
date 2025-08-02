@@ -36,6 +36,16 @@ project/assembly_name="Resume3D"
 
 enabled=PackedStringArray("res://addons/scene_object_brush/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "blue",
+"res://audio/": "purple",
+"res://resources/": "pink",
+"res://scenes/": "green",
+"res://scripts/": "gray"
+}
+
 [input]
 
 forward={
