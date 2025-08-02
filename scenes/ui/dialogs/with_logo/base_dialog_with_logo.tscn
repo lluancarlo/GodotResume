@@ -10,7 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://b0h037oplcutf" path="res://assets/styles/dialog/dialog_font_body_medium_blue.tres" id="7_h4iqu"]
 [ext_resource type="StyleBox" uid="uid://bk6s0f6qblspg" path="res://assets/styles/dialog/dialog_panel_anotherpanel.stylebox" id="7_ysc8j"]
 [ext_resource type="LabelSettings" uid="uid://defv3tobpyrn5" path="res://assets/styles/dialog/dialog_font_body_small.res" id="8_w0j6l"]
-[ext_resource type="AnimationLibrary" uid="uid://kods3hkqqgcd" path="res://ui_anims.res" id="11_6ofc6"]
+[ext_resource type="AnimationLibrary" uid="uid://kods3hkqqgcd" path="res://resources/anims/ui_anims.res" id="11_6ofc6"]
 
 [node name="BaseDialogWithLogo" type="Control"]
 layout_mode = 3

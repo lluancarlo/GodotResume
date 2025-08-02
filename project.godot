@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="GodotResume"
-run/main_scene="uid://s81e88l8pwli"
+run/main_scene="uid://ri8ko0g5pr0s"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 config/icon="res://project-icon.png"
+
+[audio]
+
+buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
 [autoload]
 
