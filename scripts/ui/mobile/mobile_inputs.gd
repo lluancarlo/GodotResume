@@ -13,7 +13,6 @@ class_name MobileInputs
 func _ready() -> void:
 	await get_tree().process_frame
 	if GameData.is_mobile:
-		GameData.popup_id_changed.connect(_on_popup_changed)
 		_button_interact.visible = false
 
 #== SIGNAL FUNCTIONS
