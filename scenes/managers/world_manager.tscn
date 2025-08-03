@@ -3432,7 +3432,7 @@ script = ExtResource("50_o1fcl")
 shape = SubResource("BoxShape3D_hf6ys")
 
 [node name="PlayerCar" parent="." instance=ExtResource("51_m7wg8")]
-transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 27.226, 0, 7.47259)
+transform = Transform3D(-4.37113e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37113e-08, 7.76946, 0, 0.145786)
 
 [connection signal="player_on_area_3d" from="Interactive/Consinco" to="." method="_on_collision_pickup"]
 [connection signal="player_on_area_3d" from="Interactive/Magit" to="." method="_on_collision_pickup"]
