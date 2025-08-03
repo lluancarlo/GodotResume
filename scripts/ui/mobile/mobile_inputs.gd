@@ -15,12 +15,12 @@ func _ready() -> void:
 	if GameData.is_mobile:
 		_button_interact.visible = false
 
+func toggle_interact_button(enable: bool) -> void:
+	_button_interact.visible = enable
+
 #== SIGNAL FUNCTIONS
 func _on_button_visual_change(button: TouchScreenButton, press: bool) -> void:
 	button.modulate.a = 0.5 if press else 1.0
-
-func _on_popup_changed() -> void:
-	_button_interact.visible = GameData.on_popup_id != 0
 
 func _on_left_pressed() -> void:
 	_on_button_visual_change(_button_left, true)

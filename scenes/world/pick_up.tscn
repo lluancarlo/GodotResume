@@ -2,17 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c4obk2ean1ecj" path="res://scripts/gameplay/pick_up.gd" id="1_ul7e6"]
 [ext_resource type="QuadMesh" uid="uid://dcbby88l8j3gk" path="res://assets/meshes/pickup_mesh.tres" id="2_m2i0j"]
+[ext_resource type="Texture2D" uid="uid://cnnl2rmrm8rxc" path="res://assets/img/crosshair042.png" id="3_5vud0"]
 [ext_resource type="FontFile" uid="uid://gqqdohjg3y7j" path="res://assets/fonts/Montreal-Regular.ttf" id="3_gruea"]
 [ext_resource type="FontFile" uid="uid://b53g3g4l0rhtn" path="res://assets/fonts/Montreal-Bold.ttf" id="4_1os0l"]
 [ext_resource type="AudioStream" uid="uid://bbjsqboqu7moh" path="res://assets/kenney/interface-sounds/switch_003.ogg" id="4_ybkj6"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m2i0j"]
-load_path = "res://.godot/imported/crosshair042.png-78eaa9e3417ca3bbf20559f5e7bcb7ec.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vud0"]
 transparency = 1
-albedo_color = Color(0, 0.8, 0.862745, 1)
-albedo_texture = SubResource("CompressedTexture2D_m2i0j")
+albedo_texture = ExtResource("3_5vud0")
 
 [sub_resource type="Animation" id="Animation_0i5as"]
 length = 0.001

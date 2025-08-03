@@ -128,6 +128,10 @@ func get_popup_by_id(id: GameData.PickUps) -> BaseDialog:
 		_:
 			return null
 
+func enable_open_dialog_mode(dialog_index: GameData.PickUps) -> void:
+	current_dialog_index = dialog_index
+	_mobile_inputs.toggle_interact_button(dialog_index != GameData.PickUps.None)
+
 #== SIGNAL FUNCTIONS
 func _on_ui_click() -> void:
 	_audio_click.play()

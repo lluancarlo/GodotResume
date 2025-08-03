@@ -22,7 +22,7 @@ func _on_ui_manager_ui_reset_player() -> void:
 	_world_manager.reset_player_position()
 
 func _on_world_manager_player_on_pickup(pickup_id: GameData.PickUps) -> void:
-	_ui_manager.current_dialog_index = pickup_id
+	_ui_manager.enable_open_dialog_mode(pickup_id)
 
 func _on_world_manager_player_gear_change(gear: int) -> void:
 	_ui_manager.update_gear(gear)
