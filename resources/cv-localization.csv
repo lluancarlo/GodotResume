@@ -62,5 +62,5 @@ MENU_OPTIONS_ADVANCED_FPS,Show FPS,Mostra FPS,Mostrar FPS,Mostrar FPS
 MENU_LANGUAGE_TITLE,Language,Lingua,Linguagem,Lengua
 HUD_AREA_OVERLAY_PERSONAL,Personal,Personale,Pessoal,Personal
 HUD_AREA_OVERLAY_PROFESSIONAL,Professional,Professionale,Profissional,Profesional
-HUD_MISSION_1,📌 Discover about me,📌 Scopri di me,📌 Descubra sobre mim,📌 Descúbreme
-HUD_MISSION_2,📌 Discover my professional experiences,📌 Scopri le mie esperienze professionali,📌 Descubra minhas experiências profissionais,📌 Descubre mis experiencias profesionales
+HUD_MISSION_1,Discover about me,Scopri di me,Descubra sobre mim,Descúbreme
+HUD_MISSION_2,Discover my professional experiences,Scopri le mie esperienze professionali,Descubra minhas experiências profissionais,Descubre mis experiencias profesionales

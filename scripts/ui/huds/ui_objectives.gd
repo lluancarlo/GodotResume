@@ -2,20 +2,22 @@ extends Control
 class_name UIObjectives
 
 # NODES
-@export_category("Default Values")
-@export var done_emoji : String = "🟢"
 #== DESKTOP
 @onready var _desktop : Control = $Desktop
 @onready var _desktop_mission1_block : HBoxContainer = $Desktop/Control/Mission1
 @onready var _desktop_mission1_value : Label = $Desktop/Control/Mission1/Value
+@onready var _desktop_mission1_check : TextureRect = $Desktop/Control/Mission1/Check
 @onready var _desktop_mission2_block : HBoxContainer = $Desktop/Control/Mission2
 @onready var _desktop_mission2_value : Label = $Desktop/Control/Mission2/Value
+@onready var _desktop_mission2_check : TextureRect = $Desktop/Control/Mission2/Check
 #== MOBILE
 @onready var _mobile : Control = $Mobile
 @onready var _mobile_mission1_block : HBoxContainer = $Mobile/Control/Mission1
 @onready var _mobile_mission1_value : Label = $Mobile/Control/Mission1/Value
+@onready var _mobile_mission1_check : TextureRect = $Mobile/Control/Mission1/Check
 @onready var _mobile_mission2_block : HBoxContainer = $Mobile/Control/Mission2
 @onready var _mobile_mission2_value : Label = $Mobile/Control/Mission2/Value
+@onready var _mobile_mission2_check : TextureRect = $Mobile/Control/Mission2/Check
 
 #== FUNCTIONS
 func _ready() -> void:
@@ -32,23 +34,31 @@ func set_counter_to_mission(mission: int, value: int) -> void:
 	if mission == 1:
 		if GameData.is_mobile:
 			if value >= 3:
-				_mobile_mission1_value.text = done_emoji
+				_mobile_mission1_value.text = "3/3"
+				_mobile_mission1_value.visible = false
+				_mobile_mission1_check.visible = true
 			else:
 				_mobile_mission1_value.text = str(value) + "/3"
 		else:
 			if value >= 3:
-				_desktop_mission1_value.text = done_emoji
+				_desktop_mission1_value.text = "3/3"
+				_desktop_mission1_value.visible = false
+				_desktop_mission1_check.visible = true
 			else:
 				_desktop_mission1_value.text = str(value) + "/3"
 	elif mission == 2:
 		if GameData.is_mobile:
 			if value >= 5:
-				_mobile_mission2_value.text = done_emoji
+				_mobile_mission2_value.text = "5/5"
+				_mobile_mission2_value.visible = false
+				_mobile_mission2_check.visible = true
 			else:
 				_mobile_mission2_value.text = str(value) + "/5"
 		else:
 			if value >= 5:
-				_desktop_mission2_value.text = done_emoji
+				_desktop_mission2_value.text = "5/5"
+				_desktop_mission2_value.visible = false
+				_desktop_mission2_check.visible = true
 			else:
 				_desktop_mission2_value.text = str(value) + "/5"
 
