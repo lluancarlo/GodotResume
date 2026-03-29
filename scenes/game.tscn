@@ -1,19 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://ri8ko0g5pr0s"]
+[gd_scene format=3 uid="uid://ri8ko0g5pr0s"]
 
 [ext_resource type="Script" uid="uid://dnwvin8ohtllc" path="res://scripts/world/game.gd" id="1_sxt1d"]
 [ext_resource type="PackedScene" uid="uid://bpuvahfxocn6m" path="res://scenes/managers/world_manager.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bprd20su71yvh" path="res://scenes/managers/ui_manager.tscn" id="3_lbhrr"]
 
-[node name="Game" type="Node3D"]
+[node name="Game" type="Node3D" unique_id=641689748]
 script = ExtResource("1_sxt1d")
 
-[node name="WorldManager" parent="." instance=ExtResource("2_lnu2h")]
+[node name="WorldManager" parent="." unique_id=2047089758 instance=ExtResource("2_lnu2h")]
 
-[node name="UiManager" parent="." instance=ExtResource("3_lbhrr")]
+[node name="UiManager" parent="." unique_id=264299848 instance=ExtResource("3_lbhrr")]
 
 [connection signal="area3d_entered_area" from="WorldManager" to="." method="_on_world_manager_area_3d_entered_area"]
 [connection signal="player_gear_change" from="WorldManager" to="." method="_on_world_manager_player_gear_change"]
 [connection signal="player_on_pickup" from="WorldManager" to="." method="_on_world_manager_player_on_pickup"]
 [connection signal="player_speed_change" from="WorldManager" to="." method="_on_world_manager_player_speed_change"]
 [connection signal="initial_menus_closed" from="UiManager" to="." method="_on_initial_menus_closed"]
+[connection signal="popup_closed" from="UiManager" to="." method="_on_ui_manager_popup_closed"]
 [connection signal="ui_reset_player" from="UiManager" to="." method="_on_ui_manager_ui_reset_player"]

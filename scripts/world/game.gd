@@ -29,3 +29,14 @@ func _on_world_manager_player_gear_change(gear: int) -> void:
 
 func _on_world_manager_player_speed_change(speed: int) -> void:
 	_ui_manager.update_speed(speed)
+
+func _on_ui_manager_popup_closed(index: GameData.PickUps) -> void:
+	if index not in GameData.pickups_done:
+		GameData.pickups_done.append(index)
+		if index in [GameData.PickUps.Born, GameData.PickUps.Live, GameData.PickUps.University]:
+			GameData.mission_1_count += 1
+			_ui_manager.add_objective_count(1, GameData.mission_1_count)
+		elif index in [GameData.PickUps.Consinco, GameData.PickUps.Magit, GameData.PickUps.TopGaming,\
+			GameData.PickUps.DeltaEngine, GameData.PickUps.Amilon]:
+			GameData.mission_2_count += 1
+			_ui_manager.add_objective_count(2, GameData.mission_2_count)

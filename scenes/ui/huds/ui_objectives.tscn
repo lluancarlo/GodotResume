@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c4x6fofb20qne"]
+
+[ext_resource type="Script" uid="uid://c8oco7w34pgc3" path="res://scripts/ui/huds/ui_objectives.gd" id="1_jbwj0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ylj7i"]
+font_size = 26
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_phbwc"]
+font_size = 26
+
+[node name="UIObjectives" type="Control" unique_id=577578899]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jbwj0")
+
+[node name="Desktop" type="Control" parent="." unique_id=1650050308]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Desktop" unique_id=134263075]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -650.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 96.0
+grow_horizontal = 0
+
+[node name="Mission1" type="HBoxContainer" parent="Desktop/Control" unique_id=1592044341]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -630.0
+offset_bottom = 36.0
+grow_horizontal = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Label" type="Label" parent="Desktop/Control/Mission1" unique_id=1182645265]
+layout_mode = 2
+text = "HUD_MISSION_1"
+label_settings = SubResource("LabelSettings_ylj7i")
+
+[node name="Value" type="Label" parent="Desktop/Control/Mission1" unique_id=1451205776]
+layout_mode = 2
+text = "0/3"
+label_settings = SubResource("LabelSettings_phbwc")
+
+[node name="Mission2" type="HBoxContainer" parent="Desktop/Control" unique_id=772539376]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -630.0
+offset_top = 40.0
+offset_bottom = 76.0
+grow_horizontal = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Label" type="Label" parent="Desktop/Control/Mission2" unique_id=601395677]
+layout_mode = 2
+text = "HUD_MISSION_2"
+label_settings = SubResource("LabelSettings_ylj7i")
+
+[node name="Value" type="Label" parent="Desktop/Control/Mission2" unique_id=1380194784]
+layout_mode = 2
+text = "0/5"
+label_settings = SubResource("LabelSettings_phbwc")
+
+[node name="Mobile" type="Control" parent="." unique_id=329978056]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Mobile" unique_id=17358336]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -315.0
+offset_top = 20.0
+offset_right = 315.0
+offset_bottom = 96.0
+grow_horizontal = 2
+
+[node name="Mission1" type="HBoxContainer" parent="Mobile/Control" unique_id=616834110]
+layout_mode = 0
+offset_right = 630.0
+offset_bottom = 36.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Mobile/Control/Mission1" unique_id=925029094]
+layout_mode = 2
+text = "HUD_MISSION_1"
+label_settings = SubResource("LabelSettings_ylj7i")
+
+[node name="Value" type="Label" parent="Mobile/Control/Mission1" unique_id=1529510018]
+layout_mode = 2
+text = "0/3"
+label_settings = SubResource("LabelSettings_phbwc")
+
+[node name="Mission2" type="HBoxContainer" parent="Mobile/Control" unique_id=1274054106]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 630.0
+offset_bottom = 76.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Mobile/Control/Mission2" unique_id=467869093]
+layout_mode = 2
+text = "HUD_MISSION_2"
+label_settings = SubResource("LabelSettings_ylj7i")
+
+[node name="Value" type="Label" parent="Mobile/Control/Mission2" unique_id=2143576761]
+layout_mode = 2
+text = "0/5"
+label_settings = SubResource("LabelSettings_phbwc")

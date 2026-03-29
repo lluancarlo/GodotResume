@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://kxotfw2ywu2c"]
+[gd_scene format=3 uid="uid://kxotfw2ywu2c"]
 
 [ext_resource type="Script" uid="uid://bfvl4jwfny80" path="res://scripts/ui/huds/ui_debug.gd" id="1_idq6x"]
 

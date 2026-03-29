@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bprd20su71yvh"]
+[gd_scene format=3 uid="uid://bprd20su71yvh"]
 
 [ext_resource type="Script" uid="uid://pdaet0m3dy1w" path="res://scripts/managers/ui_manager.gd" id="1_8t74x"]
 [ext_resource type="PackedScene" uid="uid://dsau8jsvplp5v" path="res://scenes/ui/mobile/mobile_inputs.tscn" id="2_y7fyd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cnakwrmrwsqp4" path="res://scenes/ui/huds/ui_text_overlay.tscn" id="4_4pss4"]
 [ext_resource type="PackedScene" uid="uid://bukahr6c8i8nn" path="res://scenes/ui/huds/ui_car_infos.tscn" id="5_347yf"]
 [ext_resource type="PackedScene" uid="uid://dsculw6uyoscf" path="res://scenes/ui/menus/main.tscn" id="6_qxd1k"]
+[ext_resource type="PackedScene" uid="uid://c4x6fofb20qne" path="res://scenes/ui/huds/ui_objectives.tscn" id="6_y7fyd"]
 [ext_resource type="PackedScene" uid="uid://jxerk00bt81p" path="res://scenes/ui/menus/options.tscn" id="7_jlso2"]
 [ext_resource type="PackedScene" uid="uid://dfddeqkdw3ir8" path="res://scenes/ui/menus/language.tscn" id="8_3alx1"]
 [ext_resource type="PackedScene" uid="uid://disu76fpgt3pa" path="res://scenes/ui/dialogs/with_photo/born.tscn" id="9_2ljg2"]
@@ -20,14 +21,15 @@
 [ext_resource type="AudioStream" uid="uid://dc6f5ovhc0bpy" path="res://assets/kenney/interface-sounds/drop_004.ogg" id="18_tg6oy"]
 [ext_resource type="AudioStream" uid="uid://ccevkd1encrxm" path="res://assets/kenney/ui-pack/bonus/switch2.ogg" id="19_7m4mi"]
 [ext_resource type="AudioStream" uid="uid://doyht14ygmpie" path="res://assets/kenney/ui-pack/bonus/click1.ogg" id="20_e0wm4"]
+[ext_resource type="AudioStream" uid="uid://b00k6lfhw3qbf" path="res://assets/kenney/ui-pack/bonus/notification.ogg" id="22_ngihc"]
 
-[node name="UiManager" type="CanvasLayer"]
+[node name="UiManager" type="CanvasLayer" unique_id=265965919]
 process_mode = 3
 script = ExtResource("1_8t74x")
 
-[node name="MobileInputs" parent="." instance=ExtResource("2_y7fyd")]
+[node name="MobileInputs" parent="." unique_id=450256964 instance=ExtResource("2_y7fyd")]
 
-[node name="HUD" type="Control" parent="."]
+[node name="HUD" type="Control" parent="." unique_id=2005117654]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,16 +38,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="UIDebug" parent="HUD" instance=ExtResource("3_ngihc")]
+[node name="UIDebug" parent="HUD" unique_id=1780091736 instance=ExtResource("3_ngihc")]
 layout_mode = 1
 
-[node name="UITextOverlay" parent="HUD" instance=ExtResource("4_4pss4")]
+[node name="UITextOverlay" parent="HUD" unique_id=1094904906 instance=ExtResource("4_4pss4")]
 layout_mode = 1
 
-[node name="UICarInfos" parent="HUD" instance=ExtResource("5_347yf")]
+[node name="UICarInfos" parent="HUD" unique_id=616088685 instance=ExtResource("5_347yf")]
 layout_mode = 1
 
-[node name="Menus" type="Control" parent="."]
+[node name="UIObjectives" parent="HUD" unique_id=577578899 instance=ExtResource("6_y7fyd")]
+layout_mode = 1
+
+[node name="Menus" type="Control" parent="." unique_id=823958291]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,16 +59,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Main" parent="Menus" instance=ExtResource("6_qxd1k")]
+[node name="Main" parent="Menus" unique_id=243959732 instance=ExtResource("6_qxd1k")]
 layout_mode = 1
 
-[node name="Options" parent="Menus" instance=ExtResource("7_jlso2")]
+[node name="Options" parent="Menus" unique_id=2095110970 instance=ExtResource("7_jlso2")]
 layout_mode = 1
 
-[node name="Language" parent="Menus" instance=ExtResource("8_3alx1")]
+[node name="Language" parent="Menus" unique_id=287402556 instance=ExtResource("8_3alx1")]
 layout_mode = 1
 
-[node name="Popups" type="Control" parent="."]
+[node name="Popups" type="Control" parent="." unique_id=859997183]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,47 +77,51 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Born" parent="Popups" instance=ExtResource("9_2ljg2")]
+[node name="Born" parent="Popups" unique_id=2066900231 instance=ExtResource("9_2ljg2")]
 layout_mode = 1
 
-[node name="Live" parent="Popups" instance=ExtResource("10_vfikd")]
+[node name="Live" parent="Popups" unique_id=1956972007 instance=ExtResource("10_vfikd")]
 layout_mode = 1
 
-[node name="University" parent="Popups" instance=ExtResource("11_gx646")]
+[node name="University" parent="Popups" unique_id=1424936051 instance=ExtResource("11_gx646")]
 layout_mode = 1
 
-[node name="Amilon" parent="Popups" instance=ExtResource("12_mpgcl")]
+[node name="Amilon" parent="Popups" unique_id=1681757397 instance=ExtResource("12_mpgcl")]
 layout_mode = 1
 
-[node name="Consinco" parent="Popups" instance=ExtResource("13_weuhy")]
+[node name="Consinco" parent="Popups" unique_id=510781344 instance=ExtResource("13_weuhy")]
 layout_mode = 1
 
-[node name="DeltaEngine" parent="Popups" instance=ExtResource("14_mepwj")]
+[node name="DeltaEngine" parent="Popups" unique_id=1213794420 instance=ExtResource("14_mepwj")]
 layout_mode = 1
 
-[node name="Magit" parent="Popups" instance=ExtResource("15_1s2hr")]
+[node name="Magit" parent="Popups" unique_id=68195036 instance=ExtResource("15_1s2hr")]
 layout_mode = 1
 
-[node name="TopGaming" parent="Popups" instance=ExtResource("16_u2m3y")]
+[node name="TopGaming" parent="Popups" unique_id=1414138725 instance=ExtResource("16_u2m3y")]
 layout_mode = 1
 
-[node name="AudioOpen" type="AudioStreamPlayer" parent="."]
+[node name="AudioOpen" type="AudioStreamPlayer" parent="." unique_id=1416698484]
 stream = ExtResource("17_4rooh")
 volume_db = -15.0
 
-[node name="AudioClose" type="AudioStreamPlayer" parent="."]
+[node name="AudioClose" type="AudioStreamPlayer" parent="." unique_id=849225115]
 stream = ExtResource("18_tg6oy")
 volume_db = -15.0
 
-[node name="AudioSwitch" type="AudioStreamPlayer" parent="."]
+[node name="AudioSwitch" type="AudioStreamPlayer" parent="." unique_id=1870559946]
 stream = ExtResource("19_7m4mi")
 volume_db = -15.0
 
-[node name="AudioClick" type="AudioStreamPlayer" parent="."]
+[node name="AudioClick" type="AudioStreamPlayer" parent="." unique_id=899866635]
 stream = ExtResource("20_e0wm4")
 volume_db = -15.0
 
-[node name="Blackscreen" type="ColorRect" parent="."]
+[node name="AudioNotification" type="AudioStreamPlayer" parent="." unique_id=1726649200]
+stream = ExtResource("22_ngihc")
+volume_db = -15.0
+
+[node name="Blackscreen" type="ColorRect" parent="." unique_id=807670874]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -121,7 +130,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Language" parent="." instance=ExtResource("8_3alx1")]
+[node name="Language" parent="." unique_id=1626891692 instance=ExtResource("8_3alx1")]
 show_back_button = false
 
 [connection signal="click" from="Menus/Main" to="." method="_on_ui_click"]

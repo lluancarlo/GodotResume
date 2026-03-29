@@ -19,6 +19,9 @@ enum PickUps
 #== VARIABLES
 var is_mobile : bool
 var can_drive : bool
+var mission_1_count : int
+var mission_2_count : int
+var pickups_done : Array[int] = []
 
 #== FUNCTION
 func _ready() -> void:

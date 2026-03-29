@@ -4,6 +4,7 @@ class_name UiManager
 #== SIGNALS
 signal initial_menus_closed()
 signal ui_reset_player()
+signal popup_closed(index: GameData.PickUps)
 
 #== NODES
 @onready var _initial_language : MenuLanguage = $Language
@@ -13,6 +14,7 @@ signal ui_reset_player()
 @onready var _hud_debug : UIDebug = $HUD/UIDebug
 @onready var _hud_text_overlay : UITextOverlay = $HUD/UITextOverlay
 @onready var _hud_car_infos : UICarInfos = $HUD/UICarInfos
+@onready var _hud_objectives : UIObjectives = $HUD/UIObjectives
 #==== MENUS
 @onready var _menus : Control = $Menus
 @onready var _menu_main : MenuMain = $Menus/Main
@@ -32,6 +34,7 @@ signal ui_reset_player()
 @onready var _audio_open : AudioStreamPlayer = $AudioOpen
 @onready var _audio_close : AudioStreamPlayer = $AudioClose
 @onready var _audio_click : AudioStreamPlayer = $AudioClick
+@onready var _audio_notification : AudioStreamPlayer = $AudioNotification
 
 #== VARIABLES
 var current_dialog : BaseDialog
@@ -78,7 +81,6 @@ func _physics_process(_delta: float) -> void:
 					return
 				current_dialog = popup
 				current_dialog.open()
-
 				GameData.can_drive = false
 
 func open_ui(ui: Control, play_sound: bool = true) -> void:
@@ -132,6 +134,10 @@ func enable_open_dialog_mode(dialog_index: GameData.PickUps) -> void:
 	current_dialog_index = dialog_index
 	_mobile_inputs.toggle_interact_button(dialog_index != GameData.PickUps.None)
 
+func add_objective_count(mission: int, value: int) -> void:
+	_hud_objectives.set_counter_to_mission(mission, value)
+	_audio_notification.play()
+
 #== SIGNAL FUNCTIONS
 func _on_ui_click() -> void:
 	_audio_click.play()
@@ -148,6 +154,7 @@ func close_current_ui(play_sound: bool = true) -> void:
 		current_dialog.close()
 		current_dialog = null
 
+	popup_closed.emit(current_dialog_index)
 	GameData.can_drive = true
 
 func _on_initial_language_close() -> void:
