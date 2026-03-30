@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv1tnf7x4mvir"]
+[gd_scene format=3 uid="uid://cv1tnf7x4mvir"]
 
 [ext_resource type="PackedScene" uid="uid://cl5cbv0pf7v4m" path="res://scenes/ui/dialogs/with_logo/base_dialog_with_logo.tscn" id="1_j8aaa"]
 [ext_resource type="Texture2D" uid="uid://csafgnaojruvw" path="res://assets/img/amilon-logo.png" id="2_nbg61"]
 
-[node name="Amilon" instance=ExtResource("1_j8aaa")]
+[node name="Amilon" unique_id=1139027012 instance=ExtResource("1_j8aaa")]
 link = "https://amilon.com/"
 
 [node name="Title" parent="Dialog/Head" index="0"]
